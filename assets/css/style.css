@@ -10825,7 +10825,7 @@ strong {
     .show-hide span .show-hide span:before {
       content: "hide"; }
     .show-hide span.show:before {
-      content: "show"; }
+      content: "tampilkan"; }
 
 .needs-validation label {
   opacity: 0.7;
