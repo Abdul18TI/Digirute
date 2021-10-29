@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'db_digirute',
+	'hostname' => 'localhost',
 	'username' => 'root',
 	'password' => '',
-	'database' => '',
+	'database' => 'db_digirute',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
