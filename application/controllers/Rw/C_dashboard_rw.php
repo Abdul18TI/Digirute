@@ -21,9 +21,9 @@ class C_dashboard_rw extends CI_Controller
      */
     public function index()
     {
-        $this->load->view('Rw/Templates/header');
-        $this->load->view('Rw/Templates/sidebar');
-        $this->load->view('Rw/dashboard');
-        $this->load->view('Rw/Templates/footer');
+        $this->load->view('Templates/header');
+        $this->load->view('Templates/sidebar');
+        $this->load->view('dashboard');
+        $this->load->view('Templates/footer');
     }
 }
