@@ -54,7 +54,7 @@
                 <div class="col-xl-7 p-0">
                     <div class="login-card">
                         <form class="theme-form login-form">
-                            <h4>Login Warga</h4>
+                            <h4>Login Warga2</h4>
                             <h6>Selamat datang warga Kelurahan Umban Sari.</h6>
                             <div class="form-group">
                                 <label>NIK/Username</label>
