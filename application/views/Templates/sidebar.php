@@ -2,7 +2,7 @@
 <div class="page-body-wrapper sidebar-icon">
     <!-- Page Sidebar Start-->
     <header class="main-nav">
-        <div class="sidebar-user text-center"><a class="setting-primary" href="javascript:void(0)"><i data-feather="settings"></i></a><img class="img-90 rounded-circle" src="../assets/images/dashboard/1.png" alt="">
+        <div class="sidebar-user text-center"><a class="setting-primary" href="javascript:void(0)"><i data-feather="settings"></i></a><img class="img-90 rounded-circle" src="<?= base_url() ?>assets/images/dashboard/1.png" alt="">
             <div class="badge-bottom"><span class="badge badge-primary">New</span></div><a href="user-profile.html">
                 <h6 class="mt-3 f-14 f-w-600">Emay Walter</h6>
             </a>
@@ -301,7 +301,7 @@
                         <li><a class="nav-link menu-title link-nav" href="landing-page.html"><i data-feather="navigation-2"></i><span>Landing page</span></a></li>
                         <li><a class="nav-link menu-title link-nav" href="sample-page.html"><i data-feather="file"></i><span>Sample page</span></a></li>
                         <li class="dropdown"><a class="nav-link menu-title link-nav" href="internationalization.html"><i data-feather="aperture"></i><span>Internationalization</span></a></li>
-                        <li class="dropdown"><a class="nav-link menu-title link-nav" href="../starter-kit/index.html"><i data-feather="anchor"></i><span>Starter kit </span></a></li>
+                        <li class="dropdown"><a class="nav-link menu-title link-nav" href="<?= base_url() ?>starter-kit/index.html"><i data-feather="anchor"></i><span>Starter kit </span></a></li>
                         <li class="mega-menu"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="layers"></i><span>Others</span></a>
                             <div class="mega-menu-container menu-content">
                                 <div class="container">
