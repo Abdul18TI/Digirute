@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class C_dashboard_warga extends CI_Controller
+class C_form_rw extends CI_Controller
 {
 
     /**
@@ -21,9 +21,9 @@ class C_dashboard_warga extends CI_Controller
      */
     public function index()
     {
-        $this->load->view('Warga/Templates/header');
-        $this->load->view('Warga/Templates/sidebar');
-        $this->load->view('Warga/dashboard');
-        $this->load->view('Warga/Templates/footer');
+        $this->load->view('Rw/Templates/header');
+        $this->load->view('Rw/Templates/sidebar');
+        $this->load->view('Rw/Form/form_pengaduan');
+        $this->load->view('Rw/Templates/footer');
     }
 }

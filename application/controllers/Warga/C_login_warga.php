@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class C_form extends CI_Controller
+class C_login_warga extends CI_Controller
 {
 
     /**
@@ -21,9 +21,6 @@ class C_form extends CI_Controller
      */
     public function index()
     {
-        $this->load->view('Rw/Templates/header');
-        $this->load->view('Rw/Templates/sidebar');
-        $this->load->view('Rw/Form/form_pengaduan');
-        $this->load->view('Rw/Templates/footer');
+        $this->load->view('Warga/login_warga');
     }
 }
