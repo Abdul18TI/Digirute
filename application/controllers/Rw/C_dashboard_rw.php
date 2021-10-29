@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class C_dashboard extends CI_Controller
+class C_dashboard_rw extends CI_Controller
 {
 
     /**
