@@ -1,11 +1,11 @@
 <?php
 
-class M_rw extends CI_Model
+class M_rt extends CI_Model
 {
-    public function tampil_data_rw()
+    public function tampil_data_rt()
     {
         $this->db->select('*');
-        $this->db->from('tb_rw');
+        $this->db->from('tb_rt');
         $query = $this->db->get();
         return $query;
     }

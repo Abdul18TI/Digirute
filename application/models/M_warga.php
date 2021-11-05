@@ -1,11 +1,11 @@
 <?php
 
-class M_rw extends CI_Model
+class M_warga extends CI_Model
 {
-    public function tampil_data_rw()
+    public function tampil_data_warga()
     {
         $this->db->select('*');
-        $this->db->from('tb_rw');
+        $this->db->from('tb_warga');
         $query = $this->db->get();
         return $query;
     }
