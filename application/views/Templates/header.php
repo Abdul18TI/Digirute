@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -55,8 +56,8 @@
         <div class="page-main-header">
             <div class="main-header-right row m-0">
                 <div class="main-header-left">
-                    <div class="logo-wrapper"><a href="index.html"><img class="img-fluid" src="<?= base_url()?>assets/images/logo/logo.png" alt=""></a></div>
-                    <div class="dark-logo-wrapper"><a href="index.html"><img class="img-fluid" src="<?= base_url()?>assets/images/logo/dark-logo.png" alt=""></a></div>
+                    <div class="logo-wrapper"><a href="index.html"><img class="img-fluid" src="<?= base_url() ?>assets/images/logo/logo.png" alt=""></a></div>
+                    <div class="dark-logo-wrapper"><a href="index.html"><img class="img-fluid" src="<?= base_url() ?>assets/images/logo/dark-logo.png" alt=""></a></div>
                     <div class="toggle-sidebar"><i class="status_toggle middle" data-feather="align-center" id="sidebar-toggle"></i></div>
                 </div>
                 <div class="left-menu-header col">
@@ -137,7 +138,7 @@
                         <li class="onhover-dropdown"><i data-feather="message-square"></i>
                             <ul class="chat-dropdown onhover-show-div">
                                 <li>
-                                    <div class="media"><img class="img-fluid rounded-circle me-3" src="<?= base_url()?>assets/images/user/4.jpg" alt="">
+                                    <div class="media"><img class="img-fluid rounded-circle me-3" src="<?= base_url() ?>assets/images/user/4.jpg" alt="">
                                         <div class="media-body"><span>Ain Chavez</span>
                                             <p class="f-12 light-font">Lorem Ipsum is simply dummy...</p>
                                         </div>
@@ -145,7 +146,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="media"><img class="img-fluid rounded-circle me-3" src="<?= base_url()?>assets/images/user/1.jpg" alt="">
+                                    <div class="media"><img class="img-fluid rounded-circle me-3" src="<?= base_url() ?>assets/images/user/1.jpg" alt="">
                                         <div class="media-body"><span>Erica Hughes</span>
                                             <p class="f-12 light-font">Lorem Ipsum is simply dummy...</p>
                                         </div>
@@ -153,7 +154,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="media"><img class="img-fluid rounded-circle me-3" src="<?= base_url()?>assets/images/user/2.jpg" alt="">
+                                    <div class="media"><img class="img-fluid rounded-circle me-3" src="<?= base_url() ?>assets/images/user/2.jpg" alt="">
                                         <div class="media-body"><span>Kori Thomas</span>
                                             <p class="f-12 light-font">Lorem Ipsum is simply dummy...</p>
                                         </div>
