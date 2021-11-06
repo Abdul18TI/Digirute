@@ -38,4 +38,15 @@ class M_agenda extends CI_Model
         unlink(FCPATH . 'assets/img/foto_product/' . $data['tb_foto_agenda']['Foto_Agenda']);
         redirect('Product_a');
     }
+    public function tambah_agenda($data)
+    {
+        $this->db->insert('tb_agenda', $data);
+        return $this->db->affected_rows();
+    }
+
+    public function ubah_agenda($data, $id)
+    {
+        $this->db->update('tb_agenda', $data, ['ID_Agenda' => $id]);
+        return $this->db->affected_rows();
+    }
 }
