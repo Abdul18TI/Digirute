@@ -34,9 +34,9 @@ class C_form_agenda_rw extends CI_Controller
         $IsiAgenda      = $this->input->post('IsiAgenda');
         $StatusAgenda      = 1;
         $UploadFotoBanner = $_FILES['FotoAgenda']['name'];
-        $Tgl_Mulai_Agenda = $this->input->post('Tgl_Mulai_Agenda');
-        // echo $Tgl_Mulai_Agenda;
-        // die();
+        $Tgl_Mulai_Agenda = strtotime($this->input->post('Tgl_Mulai_Agenda'));
+        echo $Tgl_Mulai_Agenda;
+        die();
         if ($UploadFotoBanner) {
             $config['upload_path'] = './assets/images/banner';
             $config['allowed_types'] = 'gif|jpg|png';
