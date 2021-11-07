@@ -6,7 +6,7 @@ class M_agenda extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('tb_agenda');
-        $this->db->join('tb_foto_agenda', 'tb_agenda.ID_Agenda = tb_foto_agenda.ID_Agenda');
+        // $this->db->join('tb_foto_agenda', 'tb_agenda.ID_Agenda = tb_foto_agenda.ID_Agenda');
         $query = $this->db->get();
         return $query;
     }
@@ -15,7 +15,7 @@ class M_agenda extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('tb_agenda');
-        $this->db->join('tb_foto_agenda', 'tb_agenda.ID_Agenda = tb_foto_agenda.ID_Agenda');
+        // $this->db->join('tb_foto_agenda', 'tb_agenda.ID_Agenda = tb_foto_agenda.ID_Agenda');
         $this->db->where('ID_Agenda', $ID_Agenda);
         $query = $this->db->get();
         return $query;
@@ -32,11 +32,11 @@ class M_agenda extends CI_Model
 
     public function hapus_agenda($ID_Agenda)
     {
-        $data['tb_agenda'] = $this->db->get_where('tb_agenda', ['ID_Agenda' => $ID_Agenda])->row_array();
-        $data['tb_foto_agenda'] = $this->db->get_where('tb_foto_agenda', ['ID_Agenda' => $ID_Agenda])->row_array();
-        $this->db->delete('tb_foto_agenda', ['ID_Agenda' => $ID_Agenda]);
-        unlink(FCPATH . 'assets/img/foto_product/' . $data['tb_foto_agenda']['Foto_Agenda']);
-        redirect('Product_a');
+        // $data['tb_agenda'] = $this->db->get_where('tb_agenda', ['ID_Agenda' => $ID_Agenda])->row_array();
+        // $data['tb_foto_agenda'] = $this->db->get_where('tb_foto_agenda', ['ID_Agenda' => $ID_Agenda])->row_array();
+        $this->db->delete('tb_agenda', ['ID_Agenda' => $ID_Agenda]);
+        // unlink(FCPATH . 'assets/img/foto_product/' . $data['tb_foto_agenda']['Foto_Agenda']);
+        redirect('Rw/C_table_agenda_rw');
     }
     public function tambah_agenda($data)
     {

@@ -39,12 +39,20 @@
 <script src="<?= base_url() ?>assets/js/owlcarousel/owl.carousel.js"></script>
 <script src="<?= base_url() ?>assets/js/owlcarousel/owl-custom.js"></script>
 <script src="<?= base_url() ?>assets/js/dashboard/dashboard_2.js"></script>
+<script src="<?= base_url() ?>assets/js/datatable/datatables/jquery.dataTables.min.js"></script>
+<script src="<?= base_url() ?>assets/js/datatable/datatables/datatable.custom.js"></script>
+<script src="<?= base_url() ?>assets/js/tooltip-init.js"></script>
 <!-- Plugins JS Ends-->
 <!-- Theme js-->
 <script src="<?= base_url() ?>assets/js/script.js"></script>
 <script src="<?= base_url() ?>assets/js/theme-customizer/customizer.js"></script>
 <!-- login js-->
 <!-- Plugin used-->
+<script>
+    $(document).ready(function() {
+        $('#dataTable').DataTable()
+    })
+</script>
 </body>
 
 </html>

@@ -32,6 +32,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/chartist.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/owlcarousel.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/prism.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/datatables.css">
     <!-- Plugins css Ends-->
     <!-- Bootstrap css-->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/bootstrap.css">

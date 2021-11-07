@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class C_form_agenda_rw extends CI_Controller
+class C_table_agenda_rw extends CI_Controller
 {
 
     /**
@@ -21,26 +21,17 @@ class C_form_agenda_rw extends CI_Controller
      */
     public function index()
     {
+        $this->load->model('M_agenda');
+        $data['agenda'] = $this->M_agenda->tampil_data_agenda()->result();
         $this->load->view('Templates/header');
         $this->load->view('Templates/sidebar');
-        $this->load->view('Rw/Form/form_agenda');
+        $this->load->view('Rw/Table/table_agenda', $data);
         $this->load->view('Templates/footer');
     }
 
-    public function tambah_agenda()
+    public function hapus_agenda($ID_Agenda)
     {
         $this->load->model('M_agenda');
-        $NamaAgenda      = $this->input->post('NamaAgenda');
-        $IsiAgenda      = $this->input->post('IsiAgenda');
-        $StatusAgenda      = 1;
-
-        $data = array(
-            'NamaAgenda'    => $NamaAgenda,
-            'IsiAgenda'    => $IsiAgenda,
-            'StatusAgenda'    => $StatusAgenda,
-        );
-
-        $this->M_agenda->tambah_agenda($data);
-        redirect('Rw/C_table_agenda_rw');
+        $this->M_agenda->hapus_agenda($ID_Agenda);
     }
 }

@@ -14,13 +14,13 @@
                     <div class="card-header pb-0">
                         <h5>Form Tambah Agenda</h5>
                     </div>
-                    <form class="form theme-form">
+                    <form class="form theme-form" method="POST" action="C_form_agenda_rw/tambah_agenda">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col">
                                     <div class="mb-3">
                                         <label class="form-label" for="exampleInputPassword22">Nama Agenda : </label>
-                                        <input class="form-control" id="exampleInputPassword22" type="text" placeholder="Gotong royong">
+                                        <input class="form-control" name="NamaAgenda" id="exampleInputPassword22" type="text" placeholder="Gotong royong">
                                     </div>
                                 </div>
                             </div>
@@ -28,7 +28,7 @@
                                 <div class="col">
                                     <div>
                                         <label class="form-label" for="exampleFormControlTextarea4">Isi Agenda : </label>
-                                        <textarea class="form-control" id="exampleFormControlTextarea4" rows="3"></textarea>
+                                        <textarea class="form-control" name="IsiAgenda" id="exampleFormControlTextarea4" rows="3"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -36,7 +36,7 @@
                                 <div class="col">
                                     <div>
                                         <label class="form-label" for="exampleFormControlTextarea4">Foto Agenda : </label>
-                                        <input class="form-control" type="file">
+                                        <input class="form-control" name="FotoAgenda" type="file">
                                     </div>
                                 </div>
                             </div>
