@@ -33,7 +33,7 @@
                                             <td><?php echo $no ?></td>
                                             <td><?php echo $ag->NamaAgenda ?></td>
                                             <td><?php echo $ag->IsiAgenda ?></td>
-                                            <td><?php echo date('d-m-y H:i', $ag->Tgl_Mulai_Agenda); ?></td>
+                                            <td><?php echo date('d-m-y H:i', $ag->Tgl_Upload_Agenda); ?></td>
                                             <td><img src="<?= base_url('assets/images/banner/') . $ag->FotoBanner ?>" alt=""></td>
                                             <td><?php echo $ag->StatusAgenda ?></td>
                                             <td>

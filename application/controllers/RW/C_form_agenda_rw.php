@@ -3,7 +3,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class C_form_agenda_rw extends CI_Controller
 {
-
+    public function __construct()
+    {
+        parent::__construct();
+        date_default_timezone_set('Asia/Jakarta');
+    }
     /**
      * Index Page for this controller.
      *
@@ -35,8 +39,10 @@ class C_form_agenda_rw extends CI_Controller
         $StatusAgenda      = 1;
         $UploadFotoBanner = $_FILES['FotoAgenda']['name'];
         $Tgl_Mulai_Agenda = strtotime($this->input->post('Tgl_Mulai_Agenda'));
-        echo $Tgl_Mulai_Agenda;
-        die();
+
+        $Tgl_Upload_Agenda = strtotime(date("Y-m-d H:i:s"));
+        // echo $Tgl_Mulai_Agenda;
+        // die();
         if ($UploadFotoBanner) {
             $config['upload_path'] = './assets/images/banner';
             $config['allowed_types'] = 'gif|jpg|png';
@@ -52,7 +58,7 @@ class C_form_agenda_rw extends CI_Controller
                     'IsiAgenda'    => $IsiAgenda,
                     'StatusAgenda'    => $StatusAgenda,
                     'Tgl_Mulai_Agenda'    => $Tgl_Mulai_Agenda,
-                    'Tgl_Upload_Agenda'    => date("Y-m-d h:i:sa"),
+                    'Tgl_Upload_Agenda'    => $Tgl_Upload_Agenda,
                     'FotoBanner' => $FotoBanner
                 );
 
@@ -64,7 +70,7 @@ class C_form_agenda_rw extends CI_Controller
                     'IsiAgenda'    => $IsiAgenda,
                     'StatusAgenda'    => $StatusAgenda,
                     'Tgl_Mulai_Agenda'    => $Tgl_Mulai_Agenda,
-                    'Tgl_Upload_Agenda'    => date("Y-m-d h:i:sa"),
+                    'Tgl_Upload_Agenda'    => $Tgl_Upload_Agenda,
                 );
 
                 $this->M_agenda->tambah_agenda($data);
