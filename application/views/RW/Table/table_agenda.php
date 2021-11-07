@@ -10,13 +10,15 @@
                         <h5>Table Agenda</h5>
                     </div>
                     <div class="card-body">
-                        <div class="table-responsive">
+                        <div class="table-responsive product-table">
                             <table class="display" id="dataTable">
                                 <thead>
                                     <tr>
                                         <th>No</th>
                                         <th>Nama Agenda</th>
                                         <th>Isi Agenda</th>
+                                        <th>Tanggal Agenda</th>
+                                        <th>Banner Agenda</th>
                                         <th>Status Agenda</th>
                                         <th>Aksi</th>
                                     </tr>
@@ -31,6 +33,8 @@
                                             <td><?php echo $no ?></td>
                                             <td><?php echo $ag->NamaAgenda ?></td>
                                             <td><?php echo $ag->IsiAgenda ?></td>
+                                            <td><?php echo $ag->Tgl_Mulai_Agenda ?></td>
+                                            <td><img src="<?= base_url('assets/images/banner/') . $ag->FotoBanner ?>" alt=""></td>
                                             <td><?php echo $ag->StatusAgenda ?></td>
                                             <td>
                                                 <a class="btn btn-info btn-sm" href="javascript:void(0)"><span class="fa fa-eye"></span> Detail</a>

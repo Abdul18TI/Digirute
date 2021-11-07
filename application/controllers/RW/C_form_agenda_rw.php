@@ -33,15 +33,45 @@ class C_form_agenda_rw extends CI_Controller
         $NamaAgenda      = $this->input->post('NamaAgenda');
         $IsiAgenda      = $this->input->post('IsiAgenda');
         $StatusAgenda      = 1;
+        $UploadFotoBanner = $_FILES['FotoAgenda']['name'];
+        $Tgl_Mulai_Agenda = $this->input->post('Tgl_Mulai_Agenda');
+        // echo $Tgl_Mulai_Agenda;
+        // die();
+        if ($UploadFotoBanner) {
+            $config['upload_path'] = './assets/images/banner';
+            $config['allowed_types'] = 'gif|jpg|png';
+            $config['max_size']     = '4096';
 
-        $data = array(
-            'NamaAgenda'    => $NamaAgenda,
-            'IsiAgenda'    => $IsiAgenda,
-            'StatusAgenda'    => $StatusAgenda,
-        );
+            $this->load->library('upload', $config);
 
-        $this->M_agenda->tambah_agenda($data);
-        redirect('Rw/C_table_agenda_rw');
+            if ($this->upload->do_upload(('FotoAgenda'))) {
+                $FotoBanner = $this->upload->data('file_name');
+
+                $data = array(
+                    'NamaAgenda'    => $NamaAgenda,
+                    'IsiAgenda'    => $IsiAgenda,
+                    'StatusAgenda'    => $StatusAgenda,
+                    'Tgl_Mulai_Agenda'    => $Tgl_Mulai_Agenda,
+                    'Tgl_Upload_Agenda'    => date("Y-m-d h:i:sa"),
+                    'FotoBanner' => $FotoBanner
+                );
+
+                $this->M_agenda->tambah_agenda($data);
+                redirect('Rw/C_table_agenda_rw');
+            } else {
+                $data = array(
+                    'NamaAgenda'    => $NamaAgenda,
+                    'IsiAgenda'    => $IsiAgenda,
+                    'StatusAgenda'    => $StatusAgenda,
+                    'Tgl_Mulai_Agenda'    => $Tgl_Mulai_Agenda,
+                    'Tgl_Upload_Agenda'    => date("Y-m-d h:i:sa"),
+                );
+
+                $this->M_agenda->tambah_agenda($data);
+                redirect('Rw/C_table_agenda_rw');
+                // echo $this->upload->display_errors();
+            }
+        }
     }
 
     public function form_ubah_agenda($ID_Agenda)
