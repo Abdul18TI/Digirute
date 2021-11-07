@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class C_form_rw extends CI_Controller
+class C_form_pengaduan extends CI_Controller
 {
 
     /**
@@ -23,7 +23,7 @@ class C_form_rw extends CI_Controller
     {
         $this->load->view('Templates/header');
         $this->load->view('Templates/sidebar');
-        $this->load->view('Rw/Form/form_pengaduan');
+        $this->load->view('Warga/Form/form_pengaduan');
         $this->load->view('Templates/footer');
     }
 }

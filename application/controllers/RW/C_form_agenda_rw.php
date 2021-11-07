@@ -43,4 +43,32 @@ class C_form_agenda_rw extends CI_Controller
         $this->M_agenda->tambah_agenda($data);
         redirect('Rw/C_table_agenda_rw');
     }
+
+    public function form_ubah_agenda($ID_Agenda)
+    {
+        $this->load->model('M_agenda');
+        $data['agenda'] = $this->M_agenda->tampil_data_agenda_by_id($ID_Agenda)->result();
+        $this->load->view('Templates/header');
+        $this->load->view('Templates/sidebar');
+        $this->load->view('Rw/Form/form_ubah_agenda', $data);
+        $this->load->view('Templates/footer');
+    }
+
+    public function ubah_agenda()
+    {
+        $this->load->model('M_agenda');
+        $ID_Agenda      = $this->input->post('ID_Agenda');
+        $NamaAgenda      = $this->input->post('NamaAgenda');
+        $IsiAgenda      = $this->input->post('IsiAgenda');
+        $StatusAgenda      = 1;
+
+        $data = array(
+            'NamaAgenda'    => $NamaAgenda,
+            'IsiAgenda'    => $IsiAgenda,
+            'StatusAgenda'    => $StatusAgenda,
+        );
+
+        $this->M_agenda->ubah_agenda($data, $ID_Agenda);
+        redirect('Rw/C_table_agenda_rw');
+    }
 }

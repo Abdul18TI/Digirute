@@ -7,7 +7,7 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                        <h5>Table Agenda</h5><span>DataTables has most features enabled by default, so all you need to do to use it with your own tables is to call the construction function:<code>$().DataTable();</code>.</span><span>Searching, ordering and paging goodness will be immediately added to the table, as shown in this example.</span>
+                        <h5>Table Agenda</h5>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -34,7 +34,7 @@
                                             <td><?php echo $ag->StatusAgenda ?></td>
                                             <td>
                                                 <a class="btn btn-info btn-sm" href="javascript:void(0)"><span class="fa fa-eye"></span> Detail</a>
-                                                <a class="btn btn-secondary btn-sm" href="javascript:void(0)"><span class="fa fa-edit"></span> Edit</a>
+                                                <a class="btn btn-secondary btn-sm" href="<?= base_url(); ?>Rw/C_form_agenda_rw/form_ubah_agenda/<?= $ag->ID_Agenda; ?>"><span class="fa fa-edit"></span> Edit</a>
                                                 <a class="btn btn-danger btn-sm" href="<?= base_url(); ?>Rw/C_table_agenda_rw/hapus_agenda/<?= $ag->ID_Agenda; ?>"><span class="fa fa-trash"></span> Hapus</a>
                                             </td>
                                         </tr>
