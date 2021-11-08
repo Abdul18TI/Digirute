@@ -21,6 +21,6 @@ class C_auth extends CI_Controller
      */
     public function index()
     {
-        $this->load->view('Warga/login_warga');
+        $this->load->view('RT/login_rt');
     }
 }

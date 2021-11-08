@@ -75,9 +75,9 @@
 							</div>
 							<div class="form-group">
 								<div class="row">
-									<div class="col-4"><a class="btn btn-light active txt-dark disabled">Warga</a></div>
-									<div class="col-4"><a class="btn btn-primary btn-block" href="index.html" type="submit">RW</a></div>
-									<div class="col-4"><a class="btn btn-primary btn-block" href="index.html" type="submit">RT</a></div>
+									<div class="col-4"><a class="btn btn-light active txt-dark disabled" >Warga</a></div>
+									<div class="col-4"><a class="btn btn-primary btn-block" href="<?= base_url('RW/C_login_rw'); ?>" type="submit">RW</a></div>
+									<div class="col-4"><a class="btn btn-primary btn-block" href="<?= base_url('RT/C_Auth'); ?>" type="submit">RT</a></div>
 								</div>
 							</div>
 					</div>
