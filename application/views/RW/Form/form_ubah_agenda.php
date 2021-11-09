@@ -38,7 +38,7 @@
                                 <div class="mb-3">
                                     <label class="col-sm-3 col-form-label">Waktu Agenda : </label>
                                     <div class="col">
-                                        <input class="form-control digits" value="<?= $ag->Tgl_Mulai_Agenda ?>" name="Tgl_Mulai_Agenda" id="example-datetime-local-input" type="datetime-local">
+                                        <input class="form-control digits" value="<?php echo date('Y-m-d', $ag->Tgl_Mulai_Agenda) . 'T' .  date('H:i', $ag->Tgl_Mulai_Agenda) ?>" name="Tgl_Mulai_Agenda" id="example-datetime-local-input" type="datetime-local">
                                     </div>
                                 </div>
                             </div>
