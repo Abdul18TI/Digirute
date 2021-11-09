@@ -97,14 +97,43 @@ class C_form_agenda_rw extends CI_Controller
         $NamaAgenda      = $this->input->post('NamaAgenda');
         $IsiAgenda      = $this->input->post('IsiAgenda');
         $StatusAgenda      = 1;
+        $UploadFotoBanner = $_FILES['FotoAgenda']['name'];
+        $Tgl_Mulai_Agenda = strtotime($this->input->post('Tgl_Mulai_Agenda'));
 
-        $data = array(
-            'NamaAgenda'    => $NamaAgenda,
-            'IsiAgenda'    => $IsiAgenda,
-            'StatusAgenda'    => $StatusAgenda,
-        );
+        if ($UploadFotoBanner) {
+            $data['banner'] = $this->db->get_where('tb_agenda', ['ID_Agenda' => $ID_Agenda])->row_array();
+            $old_image = $data['banner']['FotoBanner'];
+            unlink(FCPATH . 'assets/images/banner/' . $old_image);
+            $config['upload_path'] = './assets/images/banner';
+            $config['allowed_types'] = 'gif|jpg|png';
+            $config['max_size']     = '4096';
 
-        $this->M_agenda->ubah_agenda($data, $ID_Agenda);
-        redirect('Rw/C_table_agenda_rw');
+            $this->load->library('upload', $config);
+
+            if ($this->upload->do_upload(('FotoAgenda'))) {
+                $FotoBanner = $this->upload->data('file_name');
+
+                $data = array(
+                    'NamaAgenda'    => $NamaAgenda,
+                    'IsiAgenda'    => $IsiAgenda,
+                    'StatusAgenda'    => $StatusAgenda,
+                    'Tgl_Mulai_Agenda'    => $Tgl_Mulai_Agenda,
+                    'FotoBanner' => $FotoBanner
+                );
+                $this->M_agenda->ubah_agenda($data, $ID_Agenda, $FotoBanner);
+                redirect('Rw/C_table_agenda_rw');
+            } else {
+                $data = array(
+                    'NamaAgenda'    => $NamaAgenda,
+                    'IsiAgenda'    => $IsiAgenda,
+                    'StatusAgenda'    => $StatusAgenda,
+                    'Tgl_Mulai_Agenda'    => $Tgl_Mulai_Agenda,
+                );
+
+                $this->M_agenda->ubah_agenda($data, $ID_Agenda);
+                redirect('Rw/C_table_agenda_rw');
+                // echo $this->upload->display_errors();
+            }
+        }
     }
 }
