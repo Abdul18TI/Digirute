@@ -47,15 +47,13 @@
     <!-- Loader ends-->
     <!-- page-wrapper Start-->
     <section>
-        <div class="container-fluid">
+        <div class="container-fluid p-0">
             <div class="row">
-                <div class="col-xl-5"><img class="bg-img-cover bg-center" src="<?= base_url() ?>assets/images/login/3v2.jpg" alt="looginpage">
-                </div>
-                <div class="col-xl-7 p-0">
+                <div class="col-12">
                     <div class="login-card">
                         <form class="theme-form login-form">
-                            <h4>Login Warga</h4>
-                            <h6>Selamat datang warga Kelurahan Umban Sari.</h6>
+                            <h4>Login RT</h4>
+                            <h6>Selamat datang RT</h6>
                             <div class="form-group">
                                 <label>NIK/Username</label>
                                 <div class="input-group"><span class="input-group-text"><i class="icon-user"></i></span>
@@ -69,22 +67,25 @@
                                     <div class="show-hide"><span class="show"> </span></div>
                                 </div>
                             </div>
-                            <div class="form-group"><a class="btn btn-primary btn-block" href="index.html" type="submit">Login</a></div>
+                            <div class="form-group">
+                                <!-- <button class="btn btn-primary btn-block" type="submit">Login</button> -->
+                                <!-- <button class="btn btn-primary btn-block" href="index.html" type="submit">Login</button> -->
+                                <a class="btn btn-primary btn-block" href="index.html" type="submit">Login</a>
+                            </div>
                             <div class="login-social-title">
                                 <h5>Login Sebagai</h5>
                             </div>
                             <div class="form-group">
                                 <div class="row">
-                                    <div class="col-4"><a class="btn btn-light active txt-dark disabled">Warga</a></div>
-                                    <div class="col-4"><a class="btn btn-primary btn-block" href="<?= base_url('RW/C_login_rw'); ?>" type="submit">RW</a></div>
-                                    <div class="col-4"><a class="btn btn-primary btn-block" href="<?= base_url('RT/C_Auth'); ?>" type="submit">RT</a></div>
+                                    <div class="col-4"><a class="btn btn-primary btn-block" href="<?= base_url(''); ?>">Warga</a></div>
+                                    <div class="col-4"><a class="btn btn-primary btn-block" href="<?= base_url('RW/C_login_rw'); ?>">RW</a></div>
+                                    <div class="col-4"><a class="btn btn-light active txt-dark disabled" href="<?= base_url('RT/C_Auth'); ?>">RT</a></div>
                                 </div>
                             </div>
+                        </form>
                     </div>
-                    </form>
                 </div>
             </div>
-        </div>
         </div>
     </section>
     <!-- page-wrapper end-->

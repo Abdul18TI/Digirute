@@ -68,7 +68,19 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <button class="btn btn-primary btn-block" type="submit">Login</button>
+                                <!-- <button class="btn btn-primary btn-block" type="submit">Login</button> -->
+                                <!-- <button class="btn btn-primary btn-block" href="index.html" type="submit">Login</button> -->
+                                <a class="btn btn-primary btn-block" href="index.html" type="submit">Login</a>
+                            </div>
+                            <div class="login-social-title">
+                                <h5>Login Sebagai</h5>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-4"><a class="btn btn-primary btn-block" href="<?= base_url(''); ?>">Warga</a></div>
+                                    <div class="col-4"><a class="btn btn-light active txt-dark disabled" href="<?= base_url('RW/C_login_rw'); ?>">RW</a></div>
+                                    <div class="col-4"><a class="btn btn-primary btn-block" href="<?= base_url('RT/C_Auth'); ?>">RT</a></div>
+                                </div>
                             </div>
                         </form>
                     </div>
