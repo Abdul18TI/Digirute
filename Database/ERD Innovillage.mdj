@@ -1967,6 +1967,57 @@
 									"headNameLabel": {
 										"$ref": "AAAAAAF87xXyGnqL9m8="
 									}
+								},
+								{
+									"_type": "ERDEntityView",
+									"_id": "AAAAAAF9AGgHiJMs8Ck=",
+									"_parent": {
+										"$ref": "AAAAAAF8l1GYtzdcyVI="
+									},
+									"model": {
+										"$ref": "AAAAAAF9AGgHhpMqm5c="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF9AGgHiJMtvz0=",
+											"_parent": {
+												"$ref": "AAAAAAF9AGgHiJMs8Ck="
+											},
+											"font": "Arial;13;1",
+											"left": 464,
+											"top": 757,
+											"width": 98.83544921875,
+											"height": 13,
+											"text": "tb_pengaduan"
+										},
+										{
+											"_type": "ERDColumnCompartmentView",
+											"_id": "AAAAAAF9AGgHiJMuoDc=",
+											"_parent": {
+												"$ref": "AAAAAAF9AGgHiJMs8Ck="
+											},
+											"model": {
+												"$ref": "AAAAAAF9AGgHhpMqm5c="
+											},
+											"font": "Arial;13;0",
+											"left": 464,
+											"top": 775,
+											"width": 98.83544921875,
+											"height": 10
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 464,
+									"top": 752,
+									"width": 98.83544921875,
+									"height": 33,
+									"nameLabel": {
+										"$ref": "AAAAAAF9AGgHiJMtvz0="
+									},
+									"columnCompartment": {
+										"$ref": "AAAAAAF9AGgHiJMuoDc="
+									}
 								}
 							]
 						},
@@ -2783,6 +2834,14 @@
 								"$ref": "AAAAAAF8l1GYtjdbUXs="
 							},
 							"name": "jenissurat"
+						},
+						{
+							"_type": "ERDEntity",
+							"_id": "AAAAAAF9AGgHhpMqm5c=",
+							"_parent": {
+								"$ref": "AAAAAAF8l1GYtjdbUXs="
+							},
+							"name": "tb_pengaduan"
 						}
 					]
 				}
