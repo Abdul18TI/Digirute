@@ -114,6 +114,15 @@
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
+                                        <label class="col-sm-3 col-form-label">Tempat Tanggal Lahir</label>
+                                        <div class="col-sm-4">
+                                            <input class="form-control " type="text" id="inp_tempat" name="inp_tempat" placeholder="Tempat Lahir">
+                                        </div>
+                                        <div class="col-sm-5">
+                                        <input class="form-control digits" name="inp_tgllahir" id="example-datetime-local-input" type="date" data-bs-original-title="" title="">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Jenis Kelamin</label>
                                         <div class="col-sm-9">
                                             <div class="form-group mt-2 m-checkbox-inline mb-0 custom-radio-ml">
@@ -191,12 +200,7 @@
                                             <input class="form-control " type="text" id="inp_nama" name="inp_nama" placeholder="Nama Lengkap">
                                         </div>
                                     </div>
-                                    <div class="mb-3 row">
-                                        <label class="col-sm-3 col-form-label">URL</label>
-                                        <div class="col-sm-9">
-                                            <input class="form-control" type="url" value="https://getbootstrap.com">
-                                        </div>
-                                    </div>
+                                   
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Nama Ayah</label>
                                         <div class="col-sm-9">
@@ -210,9 +214,9 @@
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
-                                        <label class="col-sm-3 col-form-label">Tanggal Terbit</label>
+                                        <label class="col-sm-3 col-form-label">Tanggal Terbit KK</label>
                                         <div class="col-sm-9">
-                                            <input class="form-control digits" name="inp_tglterbit" type=" date" value="2018-01-01">
+                                            <input class="form-control digits" name="inp_tglterbit" type="date" >
                                         </div>
                                     </div>
 
@@ -221,7 +225,7 @@
                         </div>
                         <div class="card-footer text-end">
                             <div class="col-sm-9 offset-sm-3">
-                                <button class="btn btn-primary" type="submit">Submit</button>
+                                <button class="btn btn-primary" type="submit">Simpan</button>
                                 <input class="btn btn-light" type="reset" value="Cancel">
                             </div>
                         </div>

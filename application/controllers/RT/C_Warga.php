@@ -21,7 +21,10 @@ class C_warga extends CI_Controller
      */
     public function index()
     {
-        $this->load->view('Warga/login_warga');
+        $this->load->view('Templates/header');
+        $this->load->view('Templates/sidebar_rt');
+        $this->load->view('RT/tambahwarga');
+        $this->load->view('Templates/footer');
     }
 
     public function tambahwarga()
