@@ -29,14 +29,11 @@
                         </li>
                         <li class="sidebar-main-title">
                             <div>
-                                <h6>General </h6>
+                                <h6>Warga </h6>
                             </div>
                         </li>
-                        <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="home"></i><span>Dashboard</span></a>
-                            <ul class="nav-submenu menu-content">
-                                <li><a href="index.html">Default</a></li>
-                                <li><a href="dashboard-02.html">Ecommerce</a></li>
-                            </ul>
+                        <li>
+                            <a class="nav-link menu-title link-nav" href="<?= base_url()?>"><i data-feather="navigation-2"></i><span>Landing page</span></a>
                         </li>
                         <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="airplay"></i><span>Widgets</span></a>
                             <ul class="nav-submenu menu-content">
@@ -59,7 +56,9 @@
                                 <h6>Pages </h6>
                             </div>
                         </li>
-                        <li><a class="nav-link menu-title link-nav" href="landing-page.html"><i data-feather="navigation-2"></i><span>Landing page</span></a></li>
+                        <li>
+                            <a class="nav-link menu-title link-nav" href="landing-page.html"><i data-feather="navigation-2"></i><span>Landing page</span></a>
+                        </li>
 
                     </ul>
                 </div>
