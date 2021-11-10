@@ -53,3 +53,4 @@ $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['Warga'] = 'Admin/Auth';
+$route['RT/Warga'] = 'RT/C_Warga';

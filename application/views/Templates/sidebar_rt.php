@@ -33,7 +33,7 @@
                             </div>
                         </li>
                         <li>
-                            <a class="nav-link menu-title link-nav" href="<?= base_url()?>"><i data-feather="navigation-2"></i><span>Landing page</span></a>
+                            <a class="nav-link menu-title link-nav" href="<?= base_url('RT/Warga')?>"><i data-feather="navigation-2"></i><span>Landing page</span></a>
                         </li>
                         <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="airplay"></i><span>Widgets</span></a>
                             <ul class="nav-submenu menu-content">
