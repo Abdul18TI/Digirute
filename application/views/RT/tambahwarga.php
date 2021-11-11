@@ -74,6 +74,7 @@
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Desa/Kabupaten/Provinsi</label>
                                         <div class="col-sm-2">
+                                            
                                             <select class="form-select " id="inp_kel" name="inp_kel">
                                                 <option>Desa/Kelurahan</option>
                                                 <option>2</option>
@@ -163,16 +164,17 @@
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Pekerjaan</label>
                                         <div class="col-sm-9">
-                                            <select class="form-select " id="inp_pekerjaan" name="inp_pekerjaan">
+                                            <?= combobox('inp_pekerjaan','inp_pekerjaan','tb_pekerjaan','Nama_Pekerjaan','ID_Pekerjaan','')?>
+                                            <!-- <select class="form-select" id="inp_pekerjaan" name="inp_pekerjaan">
                                                 <option value="0">Pekerjaan</option>
-                                            </select>
+                                            </select> -->
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Golongan Darah</label>
                                         <div class="col-sm-9">
                                             <select class="form-select " id="inp_goldar" name="inp_goldar">
-                                                <option value="-">Pilih</option>
+                                                <option value="-">-- Pilih --</option>
                                                 <option value="A">A</option>
                                                 <option value="B">B</option>
                                                 <option value="AB">AB</option>
@@ -184,7 +186,7 @@
                                         <label class="col-sm-3 col-form-label">Status Perkawinan</label>
                                         <div class="col-sm-9">
                                             <select class="form-select " id="inp_status" name="inp_status">
-                                                <option value="0">Status Perkawinan</option>
+                                                <option value="0">-- Pilih --</option>
                                                 <option value="1">Belum Kawin</option>
                                                 <option value="2">Kawin</option>
                                                 <option value="3">Cerai Hidup</option>

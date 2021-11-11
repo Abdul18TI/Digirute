@@ -208,7 +208,7 @@ function comboboxmanual($name, $id, $value, $isi, $selected)
 {
     $ci = get_instance();
     $cmb = "<select name='$name' id='$id' class='custom-select col-6'>";
-    $cmb .= "<option value=''>-- PILIH --</option>";
+    $cmb .= "<option value=''>-- Pilih --</option>";
     foreach ($value as $d) {
         $cmb .= "<option value='" . $d . "'";
         $cmb .= $selected == $d ? "selected='selected'" : '';
@@ -220,10 +220,11 @@ function comboboxmanual($name, $id, $value, $isi, $selected)
 
 function combobox($name, $id, $table, $field, $primary_key, $selected)
 {
+    
     $ci = get_instance();
-    $cmb = "<select name='$name' id='$id' class='custom-select col-6'>";
+    $cmb = "<select class='form-select' name='$name' id='$id' >";
     $data = $ci->db->get($table)->result();
-    $cmb .= "<option value=''>-- PILIH --</option>";
+    $cmb .= "<option value=''>-- Pilih --</option>";
     foreach ($data as $d) {
         $cmb .= "<option value='" . $d->$primary_key . "'";
         $cmb .= $selected == $d->$primary_key ? "selected='selected'" : '';
