@@ -12,8 +12,7 @@
 </footer>
 </div>
 </div>
-<!-- latest jquery-->
-<script src="<?= base_url() ?>assets/js/jquery-3.5.1.min.js"></script>
+
 <!-- feather icon js-->
 <script src="<?= base_url() ?>assets/js/icons/feather-icon/feather.min.js"></script>
 <script src="<?= base_url() ?>assets/js/icons/feather-icon/feather-icon.js"></script>
