@@ -222,7 +222,7 @@ function combobox($name, $id, $table, $field, $primary_key, $selected)
 {
     
     $ci = get_instance();
-    $cmb = "<select class='form-select' name='$name' id='$id' >";
+    $cmb = "<select class='form-select select2' name='$name' id='$id' >";
     $data = $ci->db->get($table)->result();
     $cmb .= "<option value=''>-- Pilih --</option>";
     foreach ($data as $d) {

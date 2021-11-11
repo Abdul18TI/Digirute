@@ -40,7 +40,7 @@
                     <div class="card-header pb-0">
                         <h5>Tambah Warga</h5>
                     </div>
-                    <form class="form theme-form" method="post" action="<?= base_url('RT/C_Warga/ActionTambahWarga') ?>">
+                    <form class="form theme-form" method="post" action="<?= base_url('RT/C_Warga/get_kecamatan') ?>">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col">
@@ -75,23 +75,28 @@
                                         <label class="col-sm-3 col-form-label">Desa/Kabupaten/Provinsi</label>
 
                                         <div class="col-sm-3">
-                                            <select class="form-select select2" id="inp_prov" name="inp_prov">
-                                            <option value="" selected>Pilih Provinsi</option>
+                                            <?= combobox('inp_prov', 'inp_prov', 'tb_provinsi', 'prov_name', 'prov_id', '') ?>
+                                            <!-- <select class="form-select " id="inp_prov" name="inp_prov">
+                                                <option>Provinsi</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                            </select> -->
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <select class="form-select digits" id="inp_kab" name="inp_kab">
+
                                             </select>
                                         </div>
                                         <div class="col-sm-2">
-                                            <select class="form-select select2" id="inp_kab" name="inp_kab">
-                                            <option value="" selected>Pilih Kabupaten</option>
+                                            <select class="form-select " id="inp_kec" name="inp_kec">
+
                                             </select>
                                         </div>
                                         <div class="col-sm-2">
-                                            <select class="form-select select2" id="inp_kec" name="inp_kec">
-                                            <option value="" selected>Pilih Kecanatan</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-sm-2">
-                                            <select class="form-select select2" id="inp_kel" name="inp_kel">
-                                            <option value="" selected>Pilih Kelurahan</option>
+                                            <select class="form-select " id="inp_kel" name="inp_kel">
+
                                             </select>
                                         </div>
                                     </div>
@@ -226,97 +231,64 @@
         </div>
     </div>
 </div>
-<script type="text/javascript">
-    // Provinsi
-    $(document).ready(function() {
-        $("#inp_prov").select2({
-            ajax: {
-                url: '<?= base_url() ?>RT/C_Warga/getdataprov',
-                type: "post",
-                dataType: 'json',
-                delay: 200,
-                data: function(params) {
-                    return {
-                        searchTerm: params.term
-                    };
-                },
-                processResults: function(response) {
-                    return {
-                        results: response
-                    };
-                },
-                cache: true
-            }
-        });
-    });
-
-    // Kabupaten
+<script>
     $("#inp_prov").change(function() {
-        var id_prov = $("#inp_prov").val();
-        $("#inp_kab").select2({
-            ajax: {
-                url: '<?= base_url() ?>RT/C_Warga/getdatakab/' + id_prov,
-                type: "post",
-                dataType: 'json',
-                delay: 200,
-                data: function(params) {
-                    return {
-                        searchTerm: params.term
-                    };
-                },
-                processResults: function(response) {
-                    return {
-                        results: response
-                    };
-                },
-                cache: true
-            }
-        });
-    });
 
-    // Kecamatan
-    $("#inp_kab").change(function() {
-        var id_kab = $("#inp_kab").val();
-        $("#inp_kec").select2({
-            ajax: {
-                url: '<?= base_url() ?>RT/C_Warga/getdatakec/' + id_kab,
-                type: "post",
-                dataType: 'json',
-                delay: 200,
-                data: function(params) {
-                    return {
-                        searchTerm: params.term
-                    };
-                },
-                processResults: function(response) {
-                    return {
-                        results: response
-                    };
-                },
-                cache: true
+        // // variabel dari nilai combo box kendaraan
+        $('#inp_kec').val("--a--");
+        var prov_id = $("#inp_prov").val();
+
+        // // Menggunakan ajax untuk mengirim dan dan menerima data dari server
+        $.ajax({
+            url: "<?php echo base_url(); ?>RT/C_Warga/get_kabupaten",
+            method: "POST",
+            data: {
+                prov_id: prov_id
+            },
+            async: false,
+            dataType: 'json',
+            success: function(data) {
+                var html = '<option value="0">--Pilih--</option>';
+                var i;
+
+                for (i = 0; i < data.length; i++) {
+                    html += '<option value=' + data[i].kab_id + '>' + data[i].kab_name + '</option>';
+                }
+                $('#inp_kab').html(html);
+
+            },
+            error: function(data) {
+                alert('Error');
             }
         });
     });
- // Kelurahan
- $("#inp_kec").change(function() {
-        var id_kac = $("#inp_kec").val();
-        $("#inp_kel").select2({
-            ajax: {
-                url: '<?= base_url() ?>RT/C_Warga/getdatakel/' + id_kac,
-                type: "post",
-                dataType: 'json',
-                delay: 200,
-                data: function(params) {
-                    return {
-                        searchTerm: params.term
-                    };
-                },
-                processResults: function(response) {
-                    return {
-                        results: response
-                    };
-                },
-                cache: true
+    $("#inp_kab").change(function() {
+
+        // // variabel dari nilai combo box kendaraan
+        var kab_id = $("#inp_kab").val();
+
+        // // Menggunakan ajax untuk mengirim dan dan menerima data dari server
+        $.ajax({
+            url: "<?php echo base_url(); ?>RT/C_Warga/get_kecamatan",
+            method: "POST",
+            data: {
+                id_kab: kab_id
+            },
+            async: false,
+            dataType: 'json',
+            success: function(data) {
+                console.log(data.length);
+                var html = '<option value="0">--Pilih--</option>';
+                var i;
+
+                for (i = 0; i < data.length; i++) {
+                    html += '<option value=' + data[i].kec_id + '>' + data[i].kec_name + '</option>';
+                }
+                $('#inp_kec').html(html);
+
+            },
+            error: function(data) {
+                alert('Error');
             }
         });
     });

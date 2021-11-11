@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class C_warga extends CI_Controller
+class C_warga1 extends CI_Controller
 {
 
     /**
@@ -79,48 +79,17 @@ class C_warga extends CI_Controller
         //    'Warga_NoHP' => htmlspecialchars($this->input->post('alamat_resepsi', true)),
     }
 
-    // 	function get_kabupaten()
-    // {
-    //     $id_prov=$this->input->post('prov_id');
-    //     $data=$this->M_daerah->Kabupaten($id_prov);
-    //     echo json_encode($data);
-    // }
+    	function get_kabupaten()
+    {
+        $id_prov=$this->input->post('prov_id');
+        $data=$this->M_daerah->Kabupaten($id_prov);
+        echo json_encode($data);
+    }
 
-    // function get_kecamatan()
-    // {
-    //     $id_kab=$this->input->post('id_kab');
-    //     $data=$this->M_daerah->Kecamatan($id_kab);
-    //     echo json_encode($data);
-    // }]
-     // Provinsi
-     public function getdataprov()
-     {
-         $searchTerm = $this->input->post('searchTerm');
-         $response   = $this->M_daerah->getprov($searchTerm);
-         echo json_encode($response);
-     }
-  
-     // Kabupaten
-     public function getdatakab($id_prov)
-     {
-         $searchTerm = $this->input->post('searchTerm');
-         $response   = $this->M_daerah->getkab($id_prov, $searchTerm);
-         echo json_encode($response);
-     }
-  
-     // Kecamatan
-     public function getdatakec($id_kab)
-     {
-         $searchTerm = $this->input->post('searchTerm');
-         $response   = $this->M_daerah->getkec($id_kab, $searchTerm);
-         echo json_encode($response);
-     }
-  
-     // Kelurahan
-     public function getdatakel($id_kec)
-     {
-         $searchTerm = $this->input->post('searchTerm');
-         $response   = $this->M_daerah->getkel($id_kec, $searchTerm);
-         echo json_encode($response);
-     }
+    function get_kecamatan()
+    {
+        $id_kab=$this->input->post('id_kab');
+        $data=$this->M_daerah->Kecamatan($id_kab);
+        echo json_encode($data);
+    }
 }
