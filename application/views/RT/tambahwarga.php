@@ -40,23 +40,23 @@
                     <div class="card-header pb-0">
                         <h5>Tambah Warga</h5>
                     </div>
-                    <form class="form theme-form">
+                    <form class="form theme-form" method="post" action="<?= base_url('RT/C_Warga/ActionTambahWarga') ?>">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col">
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">RT/RW</label>
                                         <div class="col-sm-5">
-                                            <input class="form-control " type="text" id="inp_rw" name="inp_rw" disabled placeholder="RW">
+                                            <input class="form-control" type="text" id="inp_rw" name="inp_rw"  readonly placeholder="RW" value="1">
                                         </div>
                                         <div class="col-sm-4">
-                                            <input class="form-control disabled" type="text" id="inp_rt" disabled name="inp_rt" placeholder="RT">
+                                            <input class="form-control " type="text" id="inp_rt"   name="inp_rt" readonly placeholder="RT" value="2">
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Nomor Kartu Keluarga (KK)</label>
                                         <div class="col-sm-9">
-                                            <input class="form-control " type="text" id="inp_kk" name="inp_kk" placeholder="Nomor Kartu Keluarga">
+                                            <input class="form-control" type="text" id="inp_kk" name="inp_kk" placeholder="Nomor Kartu Keluarga">
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
@@ -73,7 +73,7 @@
                                     </div>
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Desa/Kabupaten/Provinsi</label>
-                                        <div class="col-sm-3">
+                                        <div class="col-sm-2">
                                             <select class="form-select " id="inp_kel" name="inp_kel">
                                                 <option>Desa/Kelurahan</option>
                                                 <option>2</option>
@@ -82,7 +82,16 @@
                                                 <option>5</option>
                                             </select>
                                         </div>
-                                        <div class="col-sm-3">
+                                        <div class="col-sm-2">
+                                            <select class="form-select " id="inp_kec" name="inp_kec">
+                                                <option>Kecamatan</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-2">
                                             <select class="form-select digits" id="inp_kab" name="inp_kab">
                                                 <option>Kabupaten</option>
                                                 <option>2</option>
@@ -127,11 +136,11 @@
                                         <div class="col-sm-9">
                                             <div class="form-group mt-2 m-checkbox-inline mb-0 custom-radio-ml">
                                                 <div class="radio radio-primary">
-                                                    <input id="laki" type="radio" name="inp_sex" value="0">
+                                                    <input id="laki" type="radio" name="inp_sex" value="1">
                                                     <label class="mb-0" for="laki">Laki-laki</label>
                                                 </div>
                                                 <div class="radio radio-primary">
-                                                    <input id="perempuan" type="radio" name="inp_sex" value="1">
+                                                    <input id="perempuan" type="radio" name="inp_sex" value="2">
                                                     <label class="mb-0" for="perempuan">Perempuan</label>
                                                 </div>
                                             </div>
@@ -140,7 +149,7 @@
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Agama</label>
                                         <div class="col-sm-9">
-                                            <select class="form-select " id="inp_pekerjaan" name="inp_agama">
+                                            <select class="form-select " id="inp_agama" name="inp_agama">
                                                 <option value="0">Agama</option>
                                                 <option value="1">Islam</option>
                                                 <option value="2">Protestantisme</option>
@@ -162,7 +171,8 @@
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Golongan Darah</label>
                                         <div class="col-sm-9">
-                                            <select class="form-select " id="inp_doldar" name="inp_doldar">
+                                            <select class="form-select " id="inp_goldar" name="inp_goldar">
+                                                <option value="-">Pilih</option>
                                                 <option value="A">A</option>
                                                 <option value="B">B</option>
                                                 <option value="AB">AB</option>
@@ -178,7 +188,7 @@
                                                 <option value="1">Belum Kawin</option>
                                                 <option value="2">Kawin</option>
                                                 <option value="3">Cerai Hidup</option>
-                                                <option value="4">Cerai mati</option>
+                                                <option value="4">Cerai Mati</option>
                                             </select>
                                         </div>
                                     </div>
@@ -192,12 +202,6 @@
                                         <label class="col-sm-3 col-form-label">No. KTIAS/KITAP</label>
                                         <div class="col-sm-9">
                                             <input class="form-control " type="text" id="inp_kitas" name="inp_kitas" placeholder="Nomor Passport">
-                                        </div>
-                                    </div>
-                                    <div class="mb-3 row">
-                                        <label class="col-sm-3 col-form-label">Nama Lengkap</label>
-                                        <div class="col-sm-9">
-                                            <input class="form-control " type="text" id="inp_nama" name="inp_nama" placeholder="Nama Lengkap">
                                         </div>
                                     </div>
                                    

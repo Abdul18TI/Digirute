@@ -9,4 +9,11 @@ class M_warga extends CI_Model
         $query = $this->db->get();
         return $query;
     }
+
+    public function insertdatawarga($data)
+    {
+        $sql = $this->db->set($data)->get_compiled_insert('tb_warga');
+        echo "<br>";
+        echo $sql;
+    }
 }
