@@ -43,8 +43,15 @@ class C_warga extends CI_Controller
     }
     public function ActionTambahWarga()
     {
-        var_dump($this->_data());
-        $this->M_warga->insertdatawarga($this->_data());
+        // var_dump($this->_data());
+        $query =  $this->M_warga->insertdatawarga($this->_data());
+        // var_dump($query);
+        if ($query) {
+            redirect(base_url('RT/C_Warga/TambahWarga'), 'refresh');
+            // echo "berhasil";
+        } else {
+            // echo "Gagal";
+        }
     }
     // method bertanggung jawab terhadap data yang masuk
     private function _data()
@@ -92,35 +99,35 @@ class C_warga extends CI_Controller
     //     $data=$this->M_daerah->Kecamatan($id_kab);
     //     echo json_encode($data);
     // }]
-     // Provinsi
-     public function getdataprov()
-     {
-         $searchTerm = $this->input->post('searchTerm');
-         $response   = $this->M_daerah->getprov($searchTerm);
-         echo json_encode($response);
-     }
-  
-     // Kabupaten
-     public function getdatakab($id_prov)
-     {
-         $searchTerm = $this->input->post('searchTerm');
-         $response   = $this->M_daerah->getkab($id_prov, $searchTerm);
-         echo json_encode($response);
-     }
-  
-     // Kecamatan
-     public function getdatakec($id_kab)
-     {
-         $searchTerm = $this->input->post('searchTerm');
-         $response   = $this->M_daerah->getkec($id_kab, $searchTerm);
-         echo json_encode($response);
-     }
-  
-     // Kelurahan
-     public function getdatakel($id_kec)
-     {
-         $searchTerm = $this->input->post('searchTerm');
-         $response   = $this->M_daerah->getkel($id_kec, $searchTerm);
-         echo json_encode($response);
-     }
+    // Provinsi
+    public function getdataprov()
+    {
+        $searchTerm = $this->input->post('searchTerm');
+        $response   = $this->M_daerah->getprov($searchTerm);
+        echo json_encode($response);
+    }
+
+    // Kabupaten
+    public function getdatakab($id_prov)
+    {
+        $searchTerm = $this->input->post('searchTerm');
+        $response   = $this->M_daerah->getkab($id_prov, $searchTerm);
+        echo json_encode($response);
+    }
+
+    // Kecamatan
+    public function getdatakec($id_kab)
+    {
+        $searchTerm = $this->input->post('searchTerm');
+        $response   = $this->M_daerah->getkec($id_kab, $searchTerm);
+        echo json_encode($response);
+    }
+
+    // Kelurahan
+    public function getdatakel($id_kec)
+    {
+        $searchTerm = $this->input->post('searchTerm');
+        $response   = $this->M_daerah->getkel($id_kec, $searchTerm);
+        echo json_encode($response);
+    }
 }
