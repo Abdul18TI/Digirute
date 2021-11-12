@@ -28,9 +28,10 @@ class C_warga extends CI_Controller
     }
     public function index()
     {
+        $data['datawarga'] = $this->M_warga->tampil_data_warga()->result();
         $this->load->view('Templates/header');
         $this->load->view('Templates/sidebar_rt');
-        $this->load->view('RT/tambahwarga');
+        $this->load->view('RT/listwarga', $data);
         $this->load->view('Templates/footer');
     }
 
