@@ -33,22 +33,10 @@
                             </div>
                         </li>
                         <li>
-                            <a class="nav-link menu-title link-nav" href="<?= base_url('RT/Warga')?>"><i data-feather="navigation-2"></i><span>Landing page</span></a>
-                        </li>
-                        <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="airplay"></i><span>Widgets</span></a>
+                        <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="users"></i><span>Warga</span></a>
                             <ul class="nav-submenu menu-content">
-                                <li><a href="general-widget.html">General</a></li>
-                                <li><a href="chart-widget.html">Chart</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="layout"></i><span>Page layout</span></a>
-                            <ul class="nav-submenu menu-content">
-                                <li><a href="box-layout.html">Boxed</a></li>
-                                <li><a href="layout-rtl.html">RTL</a></li>
-                                <li><a href="layout-dark.html">Dark</a></li>
-                                <li><a href="footer-light.html">Footer Light</a></li>
-                                <li><a href="footer-dark.html">Footer Dark</a></li>
-                                <li><a href="footer-fixed.html">Footer Fixed</a></li>
+                                <li><a href="<?= base_url('RT/Warga') ?>">Data Warga</a></li>
+                                <li><a href="<?= base_url('RT/C_Warga/TambahWarga') ?>">Tambah Data Warga</a></li>
                             </ul>
                         </li>
                         <li class="sidebar-main-title">
