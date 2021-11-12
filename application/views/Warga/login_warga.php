@@ -56,16 +56,21 @@
                         <form class="theme-form login-form">
                             <h4>Login Warga</h4>
                             <h6>Selamat datang warga Kelurahan Umban Sari.</h6>
+
+                            <?= $this->session->flashdata('message'); ?>
+
                             <div class="form-group">
                                 <label>NIK/Username</label>
                                 <div class="input-group"><span class="input-group-text"><i class="icon-user"></i></span>
                                     <input class="form-control" type="text" required="" placeholder="NIK/Username">
+                                    <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label>Password</label>
                                 <div class="input-group"><span class="input-group-text"><i class="icon-lock"></i></span>
                                     <input class="form-control" type="password" name="login[password]" required="" placeholder="*********">
+                                    <?= form_error('password', '<small class="text-danger pl-3">', '</small>'); ?>
                                     <div class="show-hide"><span class="show"> </span></div>
                                 </div>
                             </div>
