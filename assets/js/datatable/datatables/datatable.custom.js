@@ -1,7 +1,10 @@
 $(document).ready(function() {
     $('product-list').DataTable();
     // Basic table example 
-    $('#basic-1').DataTable();
+    $('#tabelwarga-rt').DataTable({columnDefs: [
+        { targets: [6], orderable: false }
+      ]}
+    );
     $('#basic-2').DataTable({
         "paging":   true,
         "ordering": false,

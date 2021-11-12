@@ -34,6 +34,10 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/prism.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/datatables.css">
     <!-- Plugins css Ends-->
+    <!-- Plugins css start-->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/datatables.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/datatable-extension.css">
+    <!-- Plugins css Ends-->
     <!-- Bootstrap css-->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/bootstrap.css">
     <!-- App css-->

@@ -41,6 +41,8 @@
 <script src="<?= base_url() ?>assets/js/datatable/datatables/jquery.dataTables.min.js"></script>
 <script src="<?= base_url() ?>assets/js/datatable/datatables/datatable.custom.js"></script>
 <script src="<?= base_url() ?>assets/js/tooltip-init.js"></script>
+<script src="<?= base_url() ?>assets/js/datatable/datatables/jquery.dataTables.min.js"></script>
+<script src="<?= base_url() ?>assets/js/datatable/datatable-extension/dataTables.buttons.min.js"></script>
 <!-- Plugins JS Ends-->
 <!-- Theme js-->
 <script src="<?= base_url() ?>assets/js/script.js"></script>

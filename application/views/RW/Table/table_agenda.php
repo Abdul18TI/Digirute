@@ -24,7 +24,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php
+                                <?php
                                     $no = 0;
                                     foreach ($agenda as $ag) : ?>
                                         <?php $no = $no + 1; ?>
