@@ -73,25 +73,27 @@
                                     </div>
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Desa/Kabupaten/Provinsi</label>
-
-                                        <div class="col-sm-3">
+                                        <div class="col-sm-5">
                                             <select class="form-select select2" id="inp_prov" name="inp_prov">
-                                            <option value="" selected>Pilih Provinsi</option>
+                                                <option value="" selected>Pilih Provinsi</option>
                                             </select>
                                         </div>
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-4">
                                             <select class="form-select select2" id="inp_kab" name="inp_kab">
-                                            <option value="" selected>Pilih Kabupaten</option>
+                                                <option value="" selected>Pilih Kabupaten</option>
                                             </select>
                                         </div>
-                                        <div class="col-sm-2">
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label class="col-sm-3 col-form-label"></label>
+                                        <div class="col-sm-5">
                                             <select class="form-select select2" id="inp_kec" name="inp_kec">
-                                            <option value="" selected>Pilih Kecanatan</option>
+                                                <option value="" selected>Pilih Kecamatan</option>
                                             </select>
                                         </div>
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-4">
                                             <select class="form-select select2" id="inp_kel" name="inp_kel">
-                                            <option value="" selected>Pilih Kelurahan</option>
+                                                <option value="" selected>Pilih Kelurahan</option>
                                             </select>
                                         </div>
                                     </div>
@@ -134,15 +136,7 @@
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Agama</label>
                                         <div class="col-sm-9">
-                                            <select class="form-select " id="inp_agama" name="inp_agama">
-                                                <option value="0">Agama</option>
-                                                <option value="1">Islam</option>
-                                                <option value="2">Protestantisme</option>
-                                                <option value="3">Katolisisme</option>
-                                                <option value="4">Hinduisme</option>
-                                                <option value="5">Buddhisme</option>
-                                                <option value="6">Konghucu</option>
-                                            </select>
+                                            <?= comboboxmanual('inp_agama', 'inp_agama', $dataagama, '') ?>
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
@@ -157,25 +151,13 @@
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Golongan Darah</label>
                                         <div class="col-sm-9">
-                                            <select class="form-select " id="inp_goldar" name="inp_goldar">
-                                                <option value="-">-- Pilih --</option>
-                                                <option value="A">A</option>
-                                                <option value="B">B</option>
-                                                <option value="AB">AB</option>
-                                                <option value="O">O</option>
-                                            </select>
+                                            <?= comboboxmanual('inp_goldar', 'inp_goldar', $datagolongandarah,  '') ?>
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Status Perkawinan</label>
                                         <div class="col-sm-9">
-                                            <select class="form-select " id="inp_status" name="inp_status">
-                                                <option value="0">-- Pilih --</option>
-                                                <option value="1">Belum Kawin</option>
-                                                <option value="2">Kawin</option>
-                                                <option value="3">Cerai Hidup</option>
-                                                <option value="4">Cerai Mati</option>
-                                            </select>
+                                            <?= comboboxmanual('inp_status', 'inp_status', $datastatus, '') ?>
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
@@ -297,8 +279,8 @@
             }
         });
     });
- // Kelurahan
- $("#inp_kec").change(function() {
+    // Kelurahan
+    $("#inp_kec").change(function() {
         var id_kac = $("#inp_kec").val();
         $("#inp_kel").select2({
             ajax: {
