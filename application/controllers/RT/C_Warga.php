@@ -29,7 +29,7 @@ class C_warga extends CI_Controller
     public function index()
     {
         $data['datawarga'] = $this->M_warga->tampil_data_warga()->result();
-        $data['datagolongandarah'] = array('A' => 'A', 'B' => 'B');
+
         $this->load->view('Templates/header');
         $this->load->view('Templates/sidebar_rt');
         $this->load->view('RT/listwarga', $data);
@@ -47,28 +47,15 @@ class C_warga extends CI_Controller
         $this->load->view('Templates/footer');
     }
 
-    private function _datagolongandarah()
-    {
-        $data = array('A' => 'A', 'B' => 'B', 'AB' => 'AB', 'O' => 'O');
-        return $data;
-    }
-    private function _datastatuskawin()
-    {
-        $data = array('Belum Kawin' => 'Belum Kawin', 'Kawin' => 'Kawin',  'Cerai Hidup' => 'Cerai Hidup', 'Cerai Mati' => 'Cerai Mati');
-        return $data;
-    }
-    private function _dataagama()
-    {
-        $data = array('1' => 'Islam', '2' => 'Kristen',  '3' => 'Hindu', '4' => 'Budha', '5' => 'Katolik', '6' => 'Konghucu');
-        return $data;
-    }
-
 
     public function TambahWarga()
     {
+        $data['datagolongandarah'] = $this->_datagolongandarah();
+        $data['datastatus'] = $this->_datastatuskawin();
+        $data['dataagama'] = $this->_dataagama();
         $this->load->view('Templates/header');
         $this->load->view('Templates/sidebar_rt');
-        $this->load->view('RT/tambahwarga');
+        $this->load->view('RT/tambahwarga', $data);
         $this->load->view('Templates/footer');
     }
     public function ActionTambahWarga()
@@ -116,19 +103,7 @@ class C_warga extends CI_Controller
         //    'Warga_NoHP' => htmlspecialchars($this->input->post('alamat_resepsi', true)),
     }
 
-    // 	function get_kabupaten()
-    // {
-    //     $id_prov=$this->input->post('prov_id');
-    //     $data=$this->M_daerah->Kabupaten($id_prov);
-    //     echo json_encode($data);
-    // }
 
-    // function get_kecamatan()
-    // {
-    //     $id_kab=$this->input->post('id_kab');
-    //     $data=$this->M_daerah->Kecamatan($id_kab);
-    //     echo json_encode($data);
-    // }]
     // Provinsi
     public function getdataprov()
     {
@@ -159,5 +134,21 @@ class C_warga extends CI_Controller
         $searchTerm = $this->input->post('searchTerm');
         $response   = $this->M_daerah->getkel($id_kec, $searchTerm);
         echo json_encode($response);
+    }
+
+    private function _datagolongandarah()
+    {
+        $data = array('A' => 'A', 'B' => 'B', 'AB' => 'AB', 'O' => 'O');
+        return $data;
+    }
+    private function _datastatuskawin()
+    {
+        $data = array('Belum Kawin' => 'Belum Kawin', 'Kawin' => 'Kawin',  'Cerai Hidup' => 'Cerai Hidup', 'Cerai Mati' => 'Cerai Mati');
+        return $data;
+    }
+    private function _dataagama()
+    {
+        $data = array('1' => 'Islam', '2' => 'Kristen',  '3' => 'Hindu', '4' => 'Budha', '5' => 'Katolik', '6' => 'Konghucu');
+        return $data;
     }
 }
