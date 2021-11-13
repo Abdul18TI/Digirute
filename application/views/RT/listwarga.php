@@ -4,6 +4,7 @@
             <div class="row">
                 <div class="col-sm-6">
                     <h3>Data Warga</h3>
+
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                         <li class="breadcrumb-item">Forms</li>
@@ -17,6 +18,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
+                <?= $this->session->flashdata('message'); ?>
                 <div class="card">
                     <div class="card-header pb-0">
                         <h5>Data Warga</h5>
