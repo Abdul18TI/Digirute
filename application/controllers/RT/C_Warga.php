@@ -64,7 +64,8 @@ class C_warga extends CI_Controller
         $query =  $this->M_warga->insertdatawarga($this->_data());
         // var_dump($query);
         if ($query) {
-            redirect(base_url('RT/C_Warga/TambahWarga'), 'refresh');
+            alert('sukses', 'Data warga berhasil ditambahkan');
+            redirect(base_url('RT/C_Warga/'), 'refresh');
             // echo "berhasil";
         } else {
             // echo "Gagal";
