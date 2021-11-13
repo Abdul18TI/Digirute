@@ -59,9 +59,9 @@
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
-                                    <label class="col-sm-3 col-form-label">Nomor Induk Kepenedudukan (NIK)</label>
+                                    <label class="col-sm-3 col-form-label">Nomor Induk Kependudukan (NIK)</label>
                                     <div class="col-sm-9">
-                                        <input class="form-control " type="text" id="inp_nik" name="inp_nik" placeholder="Nomor Induk Kependidikan" disabled>
+                                        <input class="form-control " type="text" id="inp_nik" name="inp_nik" placeholder="Nomor Induk Kependudukan" disabled>
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
@@ -72,28 +72,32 @@
                                 </div>
                                 <div class="mb-3 row">
                                     <label class="col-sm-3 col-form-label">Desa/Kabupaten/Provinsi</label>
-
-                                    <div class="col-sm-3">
+                                    <div class="col-sm-5">
                                         <select class="form-select select2" id="inp_prov" name="inp_prov" disabled>
-                                            <option value="11" selected>Sumatera Utara</option>
+                                            <?=
+                                            "<option value='" . $datawarga->id_prov . "' selected>" . $datawarga->nama_prov . "</option>" ?>
                                         </select>
                                     </div>
-                                    <div class="col-sm-2">
+                                    <div class="col-sm-4">
                                         <select class="form-select select2" id="inp_kab" name="inp_kab" disabled>
-                                            <option value="" selected>Pilih Kabupaten</option>
+                                            <?=
+                                            "<option value='" . $datawarga->id_kab . "' selected>" . $datawarga->nama_kab . "</option>" ?>
                                         </select>
                                     </div>
-                                    <div class="col-sm-2">
+
+                                </div>
+                                <div class="mb-3 row">
+                                    <label class="col-sm-3 col-form-label"></label>
+                                    <div class="col-sm-5">
                                         <select class="form-select select2" id="inp_kec" name="inp_kec" disabled>
-                                            <option value="" selected>Pilih Kecanatan</option>
+                                            <?=
+                                            "<option value='" . $datawarga->id_kec . "' selected>" . $datawarga->nama_kec . "</option>" ?>
                                         </select>
                                     </div>
-                                    <div class="col-sm-2">
+                                    <div class="col-sm-4">
                                         <select class="form-select select2" id="inp_kel" name="inp_kel" disabled>
                                             <?=
-                                            ' <option value="" selected>Pilih Kelurahan</option>'
-                                            ?>
-
+                                            "<option value='" . $datawarga->id_kel . "' selected>" . $datawarga->nama_kel . "</option>" ?>
                                         </select>
                                     </div>
                                 </div>

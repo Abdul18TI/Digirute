@@ -38,8 +38,6 @@ class C_warga extends CI_Controller
     public function DetailWarga($id)
     {
         $data['datawarga'] = $this->M_warga->warga_byid($id)->row();
-        var_dump($data['datawarga']);
-        die();
         $data['datagolongandarah'] = $this->_datagolongandarah();
         $data['datastatus'] = $this->_datastatuskawin();
         $data['dataagama'] = $this->_dataagama();
