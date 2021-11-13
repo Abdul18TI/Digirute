@@ -4,13 +4,15 @@
             <div class="row">
                 <div class="col-sm-6">
                     <h3>Data Warga</h3>
-
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                         <li class="breadcrumb-item">Forms</li>
                         <li class="breadcrumb-item">Form Controls</li>
                         <li class="breadcrumb-item active">Base Inputs</li>
                     </ol>
+                </div>
+                <div class="col-sm-6">
+
                 </div>
             </div>
         </div>
@@ -21,7 +23,18 @@
                 <?= $this->session->flashdata('message'); ?>
                 <div class="card">
                     <div class="card-header pb-0">
-                        <h5>Data Warga</h5>
+                        <div class="row">
+                            <div class="col-9">
+                                <h5>Data Warga</h5>
+                            </div>
+                            <div class="col-3">
+                                <div class="bookmark">
+
+                                    <a class="btn btn-primary btn-lg" href="<?= base_url('RT/C_Warga/TambahWarga') ?>" data-bs-original-title="" title=""> <span class="fa fa-plus-square"></span> Tambah Warga</a>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                     <div class="card-body">
                         <div class="table-responsive overflow-hidden">
@@ -51,7 +64,7 @@
                                             <td><?php echo $dw->Warga_NoHP ?></td>
                                             <td>
                                                 <a href="<?= base_url('RT/C_Warga/DetailWarga/') . '' . $dw->ID_Warga ?>" class="btn btn-success btn-sm p-2" data-container="body" data-bs-toggle="tooltip" data-bs-placement="top" title="Detail"><span class="fa fa-list"></span></a>
-                                                <a class="btn btn-secondary btn-sm p-2" data-container="body" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><span class="fa fa-pencil"></span></a>
+                                                <a href="<?= base_url('RT/C_Warga/EditWarga/') . '' . $dw->ID_Warga ?>" class="btn btn-secondary btn-sm p-2" data-container="body" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><span class="fa fa-pencil"></span></a>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>

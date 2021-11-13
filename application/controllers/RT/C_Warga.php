@@ -47,6 +47,17 @@ class C_warga extends CI_Controller
         $this->load->view('Templates/footer');
     }
 
+    public function EditWarga($id)
+    {
+        $data['datawarga'] = $this->M_warga->warga_byid($id)->row();
+        $data['datagolongandarah'] = $this->_datagolongandarah();
+        $data['datastatus'] = $this->_datastatuskawin();
+        $data['dataagama'] = $this->_dataagama();
+        $this->load->view('Templates/header');
+        $this->load->view('Templates/sidebar_rt');
+        $this->load->view('RT/editwarga', $data);
+        $this->load->view('Templates/footer');
+    }
 
     public function TambahWarga()
     {
@@ -58,6 +69,7 @@ class C_warga extends CI_Controller
         $this->load->view('RT/tambahwarga', $data);
         $this->load->view('Templates/footer');
     }
+
     public function ActionTambahWarga()
     {
         // var_dump($this->_data());
