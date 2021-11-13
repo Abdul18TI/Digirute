@@ -238,50 +238,47 @@ function combobox($name, $id, $table, $field, $primary_key, $selected, $disabled
 
 
 function comboboxdaerah($name, $id, $table, $field, $primary_key, $selected, $disabled = false)
-{ {
-
-        $ci = get_instance();
-        $disabled = $disabled == true ? "disabled" : "";
-        $cmb = "<select class='form-select select2' name='$name' id='$id' $disabled>";
-        $data = $ci->db->get($table)->result();
-        $cmb .= "<option value=''>-- Pilih --</option>";
-        foreach ($data as $d) {
-            $cmb .= "<option value='" . $d->$primary_key . "'";
-            $cmb .= $selected == $d->$primary_key ? "selected='selected'" : '';
-            $cmb .= ">" . strtoupper($d->$field) . "</option>";
-        }
-        $cmb .= "</select>";
-        return $cmb;
+{
+    $ci = get_instance();
+    $disabled = $disabled == true ? "disabled" : "";
+    $cmb = "<select class='form-select select2' name='$name' id='$id' $disabled>";
+    $data = $ci->db->get($table)->result();
+    $cmb .= "<option value=''>-- Pilih --</option>";
+    foreach ($data as $d) {
+        $cmb .= "<option value='" . $d->$primary_key . "'";
+        $cmb .= $selected == $d->$primary_key ? "selected='selected'" : '';
+        $cmb .= ">" . strtoupper($d->$field) . "</option>";
     }
-    function rupiah($angka)
-    {
-        $hasil_rupiah = "Rp. " . number_format($angka, 0, ',', '.');
-        return $hasil_rupiah;
-    }
+    $cmb .= "</select>";
+    return $cmb;
+}
+function rupiah($angka)
+{
+    $hasil_rupiah = "Rp. " . number_format($angka, 0, ',', '.');
+    return $hasil_rupiah;
+}
 
+function kode($table)
+{
+    $tabel = array('tb_akun', 'tb_acara', 'tb_mempelai', 'tb_undangan', 'tb_tamu', 'thema', 'tb_testimoni', 'tb_admin');
+    $kode = array('AKN', 'ACR', 'MPL', 'UND', 'TMU', 'THM', 'TSM', 'ADM');
+    $index_kode = array_search($table, $tabel);
+    return $kode[$index_kode];
+}
 
-    function kode($table)
-    {
-        $tabel = array('tb_akun', 'tb_acara', 'tb_mempelai', 'tb_undangan', 'tb_tamu', 'thema', 'tb_testimoni', 'tb_admin');
-        $kode = array('AKN', 'ACR', 'MPL', 'UND', 'TMU', 'THM', 'TSM', 'ADM');
-        $index_kode = array_search($table, $tabel);
-        return $kode[$index_kode];
+function kode_otomatis($table, $colum)
+{
+    $ci = get_instance();
+    $query = $ci->db->query("SELECT MAX($colum) as Kode from $table");
+    $kode = kode($table);
+    $hasil = $query->row();
+    $kodeangka = substr($hasil->Kode, 3);
+    // echo $kode . "" . ($kodeangka + 1);
+    // die();
+    if ($hasil->Kode == null) {
+        return $kode . "1";
+    } else {
+        return $kode . "" . ($kodeangka + 1);
     }
-
-    function kode_otomatis($table, $colum)
-    {
-        $ci = get_instance();
-        $query = $ci->db->query("SELECT MAX($colum) as Kode from $table");
-        $kode = kode($table);
-        $hasil = $query->row();
-        $kodeangka = substr($hasil->Kode, 3);
-        // echo $kode . "" . ($kodeangka + 1);
-        // die();
-        if ($hasil->Kode == null) {
-            return $kode . "1";
-        } else {
-            return $kode . "" . ($kodeangka + 1);
-        }
-        // die;
-    }
+    // die;
 }
