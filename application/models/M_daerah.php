@@ -8,7 +8,7 @@ class M_daerah extends CI_Model
     function getprov($searchTerm = "")
     {
         $this->db->select('id_prov, nama_prov');
-        $this->db->where("nama like '%" . $searchTerm . "%' ");
+        $this->db->where("nama_prov like '%" . $searchTerm . "%' ");
         $this->db->order_by('id_prov', 'asc');
         $fetched_records = $this->db->get('tb_provinsi');
         $dataprov = $fetched_records->result_array();
@@ -24,7 +24,7 @@ class M_daerah extends CI_Model
     {
         $this->db->select('id_kab, nama_kab');
         $this->db->where('id_prov', $id_prov);
-        $this->db->where("nama like '%" . $searchTerm . "%' ");
+        $this->db->where("nama_kab like '%" . $searchTerm . "%' ");
         $this->db->order_by('id_kab', 'asc');
         $fetched_records = $this->db->get('tb_kabupaten');
         $datakab = $fetched_records->result_array();
@@ -40,7 +40,7 @@ class M_daerah extends CI_Model
     {
         $this->db->select('id_kec, nama_kec');
         $this->db->where('id_kab', $id_kab);
-        $this->db->where("nama like '%" . $searchTerm . "%' ");
+        $this->db->where("nama_kec like '%" . $searchTerm . "%' ");
         $this->db->order_by('id_kec', 'asc');
         $fetched_records = $this->db->get('tb_kecamatan');
         $datakec = $fetched_records->result_array();
@@ -56,7 +56,7 @@ class M_daerah extends CI_Model
     {
         $this->db->select('id_kel, nama_kel');
         $this->db->where('id_kec', $id_kec);
-        $this->db->where("nama like '%" . $searchTerm . "%' ");
+        $this->db->where("nama_kel like '%" . $searchTerm . "%' ");
         $this->db->order_by('id_kel', 'asc');
         $fetched_records = $this->db->get('tb_kelurahan');
         $datakel = $fetched_records->result_array();
