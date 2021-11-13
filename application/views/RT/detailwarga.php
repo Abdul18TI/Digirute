@@ -3,7 +3,7 @@
         <div class="page-header">
             <div class="row">
                 <div class="col-sm-6">
-                    <h3>Tambah Warga</h3>
+                    <h3>Detail Warga</h3>
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                         <li class="breadcrumb-item">Forms</li>
@@ -38,7 +38,7 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header pb-0">
-                        <h5>Tambah Warga</h5>
+                        <h5>Detail Warga</h5>
                     </div>
                     <div class="card-body">
                         <div class="row">
