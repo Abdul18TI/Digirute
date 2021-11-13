@@ -28,7 +28,7 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Nama</th>
-                                        <th>NO KK</th>
+                                        <th>No KK</th>
                                         <th>NIK</th>
                                         <th>Alamat</th>
                                         <th>No HP</th>
@@ -50,7 +50,7 @@
                                             <td><?php echo $dw->Warga_NoHP ?></td>
                                             <td>
                                                 <a href="javascript:void(0)" class="btn btn-success btn-sm p-2" data-container="body" data-bs-toggle="tooltip" data-bs-placement="top" title="Detail"><span class="fa fa-list"></span></a>
-                                                <a href="javascript:void(0)" class="btn btn-secondary btn-sm p-2" data-container="body" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><span class="fa fa-pencil"></span></a>
+                                                <a href="<?= base_url('RT/C_Warga/DetailWarga/') . '' . $dw->ID_Warga ?>" class="btn btn-secondary btn-sm p-2" data-container="body" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><span class="fa fa-pencil"></span></a>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>
@@ -59,7 +59,7 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Nama</th>
-                                        <th>NO KK</th>
+                                        <th>No KK</th>
                                         <th>NIK</th>
                                         <th>Alamat</th>
                                         <th>No HP</th>

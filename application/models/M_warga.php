@@ -10,6 +10,16 @@ class M_warga extends CI_Model
         return $query;
     }
 
+    public function warga_byid($id)
+    {
+        $this->db->select('*');
+        $this->db->from('tb_warga');
+        // $this->db->join('tb_foto_agenda', 'tb_agenda.ID_Agenda = tb_foto_agenda.ID_Agenda');
+        $this->db->where('ID_Warga', $id);
+        $query = $this->db->get();
+        return $query;
+    }
+
     public function insertdatawarga($data)
     {
         $sql = $this->db->set($data)->get_compiled_insert('tb_warga');

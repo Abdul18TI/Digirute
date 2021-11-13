@@ -34,6 +34,16 @@ class C_warga extends CI_Controller
         $this->load->view('RT/listwarga', $data);
         $this->load->view('Templates/footer');
     }
+    public function DetailWarga($id)
+    {
+        $data['datawarga'] = $this->M_warga->warga_byid($id)->row();
+
+        $this->load->view('Templates/header');
+        $this->load->view('Templates/sidebar_rt');
+        $this->load->view('RT/detailwarga', $data);
+        $this->load->view('Templates/footer');
+    }
+
 
     public function TambahWarga()
     {
