@@ -282,3 +282,36 @@ function kode_otomatis($table, $colum)
     }
     // die;
 }
+
+
+function alert($tipe, $pesan)
+{
+    $ci = get_instance();
+    $template = "";
+    switch ($tipe) {
+        case 'sukses':
+            $template =  '<div class="alert alert-primary dark alert-dismissible fade show" role="alert"><strong>Sukses ! </strong> ' . $pesan . '
+            <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>';
+            break;
+        case 'gagal':
+            $template =  '<div class="alert alert-danger dark alert-dismissible fade show" role="alert"><strong>Gagal ! </strong> ' . $pesan . '
+            <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>';
+            break;
+        case 'gagal_foto':
+            $template = '<div class="alert alert-danger background-danger">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <i class="icofont icofont-close-line-circled text-white"></i>
+                            </button>
+                            <strong>Sukses !</strong> ' . $pesan . '
+                            </div>';
+
+            break;
+
+        default:
+
+            break;
+    }
+    $ci->session->set_flashdata('message', $template);
+}
