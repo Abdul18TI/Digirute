@@ -75,8 +75,7 @@
                                     <div class="col-sm-5">
                                         <select class="form-select select2" id="inp_prov" name="inp_prov">
 
-                                            <?=
-                                            "<option value='" . $datawarga->id_prov . "' selected>" . $datawarga->nama_prov . "</option>" ?>
+
                                         </select>
                                     </div>
                                     <div class="col-sm-4">
@@ -234,82 +233,85 @@
                 cache: true
             }
         });
-    });
 
-    // Kabupaten
-    $("#inp_prov").change(function() {
-        var id_prov = $("#inp_prov").val();
-        $("#inp_kab option[value=00]").attr('selected', 'selected');
-        $("#inp_kec option[value=00]").attr('selected', 'selected');
-        $("#inp_kel option[value=00]").attr('selected', 'selected');
-        $("#inp_kab").select2({
-            ajax: {
-                url: '<?= base_url() ?>RT/C_Warga/getdatakab/' + id_prov,
-                type: "post",
-                dataType: 'json',
-                delay: 200,
-                data: function(params) {
-                    return {
-                        searchTerm: params.term
-                    };
-                },
-                processResults: function(response) {
-                    return {
-                        results: response
-                    };
-                },
-                cache: true
-            }
+        $("#inp_prov").change(function() {
+            var id_prov = $("#inp_prov").val();
+            $("#inp_kab option[value=00]").attr('selected', 'selected');
+            $("#inp_kec option[value=00]").attr('selected', 'selected');
+            $("#inp_kel option[value=00]").attr('selected', 'selected');
+            $("#inp_kab").select2({
+                ajax: {
+                    url: '<?= base_url() ?>RT/C_Warga/getdatakab/' + id_prov,
+                    type: "post",
+                    dataType: 'json',
+                    delay: 200,
+                    data: function(params) {
+                        return {
+                            searchTerm: params.term
+                        };
+                    },
+                    processResults: function(response) {
+                        return {
+                            results: response
+                        };
+                    },
+                    cache: true
+                }
+            });
         });
-    });
 
-    // Kecamatan
-    $("#inp_kab").change(function() {
-        var id_kab = $("#inp_kab").val();
-        $("#inp_kel option[value=00]").attr('selected', 'selected');
-        $("#inp_kec option[value=00]").attr('selected', 'selected');
-        $("#inp_kec").select2({
-            ajax: {
-                url: '<?= base_url() ?>RT/C_Warga/getdatakec/' + id_kab,
-                type: "post",
-                dataType: 'json',
-                delay: 200,
-                data: function(params) {
-                    return {
-                        searchTerm: params.term
-                    };
-                },
-                processResults: function(response) {
-                    return {
-                        results: response
-                    };
-                },
-                cache: true
-            }
+        // Kecamatan
+        $("#inp_kab").change(function() {
+            var id_kab = $("#inp_kab").val();
+            $("#inp_kel option[value=00]").attr('selected', 'selected');
+            $("#inp_kec option[value=00]").attr('selected', 'selected');
+            $("#inp_kec").select2({
+                ajax: {
+                    url: '<?= base_url() ?>RT/C_Warga/getdatakec/' + id_kab,
+                    type: "post",
+                    dataType: 'json',
+                    delay: 200,
+                    data: function(params) {
+                        return {
+                            searchTerm: params.term
+                        };
+                    },
+                    processResults: function(response) {
+                        return {
+                            results: response
+                        };
+                    },
+                    cache: true
+                }
+            });
         });
-    });
-    // Kelurahan
-    $("#inp_kec").change(function() {
-        var id_kac = $("#inp_kec").val();
-        $("#inp_kel option[value=00]").attr('selected', 'selected');
-        $("#inp_kel").select2({
-            ajax: {
-                url: '<?= base_url() ?>RT/C_Warga/getdatakel/' + id_kac,
-                type: "post",
-                dataType: 'json',
-                delay: 200,
-                data: function(params) {
-                    return {
-                        searchTerm: params.term
-                    };
-                },
-                processResults: function(response) {
-                    return {
-                        results: response
-                    };
-                },
-                cache: true
-            }
+        // Kelurahan
+        $("#inp_kec").change(function() {
+            var id_kac = $("#inp_kec").val();
+            $("#inp_kel option[value=00]").attr('selected', 'selected');
+            $("#inp_kel").select2({
+                ajax: {
+                    url: '<?= base_url() ?>RT/C_Warga/getdatakel/' + id_kac,
+                    type: "post",
+                    dataType: 'json',
+                    delay: 200,
+                    data: function(params) {
+                        return {
+                            searchTerm: params.term
+                        };
+                    },
+                    processResults: function(response) {
+                        return {
+                            results: response
+                        };
+                    },
+                    cache: true
+                }
+            });
         });
+        // $('#inp_prov').select2().select2('val',);
+        // $('#inp_prov').val(<?= $datawarga->id_prov ?>);
+        $("#inp_prov").select2("val", "<?= $datawarga->id_prov ?>");
+
     });
 </script>
