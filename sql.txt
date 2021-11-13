@@ -1,0 +1,6 @@
+CREATE VIEW view_warga_daerah AS 
+SELECT tb_warga.ID_Warga, tb_warga.NIK, tb_warga.NoKK,tb_warga.Username,tb_warga.Password,tb_warga.Alamat,tb_warga.Kelurahan,tb_kelurahan.nama as nama_kelurahan,tb_warga.Kecamatan,tb_kecamatan.nama as nama_kecamatan,tb_warga.Kabupaten,tb_kabupaten.nama as nama_kabupaten, tb_warga.Provinsi, tb_provinsi.nama as nama_provinsi, tb_warga.KodePos,tb_warga.NamaLengkap,tb_warga.TempatLahir, tb_warga.TglLahir,tb_warga.Sex, tb_warga.Agama,tb_warga.Pekerjaan, tb_warga.GolonganDarah, tb_warga.StatusPerkawinan, tb_warga.NoPassport,tb_warga.NoKITASKITAP,tb_warga.NamaAyah,tb_warga.NamaIbu, tb_warga.TglKeluarKK, tb_warga.Photo_Warga, tb_warga.TglTambah,tb_warga.Warga_Email,tb_warga.Warga_NoHP, tb_warga.ID_RT, tb_warga.ID_RW
+FROM `tb_warga` JOIN `tb_provinsi` ON `tb_warga`.`Provinsi`=`tb_provinsi`.`id_prov` 
+JOIN `tb_kabupaten` ON `tb_warga`.`Kabupaten`=`tb_kabupaten`.`id_kab`
+JOIN `tb_kecamatan` ON `tb_warga`.`Kecamatan`=`tb_kecamatan`.`id_kec` 
+JOIN `tb_kelurahan` ON `tb_warga`.`Kelurahan`=`tb_kelurahan`.`id_kel`

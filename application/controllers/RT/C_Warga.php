@@ -29,6 +29,7 @@ class C_warga extends CI_Controller
     public function index()
     {
         $data['datawarga'] = $this->M_warga->tampil_data_warga()->result();
+        $data['datagolongandarah'] = array('A' => 'A', 'B' => 'B');
         $this->load->view('Templates/header');
         $this->load->view('Templates/sidebar_rt');
         $this->load->view('RT/listwarga', $data);
@@ -37,11 +38,31 @@ class C_warga extends CI_Controller
     public function DetailWarga($id)
     {
         $data['datawarga'] = $this->M_warga->warga_byid($id)->row();
-
+        var_dump($data['datawarga']);
+        die();
+        $data['datagolongandarah'] = $this->_datagolongandarah();
+        $data['datastatus'] = $this->_datastatuskawin();
+        $data['dataagama'] = $this->_dataagama();
         $this->load->view('Templates/header');
         $this->load->view('Templates/sidebar_rt');
         $this->load->view('RT/detailwarga', $data);
         $this->load->view('Templates/footer');
+    }
+
+    private function _datagolongandarah()
+    {
+        $data = array('A' => 'A', 'B' => 'B', 'AB' => 'AB', 'O' => 'O');
+        return $data;
+    }
+    private function _datastatuskawin()
+    {
+        $data = array('Belum Kawin' => 'Belum Kawin', 'Kawin' => 'Kawin',  'Cerai Hidup' => 'Cerai Hidup', 'Cerai Mati' => 'Cerai Mati');
+        return $data;
+    }
+    private function _dataagama()
+    {
+        $data = array('1' => 'Islam', '2' => 'Kristen',  '3' => 'Hindu', '4' => 'Budha', '5' => 'Katolik', '6' => 'Konghucu');
+        return $data;
     }
 
 

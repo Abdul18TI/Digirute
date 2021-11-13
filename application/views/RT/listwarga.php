@@ -40,7 +40,6 @@
                                     $no = 0;
                                     foreach ($datawarga as $dw) : ?>
                                         <?php $no = $no + 1; ?>
-
                                         <tr>
                                             <td><?php echo $no ?></td>
                                             <td><?php echo $dw->NamaLengkap ?></td>
