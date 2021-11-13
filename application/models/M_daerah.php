@@ -15,7 +15,7 @@ class M_daerah extends CI_Model
 
         $data = array();
         foreach ($dataprov as $prov) {
-            $data[] = array("id" => $prov['id_prov'], "text" => $prov['nama']);
+            $data[] = array("id" => $prov['id_prov'], "text" => $prov['nama_prov']);
         }
         return $data;
     }
@@ -31,7 +31,7 @@ class M_daerah extends CI_Model
 
         $data = array();
         foreach ($datakab as $kab) {
-            $data[] = array("id" => $kab['id_kab'], "text" => $kab['nama']);
+            $data[] = array("id" => $kab['id_kab'], "text" => $kab['nama_kab']);
         }
         return $data;
     }
@@ -47,7 +47,7 @@ class M_daerah extends CI_Model
 
         $data = array();
         foreach ($datakec as $kec) {
-            $data[] = array("id" => $kec['id_kec'], "text" => $kec['nama']);
+            $data[] = array("id" => $kec['id_kec'], "text" => $kec['nama_kec']);
         }
         return $data;
     }
@@ -63,7 +63,7 @@ class M_daerah extends CI_Model
 
         $data = array();
         foreach ($datakel as $kel) {
-            $data[] = array("id" => $kel['id_kel'], "text" => $kel['nama']);
+            $data[] = array("id" => $kel['id_kel'], "text" => $kel['nama_kel']);
         }
         return $data;
     }
