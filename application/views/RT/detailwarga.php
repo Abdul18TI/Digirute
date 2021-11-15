@@ -44,6 +44,18 @@
                         <div class="row">
                             <div class="col">
                                 <div class="mb-3 row">
+                                    <label class="col-sm-3 col-form-label">Nomor HP</label>
+                                    <div class="col-sm-9">
+                                        <input class="form-control digits" name="inp_nohp" type="text" value='<?= $datawarga->Warga_NoHP ?>' disabled>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label class="col-sm-3 col-form-label">Email</label>
+                                    <div class="col-sm-9">
+                                        <input class="form-control digits" name="inp_email" type="text" value='<?= $datawarga->Warga_Email ?>' disabled>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
                                     <label class="col-sm-3 col-form-label">RT/RW</label>
                                     <div class="col-sm-5">
                                         <input class="form-control" type="text" id="inp_rw" name="inp_rw" disabled placeholder="RW" value='<?= $datawarga->ID_RT ?>'>
@@ -196,6 +208,7 @@
                                         <input class="form-control digits" name="inp_tglterbit" type="date" value='<?= date('Y-m-d', $datawarga->TglKeluarKK) ?>' disabled>
                                     </div>
                                 </div>
+
 
                             </div>
                         </div>

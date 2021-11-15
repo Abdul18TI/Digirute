@@ -47,8 +47,9 @@ class C_warga extends CI_Controller
         $this->load->view('Templates/footer');
     }
 
-    public function EditWarga($id)
+    public function EditWarga($id = null)
     {
+        if (!isset($id)) redirect('RT/C_Warga');
         $data['datawarga'] = $this->M_warga->warga_byid($id)->row();
         $data['datagolongandarah'] = $this->_datagolongandarah();
         $data['datastatus'] = $this->_datastatuskawin();
@@ -61,28 +62,62 @@ class C_warga extends CI_Controller
 
     public function TambahWarga()
     {
-        $data['datagolongandarah'] = $this->_datagolongandarah();
-        $data['datastatus'] = $this->_datastatuskawin();
-        $data['dataagama'] = $this->_dataagama();
-        $this->load->view('Templates/header');
-        $this->load->view('Templates/sidebar_rt');
-        $this->load->view('RT/tambahwarga', $data);
-        $this->load->view('Templates/footer');
-    }
+        $this->form_validation->set_rules('inp_pekerjaan', 'Pekerjaan', 'callback_validate_dropdown');
+        $this->form_validation->set_rules('inp_agama', 'Agama', 'callback_validate_dropdown');
+        $this->form_validation->set_rules('inp_status', 'Status Pernikahan', 'callback_validate_dropdown');
 
-    public function ActionTambahWarga()
-    {
-        // var_dump($this->_data());
-        $query =  $this->M_warga->insertdatawarga($this->_data());
-        // var_dump($query);
-        if ($query) {
-            alert('sukses', 'Data warga berhasil ditambahkan');
-            redirect(base_url('RT/C_Warga/'), 'refresh');
-            // echo "berhasil";
+        if ($this->form_validation->run() == FALSE) {
+            $data['datagolongandarah'] = $this->_datagolongandarah();
+            $data['datastatus'] = $this->_datastatuskawin();
+            $data['dataagama'] = $this->_dataagama();
+            $this->load->view('Templates/header');
+            $this->load->view('Templates/sidebar_rt');
+            $this->load->view('RT/tambahwarga', $data);
+            $this->load->view('Templates/footer');
         } else {
-            // echo "Gagal";
+            // $data = ($this->input->post('inp_goldar') == '00') ?   NULL  : $this->input->post('inp_goldar');
+
+            $query =  $this->M_warga->insertdatawarga($this->_data());
+            if ($query) {
+                alert('sukses', 'Data warga berhasil ditambahkan');
+                redirect(base_url('RT/C_Warga/'), 'refresh');
+            } else {
+                alert('gagal', 'Data warga gagal ditambahkan');
+                redirect(base_url('RT/C_Warga/'), 'refresh');
+            }
         }
     }
+
+    //method  untuk aksi tambah data warga
+    public function ActionTambahWarga()
+    {
+        $this->form_validation->set_rules('inp_pekerjaan', 'inp_pekerjaan', 'callback_validate_dropdown');
+        $this->form_validation->set_rules('inp_agama', 'inp_pekerjaan', 'callback_validate_dropdown');
+        $this->form_validation->set_rules('in', 'inp_pekerjaan', 'callback_validate_dropdown');
+        if ($this->form_validation->run() == FALSE) {
+            redirect('RT/C_Warga');
+        } else {
+            $query =  $this->M_warga->insertdatawarga($this->_data());
+            if ($query) {
+                alert('sukses', 'Data warga berhasil ditambahkan');
+                redirect(base_url('RT/C_Warga/'), 'refresh');
+            } else {
+                alert('gagal', 'Data warga gagal ditambahkan');
+                redirect(base_url('RT/C_Warga/'), 'refresh');
+            }
+        }
+    }
+
+
+    //method  untuk aksi tambah data warga
+    public function ActionEditWarga()
+    {
+        $id = htmlspecialchars($this->input->post('inp_id', true));
+        $query = $this->M_warga->updatedatawarga($id, $this->_data());
+        alert('sukses', 'Data warga berhasil diubah');
+        redirect(base_url('RT/C_Warga/'), 'refresh');
+    }
+
     // method bertanggung jawab terhadap data yang masuk
     private function _data()
     {
@@ -101,7 +136,7 @@ class C_warga extends CI_Controller
             'Sex' => htmlspecialchars($this->input->post('inp_sex', true)),
             'Agama' => htmlspecialchars($this->input->post('inp_agama', true)),
             'Pekerjaan' => htmlspecialchars($this->input->post('inp_pekerjaan', true)),
-            'GolonganDarah' => htmlspecialchars($this->input->post('inp_goldar', true)),
+            'GolonganDarah' => ($this->input->post('inp_goldar') == '00') ?   NULL  : htmlspecialchars($this->input->post('inp_goldar', true)),
             'StatusPerkawinan' => htmlspecialchars($this->input->post('inp_status', true)),
             'NoPassport' => htmlspecialchars($this->input->post('inp_passport', true)),
             'NoKITASKITAP' => htmlspecialchars($this->input->post('inp_kitas', true)),
@@ -115,7 +150,6 @@ class C_warga extends CI_Controller
         //    'Warga_Email' => htmlspecialchars($this->input->post('alamat_resepsi', true)),
         //    'Warga_NoHP' => htmlspecialchars($this->input->post('alamat_resepsi', true)),
     }
-
 
     // Provinsi
     public function getdataprov()
@@ -163,5 +197,19 @@ class C_warga extends CI_Controller
     {
         $data = array('1' => 'Islam', '2' => 'Kristen',  '3' => 'Hindu', '4' => 'Budha', '5' => 'Katolik', '6' => 'Konghucu');
         return $data;
+    }
+
+    function validate_dropdown($str)
+    {
+        $field_value = $str; //this is redundant, but it's to show you how
+        //the content of the fields gets automatically passed to the method
+        // var_dump($str);
+        // die();
+        if ($str == '00') {
+            $this->form_validation->set_message(__FUNCTION__, 'Inputan %s harus dipilih');
+            return FALSE;
+        } else {
+            return TRUE;
+        }
     }
 }

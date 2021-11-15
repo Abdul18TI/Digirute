@@ -36,4 +36,11 @@ class M_warga extends CI_Model
         $res = $this->db->insert('tb_warga', $data); // Kode ini digunakan untuk memasukan record baru kedalam sebuah tabel
         return $res; // Kode ini digunakan untuk mengembalikan hasil $res
     }
+
+    public function updatedatawarga($id, $data)
+    {
+
+        $this->db->where('ID_Warga', $id);
+        $this->db->update('tb_warga', $data);
+    }
 }

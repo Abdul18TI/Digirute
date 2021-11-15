@@ -209,7 +209,7 @@ function comboboxmanual($name, $id, $data, $selected, $disabled = false)
     $ci = get_instance();
     $disabled = $disabled == true ? "disabled" : "";
     $cmb = "<select name='$name' id='$id' class='form-select' $disabled >";
-    $cmb .= "<option value=''>-- Pilih --</option>";
+    $cmb .= "<option value='00'>-- Pilih --</option>";
     foreach ($data as $d => $value) {
         $cmb .= "<option value='" . $d . "'";
         $cmb .= $selected == $d ? "selected='selected'" : '';
@@ -226,7 +226,7 @@ function combobox($name, $id, $table, $field, $primary_key, $selected, $disabled
     $disabled = $disabled == true ? "disabled" : "";
     $cmb = "<select class='form-select' name='$name' id='$id' $disabled>";
     $data = $ci->db->get($table)->result();
-    $cmb .= "<option value=''>-- Pilih --</option>";
+    $cmb .= "<option value='00'>-- Pilih --</option>";
     foreach ($data as $d) {
         $cmb .= "<option value='" . $d->$primary_key . "'";
         $cmb .= $selected == $d->$primary_key ? "selected='selected'" : '';
@@ -243,7 +243,7 @@ function comboboxdaerah($name, $id, $table, $field, $primary_key, $selected, $di
     $disabled = $disabled == true ? "disabled" : "";
     $cmb = "<select class='form-select select2' name='$name' id='$id' $disabled>";
     $data = $ci->db->get($table)->result();
-    $cmb .= "<option value=''>-- Pilih --</option>";
+    $cmb .= "<option value='00'>-- Pilih --</option>";
     foreach ($data as $d) {
         $cmb .= "<option value='" . $d->$primary_key . "'";
         $cmb .= $selected == $d->$primary_key ? "selected='selected'" : '';

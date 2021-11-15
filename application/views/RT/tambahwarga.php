@@ -40,7 +40,7 @@
                     <div class="card-header pb-0">
                         <h5>Tambah Warga</h5>
                     </div>
-                    <form class="form theme-form" method="post" action="<?= base_url('RT/C_Warga/ActionTambahWarga') ?>">
+                    <form class="form theme-form" method="post" action="<?= base_url('RT/C_Warga/TambahWarga') ?>">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col">
@@ -137,12 +137,14 @@
                                         <label class="col-sm-3 col-form-label">Agama</label>
                                         <div class="col-sm-9">
                                             <?= comboboxmanual('inp_agama', 'inp_agama', $dataagama, '') ?>
+                                            <?= form_error('inp_agama', '<div class="txt-danger">', '</div>'); ?>
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Pekerjaan</label>
                                         <div class="col-sm-9">
                                             <?= combobox('inp_pekerjaan', 'inp_pekerjaan', 'tb_pekerjaan', 'Nama_Pekerjaan', 'ID_Pekerjaan', '') ?>
+                                            <?= form_error('inp_pekerjaan', '<div class="txt-danger">', '</div>'); ?>
                                             <!-- <select class="form-select" id="inp_pekerjaan" name="inp_pekerjaan">
                                                 <option value="0">Pekerjaan</option>
                                             </select> -->
@@ -158,7 +160,9 @@
                                         <label class="col-sm-3 col-form-label">Status Perkawinan</label>
                                         <div class="col-sm-9">
                                             <?= comboboxmanual('inp_status', 'inp_status', $datastatus, '') ?>
+                                            <?= form_error('inp_status', '<div class="txt-danger">', '</div>'); ?>
                                         </div>
+                                        <div class="invalid-feedback">Please enter a message in the textarea.</div>
                                     </div>
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">No. Passport</label>
