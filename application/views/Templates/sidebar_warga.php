@@ -38,7 +38,7 @@
                         </li>
                         <li class="sidebar-main-title">
                             <div>
-                                <h6>Pages</h6>
+                                <h6>Pagesaaa</h6>
                             </div>
                         </li>
                         <li>
