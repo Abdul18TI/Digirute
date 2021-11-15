@@ -33,36 +33,30 @@ class C_login_warga extends CI_Controller
 
     private function _login()
     {
-        $email = $this->input->post('email');
+        $NIK = $this->input->post('NIK');
         $password = $this->input->post('password');
 
-        $user = $this->db->get_where('users', ['email' => $email])->row_array();
+        $ifNIK = $this->db->get_where('tb_warga', ['NIK' => $NIK])->row_array();
+        $ifUSERNAME = $this->db->get_where('tb_warga', ['Username' => $NIK])->row_array();
 
-        if ($user) {
-            if ($user['is_active'] == 1) {
-                if (password_verify($password, $user['password'])) {
-                    $data = [
-                        'email' => $user['email'],
-                        'role_id' => $user['role_id']
-                    ];
-                    $this->session->set_userdata($data);
-                    if ($user['role_id'] == 3) {
-                        redirect('Dashboard/owner');
-                    } else if ($user['role_id'] == 1) {
-                        redirect('Dashboard');
-                    } else {
-                        redirect('Users/forbidden');
-                    }
+        if ($ifNIK) {
+            if (password_verify($password, $ifNIK['Password'])) {
+                $data = [
+                    'email' => $ifNIK['email'],
+                    'role_id' => $ifNIK['role_id']
+                ];
+                $this->session->set_userdata($data);
+                if ($ifNIK['role_id'] == 3) {
+                    redirect('Dashboard/owner');
+                } else if ($ifNIK['role_id'] == 1) {
+                    redirect('Dashboard');
                 } else {
-                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
-                    Wrong password!
-                    </div>');
-                    redirect('Users');
+                    redirect('Users/forbidden');
                 }
             } else {
                 $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
-                This email has not been activated!
-                </div>');
+                    Wrong password!
+                    </div>');
                 redirect('Users');
             }
         } else {
