@@ -21,7 +21,7 @@ class C_login_warga extends CI_Controller
      */
     public function index()
     {
-        $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+        $this->form_validation->set_rules('email', 'Email', 'trim|required');
         $this->form_validation->set_rules('password', 'Password', 'trim|required');
 
         if ($this->form_validation->run() == false) {
@@ -33,43 +33,48 @@ class C_login_warga extends CI_Controller
 
     private function _login()
     {
-        $email = $this->input->post('email');
+        $NIK = $this->input->post('NIK');
         $password = $this->input->post('password');
 
-        $user = $this->db->get_where('users', ['email' => $email])->row_array();
+        $ifNIK = $this->db->get_where('tb_warga', ['NIK' => $NIK])->row_array();
+        $ifUSERNAME = $this->db->get_where('tb_warga', ['Username' => $NIK])->row_array();
 
-        if ($user) {
-            if ($user['is_active'] == 1) {
-                if (password_verify($password, $user['password'])) {
-                    $data = [
-                        'email' => $user['email'],
-                        'role_id' => $user['role_id']
-                    ];
-                    $this->session->set_userdata($data);
-                    if ($user['role_id'] == 3) {
-                        redirect('Dashboard/owner');
-                    } else if ($user['role_id'] == 1) {
-                        redirect('Dashboard');
-                    } else {
-                        redirect('Users/forbidden');
-                    }
-                } else {
-                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
-                    Wrong password!
-                    </div>');
-                    redirect('Users');
-                }
+        if ($ifNIK) {
+            if (password_verify($password, $ifNIK['Password'])) {
+                $data = [
+                    'ID_Warga' => $ifNIK['ID_Warga']
+                ];
+                $this->session->set_userdata($data);
             } else {
                 $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
-                This email has not been activated!
-                </div>');
+                    Password yang di masukkan salah !
+                    </div>');
                 redirect('Users');
             }
         } else {
             $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
-            Email is not registered!
+            NIK atau Username tidak terdaftar !
             </div>');
-            redirect('Users');
+            redirect('Warga/C_login_warga');
+        }
+
+        if ($ifUSERNAME) {
+            if (password_verify($password, $ifUSERNAME['Password'])) {
+                $data = [
+                    'ID_Warga' => $ifUSERNAME['ID_Warga']
+                ];
+                $this->session->set_userdata($data);
+            } else {
+                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+                    Password yang di masukkan salah !
+                    </div>');
+                redirect('Users');
+            }
+        } else {
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+            NIK atau Username tidak terdaftar !
+            </div>');
+            redirect('Warga/C_login_warga');
         }
     }
 }
