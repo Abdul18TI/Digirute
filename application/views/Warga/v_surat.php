@@ -14,7 +14,7 @@
                                 <div class="col">
                                     <div class="mb-3">
                                         <label class="form-label" for="exampleInputPassword22">Nama : </label>
-                                        <input class="form-control" id="exampleInputPassword22" name="NamaLengkap" type="text" disabled="" placeholder="Budi Setiawan">
+                                        <input class="form-control" id="exampleInputPassword22" type="text" disabled="" placeholder="Budi Setiawan">
                                     </div>
                                 </div>
                             </div>
@@ -32,12 +32,10 @@
                                         <label class="form-label" for="exampleFormControlSelect9">Kategori Pengaduan</label>
                                         <select class="form-select digits" id="exampleFormControlSelect9">
                                             <option>Infrastruktur</option>
-<<<<<<< Updated upstream
-                                            <option>Sistem Website</option>
-                                            <option>Keluhan Masyarakat</option>
-=======
                                             <option>Keluhan tetangga</option>
->>>>>>> Stashed changes
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
                                         </select>
                                     </div>
                                 </div>

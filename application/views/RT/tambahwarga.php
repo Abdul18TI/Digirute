@@ -54,34 +54,36 @@
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
-                                        <label class="col-sm-3 col-form-label">Nomor Kartu Keluarga (KK)</label>
+                                        <label class="col-sm-3 col-form-label">Nomor Kartu Keluarga (KK) <span class="text-danger">*</span></label>
                                         <div class="col-sm-9">
                                             <input class="form-control" type="text" id="inp_kk" name="inp_kk" placeholder="Nomor Kartu Keluarga">
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
-                                        <label class="col-sm-3 col-form-label">Nomor Induk Kepenedudukan (NIK)</label>
+                                        <label class="col-sm-3 col-form-label">Nomor Induk Kepenedudukan (NIK) <span class="text-danger">*</span></label>
                                         <div class="col-sm-9">
                                             <input class="form-control " type="text" id="inp_nik" name="inp_nik" placeholder="Nomor Induk Kependidikan">
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
-                                        <label class="col-sm-3 col-form-label">Alamat</label>
+                                        <label class="col-sm-3 col-form-label">Alamat <span class="text-danger">*</span></label>
                                         <div class="col-sm-9">
-                                            <textarea class="form-control" id="inp_alamat" name="inp_alamat" rows="5" cols="5" placeholder="Alamat"></textarea>
+                                            <textarea class="form-control" id="inp_alamat" name="inp_alamat" rows="5" cols="5" placeholder="Alamat"><?= set_value('inp_alamat') ?></textarea>
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
-                                        <label class="col-sm-3 col-form-label">Desa/Kabupaten/Provinsi</label>
+                                        <label class="col-sm-3 col-form-label">Desa/Kabupaten/Provinsi <span class="text-danger">*</span></label>
                                         <div class="col-sm-5">
                                             <select class="form-select select2" id="inp_prov" name="inp_prov">
                                                 <option value="" selected>Pilih Provinsi</option>
                                             </select>
+                                            <?= form_error('inp_prov', '<div class="txt-danger">', '</div>'); ?>
                                         </div>
                                         <div class="col-sm-4">
                                             <select class="form-select select2" id="inp_kab" name="inp_kab">
                                                 <option value="" selected>Pilih Kabupaten</option>
                                             </select>
+                                            <?= form_error('inp_kab', '<div class="txt-danger">', '</div>'); ?>
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
@@ -90,11 +92,13 @@
                                             <select class="form-select select2" id="inp_kec" name="inp_kec">
                                                 <option value="" selected>Pilih Kecamatan</option>
                                             </select>
+                                            <?= form_error('inp_kec', '<div class="txt-danger">', '</div>'); ?>
                                         </div>
                                         <div class="col-sm-4">
                                             <select class="form-select select2" id="inp_kel" name="inp_kel">
                                                 <option value="" selected>Pilih Kelurahan</option>
                                             </select>
+                                            <?= form_error('inp_kel', '<div class="txt-danger">', '</div>'); ?>
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
@@ -104,13 +108,13 @@
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
-                                        <label class="col-sm-3 col-form-label">Nama Lengkap</label>
+                                        <label class="col-sm-3 col-form-label">Nama Lengkap <span class="text-danger">*</span></label>
                                         <div class="col-sm-9">
                                             <input class="form-control " type="text" id="inp_nama" name="inp_nama" placeholder="Nama Lengkap">
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
-                                        <label class="col-sm-3 col-form-label">Tempat Tanggal Lahir</label>
+                                        <label class="col-sm-3 col-form-label">Tempat Tanggal Lahir <span class="text-danger">*</span></label>
                                         <div class="col-sm-4">
                                             <input class="form-control " type="text" id="inp_tempat" name="inp_tempat" placeholder="Tempat Lahir">
                                         </div>
@@ -119,7 +123,7 @@
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
-                                        <label class="col-sm-3 col-form-label">Jenis Kelamin</label>
+                                        <label class="col-sm-3 col-form-label">Jenis Kelamin <span class="text-danger">*</span></label>
                                         <div class="col-sm-9">
                                             <div class="form-group mt-2 m-checkbox-inline mb-0 custom-radio-ml">
                                                 <div class="radio radio-primary">
@@ -134,14 +138,14 @@
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
-                                        <label class="col-sm-3 col-form-label">Agama</label>
+                                        <label class="col-sm-3 col-form-label">Agama <span class="text-danger">*</span></label>
                                         <div class="col-sm-9">
                                             <?= comboboxmanual('inp_agama', 'inp_agama', $dataagama, '') ?>
                                             <?= form_error('inp_agama', '<div class="txt-danger">', '</div>'); ?>
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
-                                        <label class="col-sm-3 col-form-label">Pekerjaan</label>
+                                        <label class="col-sm-3 col-form-label">Pekerjaan <span class="text-danger">*</span></label>
                                         <div class="col-sm-9">
                                             <?= combobox('inp_pekerjaan', 'inp_pekerjaan', 'tb_pekerjaan', 'Nama_Pekerjaan', 'ID_Pekerjaan', '') ?>
                                             <?= form_error('inp_pekerjaan', '<div class="txt-danger">', '</div>'); ?>
@@ -157,12 +161,11 @@
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
-                                        <label class="col-sm-3 col-form-label">Status Perkawinan</label>
+                                        <label class="col-sm-3 col-form-label">Status Perkawinan <span class="text-danger">*</span></label>
                                         <div class="col-sm-9">
                                             <?= comboboxmanual('inp_status', 'inp_status', $datastatus, '') ?>
                                             <?= form_error('inp_status', '<div class="txt-danger">', '</div>'); ?>
                                         </div>
-                                        <div class="invalid-feedback">Please enter a message in the textarea.</div>
                                     </div>
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">No. Passport</label>
@@ -178,19 +181,19 @@
                                     </div>
 
                                     <div class="mb-3 row">
-                                        <label class="col-sm-3 col-form-label">Nama Ayah</label>
+                                        <label class="col-sm-3 col-form-label">Nama Ayah <span class="text-danger">*</span></label>
                                         <div class="col-sm-9">
                                             <input class="form-control " type="text" id="inp_namaayah" name="inp_namaayah" placeholder="Nama Ayah">
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
-                                        <label class="col-sm-3 col-form-label">Nama Ibu</label>
+                                        <label class="col-sm-3 col-form-label">Nama Ibu <span class="text-danger">*</span></label>
                                         <div class="col-sm-9">
                                             <input class="form-control " type="text" id="inp_namaibu" name="inp_namaibu" placeholder="Nama Ibu">
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
-                                        <label class="col-sm-3 col-form-label">Tanggal Terbit KK</label>
+                                        <label class="col-sm-3 col-form-label">Tanggal Terbit KK <span class="text-danger">*</span> </label>
                                         <div class="col-sm-9">
                                             <input class="form-control digits" name="inp_tglterbit" type="date">
                                         </div>

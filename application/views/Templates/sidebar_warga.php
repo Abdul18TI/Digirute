@@ -29,6 +29,7 @@
                         </li>
                         <li class="sidebar-main-title">
                             <div>
+<<<<<<< Updated upstream
                                 <h6>Warga Umban Sari</h6>
                             </div>
                         </li>
@@ -41,12 +42,32 @@
                         <li class="sidebar-main-title">
                             <div>
                                 <h6>Pages</h6>
+=======
+                                <h6>Informasi</h6>
                             </div>
                         </li>
                         <li>
-                            <a class="nav-link menu-title link-nav" href="landing-page.html"><i data-feather="navigation-2"></i><span>Landing page</span></a>
+                            <a class="nav-link menu-title link-nav" href="landing-page.html"><i data-feather="user"></i><span>Data Pribadi</span></a>
                         </li>
-
+                        <li>
+                            <a class="nav-link menu-title link-nav" href="landing-page.html"><i data-feather="users"></i><span>Keluarga</span></a>
+                        </li>
+                        <li class="sidebar-main-title">
+                            <div>
+                                <h6>Pelayanan</h6>
+>>>>>>> Stashed changes
+                            </div>
+                        </li>
+                        <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="mail"></i><span>Surat</span></a>
+                            <ul class="nav-submenu menu-content">
+                                <li><a href="">Daftar Pengajuan Surat</a></li>
+                                <li><a href="">Surat Pengantar</a></li>
+                                <li><a href="">Surat Eksternal</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="nav-link menu-title link-nav" href="landing-page.html"><i data-feather="message-circle"></i><span>Lapor</span></a>
+                        </li>
                     </ul>
                 </div>
                 <div class="right-arrow" id="right-arrow"><i data-feather="arrow-right"></i></div>
