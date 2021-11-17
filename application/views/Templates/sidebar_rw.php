@@ -29,13 +29,14 @@
                         </li>
                         <li class="sidebar-main-title">
                             <div>
-                                <h6>Warga Umban Sari</h6>
+                                <h6>RW Umban Sari</h6>
                             </div>
                         </li>
                         <li>
                         <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="users"></i><span>Pengaduan</span></a>
                             <ul class="nav-submenu menu-content">
-                                <li><a href="<?= base_url('Warga/C_form_pengaduan') ?>">Lapor pengaduan</a></li>
+                                <li><a href="<?= base_url('RW/C_form_agenda_rw') ?>">Tambah Agenda</a></li>
+                                <li><a href="<?= base_url('RW/C_table_agenda_rw') ?>">Tabel Agenda</a></li>
                             </ul>
                         </li>
                         <li class="sidebar-main-title">

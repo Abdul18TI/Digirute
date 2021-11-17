@@ -14,7 +14,7 @@
                                 <div class="col">
                                     <div class="mb-3">
                                         <label class="form-label" for="exampleInputPassword22">Nama : </label>
-                                        <input class="form-control" id="exampleInputPassword22" type="text" disabled="" placeholder="Budi Setiawan">
+                                        <input class="form-control" id="exampleInputPassword22" name="NamaLengkap" type="text" disabled="" placeholder="Budi Setiawan">
                                     </div>
                                 </div>
                             </div>
@@ -32,10 +32,8 @@
                                         <label class="form-label" for="exampleFormControlSelect9">Kategori Pengaduan</label>
                                         <select class="form-select digits" id="exampleFormControlSelect9">
                                             <option>Infrastruktur</option>
-                                            <option>Keluhan tetangga</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
+                                            <option>Sistem Website</option>
+                                            <option>Keluhan Masyarakat</option>
                                         </select>
                                     </div>
                                 </div>

@@ -51,27 +51,26 @@
             <div class="row">
                 <div class="col-12">
                     <div class="login-card">
-                        <form class="theme-form login-form">
+                        <form class="theme-form login-form" method="POST" action="C_login_rw">
                             <h4>Login RW</h4>
                             <h6>Selamat datang RW</h6>
+                            <?= $this->session->flashdata('message'); ?>
                             <div class="form-group">
                                 <label>NIK/Username</label>
                                 <div class="input-group"><span class="input-group-text"><i class="icon-user"></i></span>
-                                    <input class="form-control" type="text" required="" placeholder="NIK/Username">
+                                    <input class="form-control" type="text" id="NIK" name="NIK" placeholder="NIK/Username" value="<?= set_value('NIK'); ?>">
                                 </div>
+                                <?= form_error('password', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
                             <div class="form-group">
                                 <label>Password</label>
                                 <div class="input-group"><span class="input-group-text"><i class="icon-lock"></i></span>
-                                    <input class="form-control" type="password" name="login[password]" required="" placeholder="*********">
+                                    <input class="form-control" type="password" id="password" name="password" placeholder="*********">
                                     <div class="show-hide"><span class="show"> </span></div>
                                 </div>
+                                <?= form_error('NIK', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
-                            <div class="form-group">
-                                <!-- <button class="btn btn-primary btn-block" type="submit">Login</button> -->
-                                <!-- <button class="btn btn-primary btn-block" href="index.html" type="submit">Login</button> -->
-                                <a class="btn btn-primary btn-block" href="index.html" type="submit">Login</a>
-                            </div>
+                            <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Login</button></div>
                             <div class="login-social-title">
                                 <h5>Login Sebagai</h5>
                             </div>

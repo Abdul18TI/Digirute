@@ -21,7 +21,7 @@ class C_login_warga extends CI_Controller
      */
     public function index()
     {
-        $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+        $this->form_validation->set_rules('NIK', 'Username', 'trim|required');
         $this->form_validation->set_rules('password', 'Password', 'trim|required');
 
         if ($this->form_validation->run() == false) {
@@ -39,31 +39,48 @@ class C_login_warga extends CI_Controller
         $ifNIK = $this->db->get_where('tb_warga', ['NIK' => $NIK])->row_array();
         $ifUSERNAME = $this->db->get_where('tb_warga', ['Username' => $NIK])->row_array();
 
-        if ($ifNIK) {
+        if ($ifNIK != null) {
             if (password_verify($password, $ifNIK['Password'])) {
                 $data = [
-                    'email' => $ifNIK['email'],
-                    'role_id' => $ifNIK['role_id']
+                    'ID_Warga' => $ifNIK['ID_Warga']
                 ];
                 $this->session->set_userdata($data);
-                if ($ifNIK['role_id'] == 3) {
-                    redirect('Dashboard/owner');
-                } else if ($ifNIK['role_id'] == 1) {
-                    redirect('Dashboard');
-                } else {
-                    redirect('Users/forbidden');
-                }
+                redirect('Warga/C_form_pengaduan');
             } else {
                 $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
-                    Wrong password!
+                    Password yang di masukkan salah !
                     </div>');
-                redirect('Users');
+                redirect('Warga/C_login_warga');
+            }
+        } else if ($ifUSERNAME != null) {
+            if (password_verify($password, $ifUSERNAME['Password'])) {
+                $data = [
+                    'ID_Warga' => $ifUSERNAME['ID_Warga']
+                ];
+                $this->session->set_userdata($data);
+                redirect('Warga/C_form_pengaduan');
+            } else {
+                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+                    Password yang di masukkan salah !
+                    </div>');
+                redirect('Warga/C_login_warga');
             }
         } else {
             $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
-            Email is not registered!
+            NIK atau Username tidak terdaftar !
             </div>');
-            redirect('Users');
+            redirect('Warga/C_login_warga');
         }
+    }
+
+    public function logout()
+    {
+        $this->session->unset_userdata('ID_Warga');
+        $this->session->unset_userdata('ID_RW');
+        $this->session->unset_userdata('ID_RT');
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+        Anda sudah log out !
+        </div>');
+        redirect('Warga/C_login_warga');
     }
 }

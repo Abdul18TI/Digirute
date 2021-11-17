@@ -53,7 +53,7 @@
                 </div>
                 <div class="col-xl-7 p-0">
                     <div class="login-card">
-                        <form class="theme-form login-form" method="POST" action="">
+                        <form class="theme-form login-form" method="POST" action="C_login_warga">
                             <h4>Login Warga</h4>
                             <h6>Selamat datang warga Kelurahan Umban Sari.</h6>
 
@@ -62,19 +62,19 @@
                             <div class="form-group">
                                 <label>NIK/Username</label>
                                 <div class="input-group"><span class="input-group-text"><i class="icon-user"></i></span>
-                                    <input class="form-control" name="NIK" type="text" required="" placeholder="NIK/Username">
-                                    <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
+                                    <input class="form-control" name="NIK" id="NIK" value="<?= set_value('NIK'); ?>" type=" text" placeholder="NIK/Username">
                                 </div>
+                                <?= form_error('NIK', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
                             <div class="form-group">
                                 <label>Password</label>
                                 <div class="input-group"><span class="input-group-text"><i class="icon-lock"></i></span>
-                                    <input class="form-control" name="password" type="password" name="login[password]" required="" placeholder="*********">
-                                    <?= form_error('password', '<small class="text-danger pl-3">', '</small>'); ?>
+                                    <input class="form-control" name="password" type="password" id="password" name="password" placeholder="*********">
                                     <div class="show-hide"><span class="show"> </span></div>
                                 </div>
+                                <?= form_error('password', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
-                            <div class="form-group"><a class="btn btn-primary btn-block" href="index.html" type="submit">Login</a></div>
+                            <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Login</button></div>
                             <div class="login-social-title">
                                 <h5>Login Sebagai</h5>
                             </div>
@@ -85,8 +85,8 @@
                                     <div class="col-4"><a class="btn btn-primary btn-block" href="<?= base_url('RT/C_Auth'); ?>" type="submit">RT</a></div>
                                 </div>
                             </div>
+                        </form>
                     </div>
-                    </form>
                 </div>
             </div>
         </div>

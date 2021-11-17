@@ -21,6 +21,54 @@ class C_auth extends CI_Controller
      */
     public function index()
     {
-        $this->load->view('RT/login_rt');
+        $this->form_validation->set_rules('NIK', 'Username', 'trim|required');
+        $this->form_validation->set_rules('password', 'Password', 'trim|required');
+        if ($this->form_validation->run() == false) {
+            $this->load->view('RT/login_rt');
+        } else {
+            $this->_login();
+        }
+    }
+
+    private function _login()
+    {
+        $NIK = $this->input->post('NIK');
+        $password = $this->input->post('password');
+
+        $ifNIK = $this->db->get_where('tb_warga', ['NIK' => $NIK])->row_array();
+        $ifUSERNAME = $this->db->get_where('tb_warga', ['Username' => $NIK])->row_array();
+
+        if ($ifNIK != null) {
+            if (password_verify($password, $ifNIK['Password'])) {
+                $data = [
+                    'ID_RT' => $ifNIK['ID_RT']
+                ];
+                $this->session->set_userdata($data);
+                redirect('RT/C_Warga');
+            } else {
+                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+                        Password yang di masukkan salah !
+                        </div>');
+                redirect('RT/C_auth');
+            }
+        } else if ($ifUSERNAME != null) {
+            if (password_verify($password, $ifUSERNAME['Password'])) {
+                $data = [
+                    'ID_RT' => $ifUSERNAME['ID_RT']
+                ];
+                $this->session->set_userdata($data);
+                redirect('RT/C_Warga');
+            } else {
+                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+                        Password yang di masukkan salah !
+                        </div>');
+                redirect('RT/C_auth');
+            }
+        } else {
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+                NIK atau Username tidak terdaftar !
+                </div>');
+            redirect('RT/C_auth');
+        }
     }
 }
