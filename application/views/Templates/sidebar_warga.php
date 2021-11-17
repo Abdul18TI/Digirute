@@ -4,7 +4,7 @@
     <header class="main-nav">
         <div class="sidebar-user text-center"><a class="setting-primary" href="javascript:void(0)"><i data-feather="settings"></i></a><img class="img-90 rounded-circle" src="<?= base_url() ?>assets/images/dashboard/1.png" alt="">
             <div class="badge-bottom"><span class="badge badge-primary">RT</span></div><a href="user-profile.html">
-                <h6 class="mt-3 f-14 f-w-600">Sahid</h6>
+                <h6 class="mt-3 f-14 f-w-600">Warga</h6>
             </a>
             <p class="mb-0 font-roboto">RT 04 RW 01</p>
             <!-- <ul>
@@ -29,20 +29,6 @@
                         </li>
                         <li class="sidebar-main-title">
                             <div>
-<<<<<<< Updated upstream
-                                <h6>Warga Umban Sari</h6>
-                            </div>
-                        </li>
-                        <li>
-                        <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="users"></i><span>Pengaduan</span></a>
-                            <ul class="nav-submenu menu-content">
-                                <li><a href="<?= base_url('Warga/C_form_pengaduan') ?>">Lapor pengaduan</a></li>
-                            </ul>
-                        </li>
-                        <li class="sidebar-main-title">
-                            <div>
-                                <h6>Pages</h6>
-=======
                                 <h6>Informasi</h6>
                             </div>
                         </li>
@@ -55,7 +41,6 @@
                         <li class="sidebar-main-title">
                             <div>
                                 <h6>Pelayanan</h6>
->>>>>>> Stashed changes
                             </div>
                         </li>
                         <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="mail"></i><span>Surat</span></a>
@@ -66,7 +51,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a class="nav-link menu-title link-nav" href="landing-page.html"><i data-feather="message-circle"></i><span>Lapor</span></a>
+                            <a class="nav-link menu-title link-nav" href="<?= base_url('Warga/C_form_pengaduan') ?>"><i data-feather="message-circle"></i><span>Lapor</span></a>
                         </li>
                     </ul>
                 </div>
