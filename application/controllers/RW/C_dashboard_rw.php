@@ -21,9 +21,14 @@ class C_dashboard_rw extends CI_Controller
      */
     public function index()
     {
+        if ($this->session->userdata('rw_id') != null) {
         $this->load->view('Templates/header');
         $this->load->view('Templates/sidebar');
         $this->load->view('dashboard');
         $this->load->view('Templates/footer');
+    } else {
+        $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Please login first..!</div>');
+        redirect('C_error_page');
+    }
     }
 }

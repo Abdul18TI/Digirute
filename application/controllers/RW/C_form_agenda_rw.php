@@ -25,14 +25,20 @@ class C_form_agenda_rw extends CI_Controller
      */
     public function index()
     {
+    if ($this->session->userdata('rw_id') != null) {
         $this->load->view('Templates/header');
         $this->load->view('Templates/sidebar');
         $this->load->view('Rw/Form/form_agenda');
         $this->load->view('Templates/footer');
+    } else {
+        $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Please login first..!</div>');
+        redirect('C_error_page');
+    }
     }
 
     public function tambah_agenda()
     {
+        if ($this->session->userdata('rw_id') != null) {
         $this->load->model('M_agenda');
         $NamaAgenda      = $this->input->post('NamaAgenda');
         $IsiAgenda      = $this->input->post('IsiAgenda');
@@ -78,20 +84,30 @@ class C_form_agenda_rw extends CI_Controller
                 // echo $this->upload->display_errors();
             }
         }
+    } else {
+        $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Please login first..!</div>');
+        redirect('C_error_page');
+    }
     }
 
     public function form_ubah_agenda($ID_Agenda)
     {
+        if ($this->session->userdata('rw_id') != null) {
         $this->load->model('M_agenda');
         $data['agenda'] = $this->M_agenda->tampil_data_agenda_by_id($ID_Agenda)->result();
         $this->load->view('Templates/header');
         $this->load->view('Templates/sidebar');
         $this->load->view('Rw/Form/form_ubah_agenda', $data);
         $this->load->view('Templates/footer');
+    } else {
+        $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Please login first..!</div>');
+        redirect('C_error_page');
+    }
     }
 
     public function ubah_agenda()
     {
+        if ($this->session->userdata('rw_id') != null) {
         $this->load->model('M_agenda');
         $ID_Agenda      = $this->input->post('ID_Agenda');
         $NamaAgenda      = $this->input->post('NamaAgenda');
@@ -136,4 +152,8 @@ class C_form_agenda_rw extends CI_Controller
             }
         }
     }
+} else {
+    $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Please login first..!</div>');
+    redirect('C_error_page');
+}
 }

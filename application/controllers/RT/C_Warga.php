@@ -28,15 +28,21 @@ class C_warga extends CI_Controller
     }
     public function index()
     {
+        if ($this->session->userdata('rt_id') != null) {
         $data['datawarga'] = $this->M_warga->tampil_data_warga()->result();
 
         $this->load->view('Templates/header');
         $this->load->view('Templates/sidebar_rt');
         $this->load->view('RT/listwarga', $data);
         $this->load->view('Templates/footer');
+    } else {
+        $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Please login first..!</div>');
+        redirect('C_error_page');
+    }
     }
     public function DetailWarga($id)
     {
+        if ($this->session->userdata('rt_id') != null) {
         $data['datawarga'] = $this->M_warga->warga_byid($id)->row();
         $data['datagolongandarah'] = $this->_datagolongandarah();
         $data['datastatus'] = $this->_datastatuskawin();
@@ -45,10 +51,15 @@ class C_warga extends CI_Controller
         $this->load->view('Templates/sidebar_rt');
         $this->load->view('RT/detailwarga', $data);
         $this->load->view('Templates/footer');
+    } else {
+        $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Please login first..!</div>');
+        redirect('C_error_page');
+    }
     }
 
     public function EditWarga($id = null)
     {
+        if ($this->session->userdata('rt_id') != null) {
         if (!isset($id)) redirect('RT/C_Warga');
         $data['datawarga'] = $this->M_warga->warga_byid($id)->row();
         $data['datagolongandarah'] = $this->_datagolongandarah();
@@ -58,10 +69,15 @@ class C_warga extends CI_Controller
         $this->load->view('Templates/sidebar_rt');
         $this->load->view('RT/editwarga', $data);
         $this->load->view('Templates/footer');
+    } else {
+        $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Please login first..!</div>');
+        redirect('C_error_page');
+    }
     }
 
     public function TambahWarga()
     {
+        if ($this->session->userdata('rt_id') != null) {
         // $this->form_validation->set_rules('inp_pekerjaan', 'Pekerjaan', 'callback_validate_dropdown');
         // $this->form_validation->set_rules('inp_agama', 'Agama', 'callback_validate_dropdown');
         // $this->form_validation->set_rules('inp_status', 'Status Pernikahan', 'callback_validate_dropdown');
@@ -91,11 +107,16 @@ class C_warga extends CI_Controller
             //     redirect(base_url('RT/C_Warga/'), 'refresh');
             // }
         }
+    } else {
+        $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Please login first..!</div>');
+        redirect('C_error_page');
+    }
     }
 
     //method  untuk aksi tambah data warga
     public function ActionTambahWarga()
     {
+        if ($this->session->userdata('rt_id') != null) {
         // $this->form_validation->set_rules('inp_pekerjaan', 'inp_pekerjaan', 'callback_validate_dropdown');
         // $this->form_validation->set_rules('inp_agama', 'inp_pekerjaan', 'callback_validate_dropdown');
         // $this->form_validation->set_rules('inp_pekerjaan', 'inp_pekerjaan', 'callback_validate_dropdown');
@@ -112,16 +133,25 @@ class C_warga extends CI_Controller
             //     redirect(base_url('RT/C_Warga/'), 'refresh');
             // }
         }
+    } else {
+        $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Please login first..!</div>');
+        redirect('C_error_page');
+    }
     }
 
 
     //method  untuk aksi tambah data warga
     public function ActionEditWarga()
     {
+        if ($this->session->userdata('rt_id') != null) {
         $id = htmlspecialchars($this->input->post('inp_id', true));
         $query = $this->M_warga->updatedatawarga($id, $this->_data());
         alert('sukses', 'Data warga berhasil diubah');
         redirect(base_url('RT/C_Warga/'), 'refresh');
+    } else {
+        $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Please login first..!</div>');
+        redirect('C_error_page');
+    }
     }
 
     // method bertanggung jawab terhadap data yang masuk

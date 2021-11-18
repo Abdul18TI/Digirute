@@ -21,9 +21,14 @@ class C_surat extends CI_Controller
      */
     public function index()
     {
+        if ($this->session->userdata('ID_Warga') != null) {
         $this->load->view('Templates/header');
         $this->load->view('Templates/sidebar_warga');
         $this->load->view('Warga/v_daftarsurat');
         $this->load->view('Templates/footer');
+    } else {
+        $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Please login first..!</div>');
+        redirect('C_error_page');
+    }
     }
 }

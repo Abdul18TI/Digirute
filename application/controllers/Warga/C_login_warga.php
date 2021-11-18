@@ -76,8 +76,8 @@ class C_login_warga extends CI_Controller
     public function logout()
     {
         $this->session->unset_userdata('ID_Warga');
-        $this->session->unset_userdata('ID_RW');
-        $this->session->unset_userdata('ID_RT');
+        $this->session->unset_userdata('rw_id');
+        $this->session->unset_userdata('rt_id');
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
         Anda sudah log out !
         </div>');

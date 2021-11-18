@@ -35,13 +35,13 @@ class C_login_rw extends CI_Controller
         $NIK = $this->input->post('NIK');
         $password = $this->input->post('password');
 
-        $ifNIK = $this->db->get_where('tb_warga', ['NIK' => $NIK])->row_array();
-        $ifUSERNAME = $this->db->get_where('tb_warga', ['Username' => $NIK])->row_array();
+        $ifNIK = $this->db->get_where('tb_rw', ['ketua_rw' => $NIK])->row_array();
+        $ifUSERNAME = $this->db->get_where('tb_rw', ['username_rw' => $NIK])->row_array();
 
         if ($ifNIK != null) {
-            if (password_verify($password, $ifNIK['Password'])) {
+            if (password_verify($password, $ifNIK['password_rw'])) {
                 $data = [
-                    'ID_RW' => $ifNIK['ID_RW']
+                    'rw_id' => $ifNIK['rw_id']
                 ];
                 $this->session->set_userdata($data);
                 redirect('RW/C_table_agenda_rw');
@@ -52,9 +52,9 @@ class C_login_rw extends CI_Controller
                 redirect('RW/C_login_rw');
             }
         } else if ($ifUSERNAME != null) {
-            if (password_verify($password, $ifUSERNAME['Password'])) {
+            if (password_verify($password, $ifUSERNAME['password_rw'])) {
                 $data = [
-                    'ID_RW' => $ifUSERNAME['ID_Warga']
+                    'rw_id' => $ifUSERNAME['rw_id']
                 ];
                 $this->session->set_userdata($data);
                 redirect('RW/C_table_agenda_rw');

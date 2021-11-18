@@ -21,17 +21,27 @@ class C_table_agenda_rw extends CI_Controller
      */
     public function index()
     {
+        if ($this->session->userdata('rw_id') != null) {
         $this->load->model('M_agenda');
         $data['agenda'] = $this->M_agenda->tampil_data_agenda()->result();
         $this->load->view('Templates/header');
         $this->load->view('Templates/sidebar');
         $this->load->view('Rw/Table/table_agenda', $data);
         $this->load->view('Templates/footer');
+    } else {
+        $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Please login first..!</div>');
+        redirect('C_error_page');
+    }
     }
 
     public function hapus_agenda($ID_Agenda)
     {
+        if ($this->session->userdata('rw_id') != null) {
         $this->load->model('M_agenda');
         $this->M_agenda->hapus_agenda($ID_Agenda);
+    } else {
+        $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Please login first..!</div>');
+        redirect('C_error_page');
+    }
     }
 }
