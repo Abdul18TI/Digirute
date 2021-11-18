@@ -32,12 +32,9 @@
                                         <label class="form-label" for="exampleFormControlSelect9">Kategori Pengaduan</label>
                                         <select class="form-select digits" id="exampleFormControlSelect9">
                                             <option>Infrastruktur</option>
-<<<<<<< Updated upstream
                                             <option>Sistem Website</option>
                                             <option>Keluhan Masyarakat</option>
-=======
                                             <option>Keluhan tetangga</option>
->>>>>>> Stashed changes
                                         </select>
                                     </div>
                                 </div>
