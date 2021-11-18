@@ -19,7 +19,8 @@ class M_warga extends CI_Model
         $this->db->join("tb_kecamatan", 'tb_warga.Kecamatan=tb_kecamatan.id_kec');
         $this->db->join("tb_kelurahan", 'tb_warga.Kelurahan=tb_kelurahan.id_kel');
         // $this->db->join('tb_foto_agenda', 'tb_agenda.ID_Agenda = tb_foto_agenda.ID_Agenda');
-        $this->db->where('ID_Warga', $id);
+        $this->db->where('ID_Warga', $id, FALSE);
+        $this->db->or_where('NIK', $id);
         // SELECT * 
         // FROM `tb_warga` w
         // JOIN tb_provinsi p ON w.Provinsi = p.id_prov
