@@ -33,7 +33,7 @@
                             </div>
                         </li>
                         <li>
-                            <a class="nav-link menu-title link-nav" href="landing-page.html"><i data-feather="user"></i><span>Data Pribadi</span></a>
+                            <a class="nav-link menu-title link-nav" href="<?= base_url('Warga/C_datapribadi') ?>"><i data-feather="user"></i><span>Data Pribadi</span></a>
                         </li>
                         <li>
                             <a class="nav-link menu-title link-nav" href="landing-page.html"><i data-feather="users"></i><span>Keluarga</span></a>

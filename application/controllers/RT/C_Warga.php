@@ -29,114 +29,114 @@ class C_warga extends CI_Controller
     public function index()
     {
         if ($this->session->userdata('rt_id') != null) {
-        $data['datawarga'] = $this->M_warga->tampil_data_warga()->result();
+            $data['datawarga'] = $this->M_warga->tampil_data_warga()->result();
 
-        $this->load->view('Templates/header');
-        $this->load->view('Templates/sidebar_rt');
-        $this->load->view('RT/listwarga', $data);
-        $this->load->view('Templates/footer');
-    } else {
-        $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Please login first..!</div>');
-        redirect('C_error_page');
-    }
+            $this->load->view('Templates/header');
+            $this->load->view('Templates/sidebar_rt');
+            $this->load->view('RT/listwarga', $data);
+            $this->load->view('Templates/footer');
+        } else {
+            $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Please login first..!</div>');
+            redirect('C_error_page');
+        }
     }
     public function DetailWarga($id)
     {
         if ($this->session->userdata('rt_id') != null) {
-        $data['datawarga'] = $this->M_warga->warga_byid($id)->row();
-        $data['datagolongandarah'] = $this->_datagolongandarah();
-        $data['datastatus'] = $this->_datastatuskawin();
-        $data['dataagama'] = $this->_dataagama();
-        $this->load->view('Templates/header');
-        $this->load->view('Templates/sidebar_rt');
-        $this->load->view('RT/detailwarga', $data);
-        $this->load->view('Templates/footer');
-    } else {
-        $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Please login first..!</div>');
-        redirect('C_error_page');
-    }
+            $data['datawarga'] = $this->M_warga->warga_byid($id)->row();
+            $data['datagolongandarah'] = _datagolongandarah();
+            $data['datastatus'] = _datastatuskawin();
+            $data['dataagama'] = _dataagama();
+            $this->load->view('Templates/header');
+            $this->load->view('Templates/sidebar_rt');
+            $this->load->view('RT/detailwarga', $data);
+            $this->load->view('Templates/footer');
+        } else {
+            $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Please login first..!</div>');
+            redirect('C_error_page');
+        }
     }
 
     public function EditWarga($id = null)
     {
         if ($this->session->userdata('rt_id') != null) {
-        if (!isset($id)) redirect('RT/C_Warga');
-        $data['datawarga'] = $this->M_warga->warga_byid($id)->row();
-        $data['datagolongandarah'] = $this->_datagolongandarah();
-        $data['datastatus'] = $this->_datastatuskawin();
-        $data['dataagama'] = $this->_dataagama();
-        $this->load->view('Templates/header');
-        $this->load->view('Templates/sidebar_rt');
-        $this->load->view('RT/editwarga', $data);
-        $this->load->view('Templates/footer');
-    } else {
-        $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Please login first..!</div>');
-        redirect('C_error_page');
-    }
+            if (!isset($id)) redirect('RT/C_Warga');
+            $data['datawarga'] = $this->M_warga->warga_byid($id)->row();
+            $data['datagolongandarah'] = _datagolongandarah();
+            $data['datastatus'] = _datastatuskawin();
+            $data['dataagama'] = _dataagama();
+            $this->load->view('Templates/header');
+            $this->load->view('Templates/sidebar_rt');
+            $this->load->view('RT/editwarga', $data);
+            $this->load->view('Templates/footer');
+        } else {
+            $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Please login first..!</div>');
+            redirect('C_error_page');
+        }
     }
 
     public function TambahWarga()
     {
         if ($this->session->userdata('rt_id') != null) {
-        // $this->form_validation->set_rules('inp_pekerjaan', 'Pekerjaan', 'callback_validate_dropdown');
-        // $this->form_validation->set_rules('inp_agama', 'Agama', 'callback_validate_dropdown');
-        // $this->form_validation->set_rules('inp_status', 'Status Pernikahan', 'callback_validate_dropdown');
-        $this->form_validation->set_rules('alamat', 'inp_pekerjaan', 'required');
-        $this->form_validation->set_rules('inp_prov', 'inp_pekerjaan', 'required');
-        $this->form_validation->set_rules('inp_kab', 'inp_pekerjaan', 'required');
-        $this->form_validation->set_rules('inp_kel', 'inp_pekerjaan', 'required');
-        $this->form_validation->set_rules('inp_kec', 'inp_pekerjaan', 'required');
+            // $this->form_validation->set_rules('inp_pekerjaan', 'Pekerjaan', 'callback_validate_dropdown');
+            // $this->form_validation->set_rules('inp_agama', 'Agama', 'callback_validate_dropdown');
+            // $this->form_validation->set_rules('inp_status', 'Status Pernikahan', 'callback_validate_dropdown');
+            $this->form_validation->set_rules('alamat', 'inp_pekerjaan', 'required');
+            $this->form_validation->set_rules('inp_prov', 'inp_pekerjaan', 'required');
+            $this->form_validation->set_rules('inp_kab', 'inp_pekerjaan', 'required');
+            $this->form_validation->set_rules('inp_kel', 'inp_pekerjaan', 'required');
+            $this->form_validation->set_rules('inp_kec', 'inp_pekerjaan', 'required');
 
-        if ($this->form_validation->run() == FALSE) {
-            $data['datagolongandarah'] = $this->_datagolongandarah();
-            $data['datastatus'] = $this->_datastatuskawin();
-            $data['dataagama'] = $this->_dataagama();
-            $this->load->view('Templates/header');
-            $this->load->view('Templates/sidebar_rt');
-            $this->load->view('RT/tambahwarga', $data);
-            $this->load->view('Templates/footer');
+            if ($this->form_validation->run() == FALSE) {
+                $data['datagolongandarah'] = _datagolongandarah();
+                $data['datastatus'] = _datastatuskawin();
+                $data['dataagama'] = _dataagama();
+                $this->load->view('Templates/header');
+                $this->load->view('Templates/sidebar_rt');
+                $this->load->view('RT/tambahwarga', $data);
+                $this->load->view('Templates/footer');
+            } else {
+                // // $data = ($this->input->post('inp_goldar') == '00') ?   NULL  : $this->input->post('inp_goldar');
+
+                // $query =  $this->M_warga->insertdatawarga($this->_data());
+                // if ($query) {
+                //     alert('sukses', 'Data warga berhasil ditambahkan');
+                //     redirect(base_url('RT/C_Warga/'), 'refresh');
+                // } else {
+                //     alert('gagal', 'Data warga gagal ditambahkan');
+                //     redirect(base_url('RT/C_Warga/'), 'refresh');
+                // }
+            }
         } else {
-            // // $data = ($this->input->post('inp_goldar') == '00') ?   NULL  : $this->input->post('inp_goldar');
-
-            // $query =  $this->M_warga->insertdatawarga($this->_data());
-            // if ($query) {
-            //     alert('sukses', 'Data warga berhasil ditambahkan');
-            //     redirect(base_url('RT/C_Warga/'), 'refresh');
-            // } else {
-            //     alert('gagal', 'Data warga gagal ditambahkan');
-            //     redirect(base_url('RT/C_Warga/'), 'refresh');
-            // }
+            $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Please login first..!</div>');
+            redirect('C_error_page');
         }
-    } else {
-        $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Please login first..!</div>');
-        redirect('C_error_page');
-    }
     }
 
     //method  untuk aksi tambah data warga
     public function ActionTambahWarga()
     {
         if ($this->session->userdata('rt_id') != null) {
-        // $this->form_validation->set_rules('inp_pekerjaan', 'inp_pekerjaan', 'callback_validate_dropdown');
-        // $this->form_validation->set_rules('inp_agama', 'inp_pekerjaan', 'callback_validate_dropdown');
-        // $this->form_validation->set_rules('inp_pekerjaan', 'inp_pekerjaan', 'callback_validate_dropdown');
-        $this->form_validation->set_rules('inp_prov', 'inp_pekerjaan', 'callback_validate_daerah');
-        if ($this->form_validation->run() == FALSE) {
-            redirect('RT/C_Warga');
+            // $this->form_validation->set_rules('inp_pekerjaan', 'inp_pekerjaan', 'callback_validate_dropdown');
+            // $this->form_validation->set_rules('inp_agama', 'inp_pekerjaan', 'callback_validate_dropdown');
+            // $this->form_validation->set_rules('inp_pekerjaan', 'inp_pekerjaan', 'callback_validate_dropdown');
+            $this->form_validation->set_rules('inp_prov', 'inp_pekerjaan', 'callback_validate_daerah');
+            if ($this->form_validation->run() == FALSE) {
+                redirect('RT/C_Warga');
+            } else {
+                // $query =  $this->M_warga->insertdatawarga($this->_data());
+                // if ($query) {
+                //     alert('sukses', 'Data warga berhasil ditambahkan');
+                //     redirect(base_url('RT/C_Warga/'), 'refresh');
+                // } else {
+                //     alert('gagal', 'Data warga gagal ditambahkan');
+                //     redirect(base_url('RT/C_Warga/'), 'refresh');
+                // }
+            }
         } else {
-            // $query =  $this->M_warga->insertdatawarga($this->_data());
-            // if ($query) {
-            //     alert('sukses', 'Data warga berhasil ditambahkan');
-            //     redirect(base_url('RT/C_Warga/'), 'refresh');
-            // } else {
-            //     alert('gagal', 'Data warga gagal ditambahkan');
-            //     redirect(base_url('RT/C_Warga/'), 'refresh');
-            // }
+            $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Please login first..!</div>');
+            redirect('C_error_page');
         }
-    } else {
-        $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Please login first..!</div>');
-        redirect('C_error_page');
-    }
     }
 
 
@@ -144,14 +144,14 @@ class C_warga extends CI_Controller
     public function ActionEditWarga()
     {
         if ($this->session->userdata('rt_id') != null) {
-        $id = htmlspecialchars($this->input->post('inp_id', true));
-        $query = $this->M_warga->updatedatawarga($id, $this->_data());
-        alert('sukses', 'Data warga berhasil diubah');
-        redirect(base_url('RT/C_Warga/'), 'refresh');
-    } else {
-        $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Please login first..!</div>');
-        redirect('C_error_page');
-    }
+            $id = htmlspecialchars($this->input->post('inp_id', true));
+            $query = $this->M_warga->updatedatawarga($id, $this->_data());
+            alert('sukses', 'Data warga berhasil diubah');
+            redirect(base_url('RT/C_Warga/'), 'refresh');
+        } else {
+            $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Please login first..!</div>');
+            redirect('C_error_page');
+        }
     }
 
     // method bertanggung jawab terhadap data yang masuk
@@ -220,21 +220,7 @@ class C_warga extends CI_Controller
         echo json_encode($response);
     }
 
-    private function _datagolongandarah()
-    {
-        $data = array('A' => 'A', 'B' => 'B', 'AB' => 'AB', 'O' => 'O');
-        return $data;
-    }
-    private function _datastatuskawin()
-    {
-        $data = array('Belum Kawin' => 'Belum Kawin', 'Kawin' => 'Kawin',  'Cerai Hidup' => 'Cerai Hidup', 'Cerai Mati' => 'Cerai Mati');
-        return $data;
-    }
-    private function _dataagama()
-    {
-        $data = array('1' => 'Islam', '2' => 'Kristen',  '3' => 'Hindu', '4' => 'Budha', '5' => 'Katolik', '6' => 'Konghucu');
-        return $data;
-    }
+
 
     function validate_dropdown($str)
     {

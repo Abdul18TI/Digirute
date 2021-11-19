@@ -103,6 +103,21 @@ function check_access($role_id, $menu_id)
         return "checked='checked'";
     }
 }
+function _datagolongandarah()
+{
+    $data = array('A' => 'A', 'B' => 'B', 'AB' => 'AB', 'O' => 'O');
+    return $data;
+}
+function _datastatuskawin()
+{
+    $data = array('Belum Kawin' => 'Belum Kawin', 'Kawin' => 'Kawin',  'Cerai Hidup' => 'Cerai Hidup', 'Cerai Mati' => 'Cerai Mati');
+    return $data;
+}
+function _dataagama()
+{
+    $data = array('1' => 'Islam', '2' => 'Kristen',  '3' => 'Hindu', '4' => 'Budha', '5' => 'Katolik', '6' => 'Konghucu');
+    return $data;
+}
 
 function sex($sex)
 {

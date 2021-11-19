@@ -29,71 +29,71 @@ class C_form_pengaduan extends CI_Controller
     public function index()
     {
         if ($this->session->userdata('ID_Warga') != null) {
-        $this->load->view('Templates/header');
-        $this->load->view('Templates/sidebar');
-        $this->load->view('Warga/Form/form_pengaduan');
-        $this->load->view('Templates/footer');
-    } else {
-        $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Please login first..!</div>');
-        redirect('C_error_page');
-    }
+            $this->load->view('Templates/header');
+            $this->load->view('Templates/sidebar_warga');
+            $this->load->view('Warga/Form/form_pengaduan');
+            $this->load->view('Templates/footer');
+        } else {
+            $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Please login first..!</div>');
+            redirect('C_error_page');
+        }
     }
     public function tambah_pengaduan()
     {
         if ($this->session->userdata('ID_Warga') != null) {
-        $Judul_Pengaduan      = $this->input->post('Judul_Pengaduan');
-        $Kategori_Pengaduan      = $this->input->post('Kategori_Pengaduan');
-        $Deskripsi_Pengaduan      = $this->input->post('Deskripsi_Pengaduan');     
-        $ID_RW      = 1;    
-        $ID_RT      = 1;  
-        $Status_Pengaduan      = 1;  
-        $UploadFotoPengaduan = $_FILES['Gambar_Pengaduan']['name'];
-        $Tgl_Upload_Pengaduan = strtotime(date("Y-m-d H:i:s"));
-        if ($UploadFotoPengaduan) {
-            $config['upload_path'] = './assets/images/pengaduan';
-            $config['allowed_types'] = 'gif|jpg|png';
-            $config['max_size']     = '4096';
+            $Judul_Pengaduan      = $this->input->post('Judul_Pengaduan');
+            $Kategori_Pengaduan      = $this->input->post('Kategori_Pengaduan');
+            $Deskripsi_Pengaduan      = $this->input->post('Deskripsi_Pengaduan');
+            $ID_RW      = 1;
+            $ID_RT      = 1;
+            $Status_Pengaduan      = 1;
+            $UploadFotoPengaduan = $_FILES['Gambar_Pengaduan']['name'];
+            $Tgl_Upload_Pengaduan = strtotime(date("Y-m-d H:i:s"));
+            if ($UploadFotoPengaduan) {
+                $config['upload_path'] = './assets/images/pengaduan';
+                $config['allowed_types'] = 'gif|jpg|png';
+                $config['max_size']     = '4096';
 
-            $this->load->library('upload', $config);
+                $this->load->library('upload', $config);
 
-            if ($this->upload->do_upload(('Gambar_Pengaduan'))) {
-                $Gambar_Pengaduan = $this->upload->data('file_name');
+                if ($this->upload->do_upload(('Gambar_Pengaduan'))) {
+                    $Gambar_Pengaduan = $this->upload->data('file_name');
 
-                $data = array(
-                    'Judul_Pengaduan'    => $Judul_Pengaduan,
-                    'Kategori_Pengaduan'    => $Kategori_Pengaduan,
-                    'Deskripsi_Pengaduan'    => $Deskripsi_Pengaduan,
-                    'Tgl_Upload_Pengaduan'    => $Tgl_Upload_Pengaduan,
-                    'ID_RW'    => $ID_RW,
-                    'ID_RT'    => $ID_RT,
-                    'Status_Pengaduan'    => $Status_Pengaduan,
-                    'Status_Pengaduan'    => $Status_Pengaduan,
-                    'Gambar_Pengaduan' => $Gambar_Pengaduan
-                );
+                    $data = array(
+                        'Judul_Pengaduan'    => $Judul_Pengaduan,
+                        'Kategori_Pengaduan'    => $Kategori_Pengaduan,
+                        'Deskripsi_Pengaduan'    => $Deskripsi_Pengaduan,
+                        'Tgl_Upload_Pengaduan'    => $Tgl_Upload_Pengaduan,
+                        'ID_RW'    => $ID_RW,
+                        'ID_RT'    => $ID_RT,
+                        'Status_Pengaduan'    => $Status_Pengaduan,
+                        'Status_Pengaduan'    => $Status_Pengaduan,
+                        'Gambar_Pengaduan' => $Gambar_Pengaduan
+                    );
 
-                $this->M_pengaduan->tambah_pengaduan($data);
-                redirect('Warga/C_form_pengaduan');
-            } else {
-                $data = array(
-                    'Judul_Pengaduan'    => $Judul_Pengaduan,
-                    'Kategori_Pengaduan'    => $Kategori_Pengaduan,
-                    'Deskripsi_Pengaduan'    => $Deskripsi_Pengaduan,
-                    'Tgl_Upload_Pengaduan'    => $Tgl_Upload_Pengaduan,
-                    'ID_RW'    => $ID_RW,
-                    'ID_RT'    => $ID_RT,
-                    'Status_Pengaduan'    => $Status_Pengaduan,
-                    'Status_Pengaduan'    => $Status_Pengaduan
-                );
+                    $this->M_pengaduan->tambah_pengaduan($data);
+                    redirect('Warga/C_form_pengaduan');
+                } else {
+                    $data = array(
+                        'Judul_Pengaduan'    => $Judul_Pengaduan,
+                        'Kategori_Pengaduan'    => $Kategori_Pengaduan,
+                        'Deskripsi_Pengaduan'    => $Deskripsi_Pengaduan,
+                        'Tgl_Upload_Pengaduan'    => $Tgl_Upload_Pengaduan,
+                        'ID_RW'    => $ID_RW,
+                        'ID_RT'    => $ID_RT,
+                        'Status_Pengaduan'    => $Status_Pengaduan,
+                        'Status_Pengaduan'    => $Status_Pengaduan
+                    );
 
-                $this->M_pengaduan->tambah_pengaduan($data);
-                redirect('Warga/C_form_pengaduan');
-                // echo $this->upload->display_errors();
+                    $this->M_pengaduan->tambah_pengaduan($data);
+                    redirect('Warga/C_form_pengaduan');
+                    // echo $this->upload->display_errors();
+                }
             }
+        } else {
+            $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Please login first..!</div>');
+            redirect('C_error_page');
         }
-    } else {
-        $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Please login first..!</div>');
-        redirect('C_error_page');
-    }
     }
 
     public function form_ubah_pengaduan($ID_Pengaduan)
@@ -167,5 +167,4 @@ class C_form_pengaduan extends CI_Controller
             $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Please login first..!</div>');
             redirect('C_error_page');
         }
-}
 }

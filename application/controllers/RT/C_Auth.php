@@ -35,11 +35,13 @@ class C_auth extends CI_Controller
         $NIK = $this->input->post('NIK');
         $password = $this->input->post('password');
 
-        $ifNIK = $this->db->get_where('tb_rt', ['ketua_rw' => $NIK])->row_array();
-        $ifUSERNAME = $this->db->get_where('tb_rt', ['username_rw' => $NIK])->row_array();
+        $ifNIK = $this->db->get_where('tb_rt', ['ketua_rt' => $NIK])->row_array();
+        // var_dump($ifNIK['password_rt']);
+        // die();
+        $ifUSERNAME = $this->db->get_where('tb_rt', ['username_rt' => $NIK])->row_array();
 
         if ($ifNIK != null) {
-            if (password_verify($password, $ifNIK['Password'])) {
+            if (password_verify($password, $ifNIK['password_rt'])) {
                 $data = [
                     'rt_id' => $ifNIK['rt_id']
                 ];
@@ -52,7 +54,7 @@ class C_auth extends CI_Controller
                 redirect('RT/C_auth');
             }
         } else if ($ifUSERNAME != null) {
-            if (password_verify($password, $ifUSERNAME['Password'])) {
+            if (password_verify($password, $ifUSERNAME['password_rt'])) {
                 $data = [
                     'rt_id' => $ifUSERNAME['rt_id']
                 ];
