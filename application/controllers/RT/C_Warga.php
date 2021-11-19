@@ -36,7 +36,7 @@ class C_warga extends CI_Controller
             $this->load->view('RT/listwarga', $data);
             $this->load->view('Templates/footer');
         } else {
-            $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Please login first..!</div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Silahkan login terlebih dahulu</div>');
             redirect('C_error_page');
         }
     }
@@ -52,7 +52,7 @@ class C_warga extends CI_Controller
             $this->load->view('RT/detailwarga', $data);
             $this->load->view('Templates/footer');
         } else {
-            $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Please login first..!</div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Silahkan login terlebih dahulu</div>');
             redirect('C_error_page');
         }
     }
@@ -70,7 +70,7 @@ class C_warga extends CI_Controller
             $this->load->view('RT/editwarga', $data);
             $this->load->view('Templates/footer');
         } else {
-            $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Please login first..!</div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Silahkan login terlebih dahulu</div>');
             redirect('C_error_page');
         }
     }
@@ -108,7 +108,7 @@ class C_warga extends CI_Controller
                 // }
             }
         } else {
-            $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Please login first..!</div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Silahkan login terlebih dahulu</div>');
             redirect('C_error_page');
         }
     }
@@ -134,7 +134,7 @@ class C_warga extends CI_Controller
                 // }
             }
         } else {
-            $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Please login first..!</div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Silahkan login terlebih dahulu</div>');
             redirect('C_error_page');
         }
     }
@@ -149,7 +149,7 @@ class C_warga extends CI_Controller
             alert('sukses', 'Data warga berhasil diubah');
             redirect(base_url('RT/C_Warga/'), 'refresh');
         } else {
-            $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Please login first..!</div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Silahkan login terlebih dahulu</div>');
             redirect('C_error_page');
         }
     }

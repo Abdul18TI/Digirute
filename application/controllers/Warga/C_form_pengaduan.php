@@ -24,6 +24,7 @@ class C_form_pengaduan extends CI_Controller
     {
         parent::__construct();
         $this->load->model('M_pengaduan');
+        $this->load->library('session');
     }
 
     public function index()
@@ -34,10 +35,11 @@ class C_form_pengaduan extends CI_Controller
             $this->load->view('Warga/Form/form_pengaduan');
             $this->load->view('Templates/footer');
         } else {
-            $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Please login first..!</div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Silahkan login terlebih dahulu</div>');
             redirect('C_error_page');
         }
     }
+
     public function tambah_pengaduan()
     {
         if ($this->session->userdata('ID_Warga') != null) {
@@ -91,7 +93,7 @@ class C_form_pengaduan extends CI_Controller
                 }
             }
         } else {
-            $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Please login first..!</div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Silahkan login terlebih dahulu</div>');
             redirect('C_error_page');
         }
     }
@@ -106,7 +108,7 @@ class C_form_pengaduan extends CI_Controller
             $this->load->view('Rw/Form/form_ubah_agenda', $data);
             $this->load->view('Templates/footer');
         } else {
-            $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Please login first..!</div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Silahkan login terlebih dahulu</div>');
             redirect('C_error_page');
         }
     }

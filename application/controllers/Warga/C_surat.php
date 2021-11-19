@@ -22,14 +22,14 @@ class C_surat extends CI_Controller
     public function index()
     {
         if ($this->session->userdata('ID_Warga') != null) {
-        $this->load->view('Templates/header');
-        $this->load->view('Templates/sidebar_warga');
-        $this->load->view('Warga/v_daftarsurat');
-        $this->load->view('Templates/footer');
-    } else {
-        $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Please login first..!</div>');
-        redirect('C_error_page');
-    }
+            $this->load->view('Templates/header');
+            $this->load->view('Templates/sidebar_warga');
+            $this->load->view('Warga/v_daftarsurat');
+            $this->load->view('Templates/footer');
+        } else {
+            $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Silahkan login terlebih dahulu</div>');
+            redirect('C_error_page');
+        }
     }
 
     public function form_surat_pernyataan_orang_tua_wali()
@@ -40,7 +40,7 @@ class C_surat extends CI_Controller
             $this->load->view('Warga/Form/form_surat_pernyataan_orang_tua_wali');
             $this->load->view('Templates/footer');
         } else {
-            $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Please login first..!</div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Silahkan login terlebih dahulu</div>');
             redirect('C_error_page');
         }
     }

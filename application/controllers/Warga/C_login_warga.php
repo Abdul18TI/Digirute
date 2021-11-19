@@ -38,13 +38,18 @@ class C_login_warga extends CI_Controller
 
         $ifNIK = $this->db->get_where('tb_warga', ['NIK' => $NIK])->row_array();
         $ifUSERNAME = $this->db->get_where('tb_warga', ['Username' => $NIK])->row_array();
-
+        // var_dump($ifNIK);
+        // var_dump($ifUSERNAME);
+        // die();
         if ($ifNIK != null) {
             if (password_verify($password, $ifNIK['Password'])) {
                 $data = [
                     'ID_Warga' => $ifNIK['ID_Warga']
                 ];
                 $this->session->set_userdata($data);
+
+                // var_dump($this->session->userdata('ID_Warga'));
+                // die();
                 redirect('Warga/C_form_pengaduan');
             } else {
                 $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
