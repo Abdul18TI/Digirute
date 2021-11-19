@@ -3,8 +3,8 @@
     <!-- Page Sidebar Start-->
     <header class="main-nav">
         <div class="sidebar-user text-center"><a class="setting-primary" href="javascript:void(0)"><i data-feather="settings"></i></a><img class="img-90 rounded-circle" src="<?= base_url() ?>assets/images/dashboard/1.png" alt="">
-            <div class="badge-bottom"><span class="badge badge-primary">RT</span></div><a href="user-profile.html">
-                <h6 class="mt-3 f-14 f-w-600">Warga</h6>
+            <div class="badge-bottom"><span class="badge badge-primary">Warga</span></div><a href="user-profile.html">
+                <h6 class="mt-3 f-14 f-w-600">Andra Hafiz HSb</h6>
             </a>
             <p class="mb-0 font-roboto">RT 04 RW 01</p>
             <!-- <ul>
@@ -39,7 +39,7 @@
                             <a class="nav-link menu-title link-nav" href="<?= base_url('Warga/C_datapribadi') ?>"><i data-feather="user"></i><span>Data Pribadi</span></a>
                         </li>
                         <li>
-                            <a class="nav-link menu-title link-nav" href="landing-page.html"><i data-feather="users"></i><span>Keluarga</span></a>
+                            <a class="nav-link menu-title link-nav" href="<?= base_url('Warga/C_datapribadi/keluarga') ?>"><i data-feather="users"></i><span>Keluarga</span></a>
                         </li>
                         <li class="sidebar-main-title">
                             <div>

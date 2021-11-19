@@ -24,6 +24,7 @@ class C_datapribadi extends CI_Controller
     {
         parent::__construct();
         $this->load->model('M_warga');
+
         $this->id = $this->session->userdata('ID_Warga');
     }
 
@@ -48,11 +49,24 @@ class C_datapribadi extends CI_Controller
     public function updatehpemail()
     {
         $id = htmlspecialchars($this->input->post('id_mempelai', true));
-        
+
         $data = [
             'Warga_Email' => htmlspecialchars($this->input->post('inp_email', true)),
             'Warga_Email' => htmlspecialchars($this->input->post('inp_email', true))
         ];
         // $this->Mempelai_Model->update($id, $data);
+    }
+
+    public function keluarga()
+    {
+        // echo $this->id;
+        $data['datawarga'] = $this->M_warga->warga_byid($this->id)->result();
+        $data['datakeluarga'] = $this->M_warga->keluarga($data['datawarga'][0]->NoKK)->result();
+        // var_dump($data['datakeluarga']);
+        // die();
+        $this->load->view('Templates/header');
+        $this->load->view('Templates/sidebar_warga');
+        $this->load->view('Warga/v_keluarga', $data);
+        $this->load->view('Templates/footer');
     }
 }
