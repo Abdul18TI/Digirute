@@ -29,6 +29,7 @@ class C_form_pengaduan extends CI_Controller
 
     public function index()
     {
+
         if ($this->session->userdata('ID_Warga') != null) {
             $this->load->view('Templates/header');
             $this->load->view('Templates/sidebar_warga');

@@ -48,10 +48,11 @@ class C_datapribadi extends CI_Controller
     public function updatehpemail()
     {
         $id = htmlspecialchars($this->input->post('id_mempelai', true));
+        
         $data = [
             'Warga_Email' => htmlspecialchars($this->input->post('inp_email', true)),
             'Warga_Email' => htmlspecialchars($this->input->post('inp_email', true))
         ];
-        $this->Mempelai_Model->update($id, $data);
+        // $this->Mempelai_Model->update($id, $data);
     }
 }
