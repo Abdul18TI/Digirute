@@ -31,13 +31,15 @@ class C_datapribadi extends CI_Controller
     public function index()
     {
         if ($this->session->userdata('ID_Warga') != null) {
-
+            $data['datadiri'] = $this->session->userdata('NamaLengkap');
+            $data['rw'] = $this->session->userdata('ID_RW');
+            $data['rt'] = $this->session->userdata('ID_RT');
             $data['datawarga'] = $this->M_warga->warga_byid($this->id)->row();
             $data['datagolongandarah'] = _datagolongandarah();
             $data['datastatus'] = _datastatuskawin();
             $data['dataagama'] = _dataagama();
             $this->load->view('Templates/header');
-            $this->load->view('Templates/sidebar_warga');
+            $this->load->view('Templates/sidebar_warga',$data);
             $this->load->view('Warga/v_detailpribadi', $data);
             $this->load->view('Templates/footer');
         } else {

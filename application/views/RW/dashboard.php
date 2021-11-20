@@ -1,1056 +1,499 @@
-<div class="page-body dashboard-2-main">
+<div class="page-body">
     <!-- Container-fluid starts-->
-    <div class="container-fluid">
+    <div class="container-fluid general-widget">
         <div class="row">
-            <div class="col-xl-6 box-col-12 des-xl-100 invoice-sec">
-                <div class="card">
-                    <div class="card-header">
-                        <div class="header-top d-sm-flex justify-content-between align-items-center">
-                            <h5>Invoice Overview </h5>
-                            <div class="center-content">
-                                <p class="d-sm-flex align-items-center"><span class="m-r-10">$5,56548k</span><i class="toprightarrow-primary fa fa-arrow-up m-r-10"></i>94% More Than Last Year</p>
-                            </div>
-                            <div class="setting-list">
-                                <ul class="list-unstyled setting-option">
-                                    <li>
-                                        <div class="setting-primary"><i class="icon-settings"></i></div>
-                                    </li>
-                                    <li><i class="view-html fa fa-code font-primary"></i></li>
-                                    <li><i class="icofont icofont-maximize full-card font-primary"></i></li>
-                                    <li><i class="icofont icofont-minus minimize-card font-primary"></i></li>
-                                    <li><i class="icofont icofont-refresh reload-card font-primary"></i></li>
-                                    <li><i class="icofont icofont-error close-card font-primary"> </i></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-body p-0">
-                        <div id="timeline-chart"></div>
-                        <div class="code-box-copy">
-                            <button class="code-box-copy__btn btn-clipboard" data-clipboard-target="#invoice-overview" title="Copy"><i class="icofont icofont-copy-alt"></i></button>
-                            <pre><code class="language-html" id="invoice-overview">&lt;div class="card"&gt;
- &lt;div class="card-header"&gt;
-   &lt;div class="header-top d-sm-flex justify-content-between align-items-center"&gt;
-     &lt;h5&gt;Invoice Overview &lt;/h5&gt;
-     &lt;div class="center-content"&gt;
-       &lt;p class="d-sm-flex align-items-center"&gt;
-         &lt;span class="m-r-10"&gt;$5,56548k&lt;/span&gt;
-           &lt;i class="toprightarrow-primary fa fa-arrow-up m-r-10"&gt;&lt;/i&gt;94% More Than Last Year
-       &lt;/p&gt;
-     &lt;/div&gt;
-     &lt;div class="setting-list"&gt;
-       &lt;ul class="list-unstyled setting-option"&gt;
-         &lt;li&gt;
-           &lt;div class="setting-primary"&gt;&lt;i class="icon-settings"&gt;&lt;/i&gt;&lt;/div&gt;
-         &lt;/li&gt;
-         &lt;li&gt;&lt;i class="view-html fa fa-code font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-         &lt;li&gt;&lt;i class="icofont icofont-maximize full-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-         &lt;li&gt;&lt;i class="icofont icofont-minus minimize-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-         &lt;li&gt;&lt;i class="icofont icofont-refresh reload-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-         &lt;li&gt;&lt;i class="icofont icofont-error close-card font-primary"&gt; &lt;/i&gt;&lt;/li&gt;
-       &lt;/ul&gt;
-     &lt;/div&gt;
-   &lt;/div&gt;
- &lt;/div&gt;
- &lt;div class="card-body p-0"&gt;
-   &lt;div id="timeline-chart"&gt;&lt;/div&gt;
- &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-6 box-col-12 des-xl-100 top-dealer-sec">
-                <div class="card">
-                    <div class="card-header pb-0">
-                        <div class="header-top d-sm-flex justify-content-between align-items-center">
-                            <h5>Top Dealer</h5>
-                            <div class="center-content">
-                                <p class="d-sm-flex align-items-center"><span class="m-r-10">845 Dealer</span><i class="toprightarrow-primary fa fa-arrow-up m-r-10"></i>86% More Than Last Year</p>
-                            </div>
-                            <div class="setting-list">
-                                <ul class="list-unstyled setting-option">
-                                    <li>
-                                        <div class="setting-primary"><i class="icon-settings"></i></div>
-                                    </li>
-                                    <li><i class="view-html fa fa-code font-primary"></i></li>
-                                    <li><i class="icofont icofont-maximize full-card font-primary"></i></li>
-                                    <li><i class="icofont icofont-minus minimize-card font-primary"></i></li>
-                                    <li><i class="icofont icofont-refresh reload-card font-primary"></i></li>
-                                    <li><i class="icofont icofont-error close-card font-primary"> </i></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="owl-carousel owl-theme" id="owl-carousel-14">
-                            <div class="item">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="owl-carousel-16 owl-carousel owl-theme">
-                                            <div class="item">
-                                                <div class="card">
-                                                    <div class="top-dealerbox text-center"><img class="card-img-top" src="../assets/images/dashboard-2/1.png" alt="...">
-                                                        <h6>Thompson lee</h6>
-                                                        <p>Malasiya</p><a class="btn btn-rounded" href="social-app.html">View More</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="card">
-                                                    <div class="top-dealerbox text-center"><img class="card-img-top" src="../assets/images/dashboard-2/8.png" alt="...">
-                                                        <h6>Johnson allon</h6>
-                                                        <p>Bangladesh</p><a class="btn btn-rounded" href="social-app.html">View More</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="card">
-                                                    <div class="top-dealerbox text-center"><img class="card-img-top" src="../assets/images/dashboard-2/3.png" alt="...">
-                                                        <h6>williams reed</h6>
-                                                        <p>Belgium</p><a class="btn btn-rounded" href="social-app.html">View More</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="card">
-                                                    <div class="top-dealerbox text-center"><img class="card-img-top" src="../assets/images/dashboard-2/4.png" alt="...">
-                                                        <h6> Jones king</h6>
-                                                        <p>Canada</p><a class="btn btn-rounded" href="social-app.html">View More</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="owl-carousel-16 owl-carousel owl-theme">
-                                            <div class="item">
-                                                <div class="card">
-                                                    <div class="top-dealerbox text-center"><img class="card-img-top" src="../assets/images/dashboard-2/5.png" alt="...">
-                                                        <h6>Brown davis</h6>
-                                                        <p>China</p><a class="btn btn-rounded" href="social-app.html">View More</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="card">
-                                                    <div class="top-dealerbox text-center"><img class="card-img-top" src="../assets/images/dashboard-2/6.png" alt="...">
-                                                        <h6>Wilson Hill</h6>
-                                                        <p>Denmark</p><a class="btn btn-rounded" href="social-app.html">View More</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="card">
-                                                    <div class="top-dealerbox text-center"><img class="card-img-top" src="../assets/images/dashboard-2/7.png" alt="...">
-                                                        <h6>Anderson ban</h6>
-                                                        <p>Japan</p><a class="btn btn-rounded" href="social-app.html">View More</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="card">
-                                                    <div class="top-dealerbox text-center"><img class="card-img-top" src="../assets/images/dashboard-2/8.png" alt="...">
-                                                        <h6>Thompson lee</h6>
-                                                        <p>Malasiya</p><a class="btn btn-rounded" href="social-app.html">View More</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="owl-carousel-16 owl-carousel owl-theme">
-                                            <div class="item">
-                                                <div class="card">
-                                                    <div class="top-dealerbox text-center"><img class="card-img-top" src="../assets/images/dashboard-2/1.png" alt="...">
-                                                        <h6>Thompson lee</h6>
-                                                        <p>Malasiya</p><a class="btn btn-rounded" href="social-app.html">View More</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="card">
-                                                    <div class="top-dealerbox text-center"><img class="card-img-top" src="../assets/images/dashboard-2/8.png" alt="...">
-                                                        <h6>Johnson allon</h6>
-                                                        <p>Bangladesh</p><a class="btn btn-rounded" href="social-app.html">View More</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="card">
-                                                    <div class="top-dealerbox text-center"><img class="card-img-top" src="../assets/images/dashboard-2/3.png" alt="...">
-                                                        <h6>williams reed</h6>
-                                                        <p>Belgium</p><a class="btn btn-rounded" href="social-app.html">View More</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="card">
-                                                    <div class="top-dealerbox text-center"><img class="card-img-top" src="../assets/images/dashboard-2/4.png" alt="...">
-                                                        <h6> Jones king</h6>
-                                                        <p>Canada</p><a class="btn btn-rounded" href="social-app.html">View More</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="owl-carousel-16 owl-carousel owl-theme">
-                                            <div class="item">
-                                                <div class="card">
-                                                    <div class="top-dealerbox text-center"><img class="card-img-top" src="../assets/images/dashboard-2/5.png" alt="...">
-                                                        <h6>Brown davis</h6>
-                                                        <p>China</p><a class="btn btn-rounded" href="social-app.html">View More</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="card">
-                                                    <div class="top-dealerbox text-center"><img class="card-img-top" src="../assets/images/dashboard-2/6.png" alt="...">
-                                                        <h6>Wilson Hill</h6>
-                                                        <p>Denmark</p><a class="btn btn-rounded" href="social-app.html">View More</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="card">
-                                                    <div class="top-dealerbox text-center"><img class="card-img-top" src="../assets/images/dashboard-2/7.png" alt="...">
-                                                        <h6>Anderson ban</h6>
-                                                        <p>Japan</p><a class="btn btn-rounded" href="social-app.html">View More</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="card">
-                                                    <div class="top-dealerbox text-center"><img class="card-img-top" src="../assets/images/dashboard-2/8.png" alt="...">
-                                                        <h6>Thompson lee</h6>
-                                                        <p>Malasiya</p><a class="btn btn-rounded" href="social-app.html">View More</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="owl-carousel-16 owl-carousel owl-theme">
-                                            <div class="item">
-                                                <div class="card">
-                                                    <div class="top-dealerbox text-center"><img class="card-img-top" src="../assets/images/dashboard-2/1.png" alt="...">
-                                                        <h6>Thompson lee</h6>
-                                                        <p>Malasiya</p><a class="btn btn-rounded" href="social-app.html">View More</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="card">
-                                                    <div class="top-dealerbox text-center"><img class="card-img-top" src="../assets/images/dashboard-2/8.png" alt="...">
-                                                        <h6>Johnson allon</h6>
-                                                        <p>Bangladesh</p><a class="btn btn-rounded" href="social-app.html">View More</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="card">
-                                                    <div class="top-dealerbox text-center"><img class="card-img-top" src="../assets/images/dashboard-2/3.png" alt="...">
-                                                        <h6>williams reed</h6>
-                                                        <p>Belgium</p><a class="btn btn-rounded" href="social-app.html">View More</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="card">
-                                                    <div class="top-dealerbox text-center"><img class="card-img-top" src="../assets/images/dashboard-2/4.png" alt="...">
-                                                        <h6> Jones king</h6>
-                                                        <p>Canada</p><a class="btn btn-rounded" href="social-app.html">View More</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="owl-carousel-16 owl-carousel owl-theme">
-                                            <div class="item">
-                                                <div class="card">
-                                                    <div class="top-dealerbox text-center"><img class="card-img-top" src="../assets/images/dashboard-2/5.png" alt="...">
-                                                        <h6>Brown davis</h6>
-                                                        <p>China</p><a class="btn btn-rounded" href="social-app.html">View More</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="card">
-                                                    <div class="top-dealerbox text-center"><img class="card-img-top" src="../assets/images/dashboard-2/6.png" alt="...">
-                                                        <h6>Wilson Hill</h6>
-                                                        <p>Denmark</p><a class="btn btn-rounded" href="social-app.html">View More</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="card">
-                                                    <div class="top-dealerbox text-center"><img class="card-img-top" src="../assets/images/dashboard-2/7.png" alt="...">
-                                                        <h6>Anderson ban</h6>
-                                                        <p>Japan</p><a class="btn btn-rounded" href="social-app.html">View More</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="card">
-                                                    <div class="top-dealerbox text-center"><img class="card-img-top" src="../assets/images/dashboard-2/8.png" alt="...">
-                                                        <h6>Thompson lee</h6>
-                                                        <p>Malasiya</p><a class="btn btn-rounded" href="social-app.html">View More</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="owl-carousel-16 owl-carousel owl-theme">
-                                            <div class="item">
-                                                <div class="card">
-                                                    <div class="top-dealerbox text-center"><img class="card-img-top" src="../assets/images/dashboard-2/1.png" alt="...">
-                                                        <h6>Thompson lee</h6>
-                                                        <p>Malasiya</p><a class="btn btn-rounded" href="social-app.html">View More</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="card">
-                                                    <div class="top-dealerbox text-center"><img class="card-img-top" src="../assets/images/dashboard-2/8.png" alt="...">
-                                                        <h6>Johnson allon</h6>
-                                                        <p>Bangladesh</p><a class="btn btn-rounded" href="social-app.html">View More</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="card">
-                                                    <div class="top-dealerbox text-center"><img class="card-img-top" src="../assets/images/dashboard-2/3.png" alt="...">
-                                                        <h6>williams reed</h6>
-                                                        <p>Belgium</p><a class="btn btn-rounded" href="social-app.html">View More</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="card">
-                                                    <div class="top-dealerbox text-center"><img class="card-img-top" src="../assets/images/dashboard-2/4.png" alt="...">
-                                                        <h6> Jones king</h6>
-                                                        <p>Canada</p><a class="btn btn-rounded" href="social-app.html">View More</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="owl-carousel-16 owl-carousel owl-theme">
-                                            <div class="item">
-                                                <div class="card">
-                                                    <div class="top-dealerbox text-center"><img class="card-img-top" src="../assets/images/dashboard-2/5.png" alt="...">
-                                                        <h6>Brown davis</h6>
-                                                        <p>China</p><a class="btn btn-rounded" href="social-app.html">View More</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="card">
-                                                    <div class="top-dealerbox text-center"><img class="card-img-top" src="../assets/images/dashboard-2/6.png" alt="...">
-                                                        <h6>Wilson Hill</h6>
-                                                        <p>Denmark</p><a class="btn btn-rounded" href="social-app.html">View More</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="card">
-                                                    <div class="top-dealerbox text-center"><img class="card-img-top" src="../assets/images/dashboard-2/7.png" alt="...">
-                                                        <h6>Anderson ban</h6>
-                                                        <p>Japan</p><a class="btn btn-rounded" href="social-app.html">View More</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="card">
-                                                    <div class="top-dealerbox text-center"><img class="card-img-top" src="../assets/images/dashboard-2/8.png" alt="...">
-                                                        <h6>Thompson lee</h6>
-                                                        <p>Malasiya</p><a class="btn btn-rounded" href="social-app.html">View More</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="code-box-copy">
-                            <button class="code-box-copy__btn btn-clipboard" data-clipboard-target="#top-dealer" title="Copy"><i class="icofont icofont-copy-alt"></i></button>
-                            <pre><code class="language-html" id="top-dealer">&lt;div class="card"&gt;
- &lt;div class="card-header pb-0"&gt;
-   &lt;div class="header-top d-sm-flex justify-content-between align-items-center"&gt;
-       &lt;h5&gt;Top Dealer&lt;/h5&gt;
-       &lt;div class="center-content"&gt; 
-         &lt;p class="d-sm-flex align-items-center"&gt;&lt;span class="m-r-10"&gt;845 Dealer&lt;/span&gt;&lt;i class="toprightarrow-primary fa fa-arrow-up m-r-10"&gt;&lt;/i&gt;86% More Than Last Year&lt;/p&gt;
-       &lt;/div&gt;
-       &lt;div class="setting-list"&gt;
-           &lt;ul class="list-unstyled setting-option"&gt;
-             &lt;li&gt;
-               &lt;div class="setting-primary"&gt;&lt;i class="icon-settings"&gt;&lt;/i&gt;&lt;/div&gt;
-             &lt;/li&gt;
-             &lt;li&gt;&lt;i class="view-html fa fa-code font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-             &lt;li&gt;&lt;i class="icofont icofont-maximize full-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-             &lt;li&gt;&lt;i class="icofont icofont-minus minimize-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-             &lt;li&gt;&lt;i class="icofont icofont-refresh reload-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-             &lt;li&gt;&lt;i class="icofont icofont-error close-card font-primary"&gt; &lt;/i&gt;&lt;/li&gt;
-            &lt;/ul&gt;
-       &lt;/div&gt;
-   &lt;/div&gt;
- &lt;/div&gt;
- &lt;div class="card-body"&gt;
-     &lt;div id="owl-carousel-14" class="owl-carousel owl-theme"&gt;
-       &lt;div class="item"&gt;
-         &lt;div class="row"&gt;
-           &lt;div class="col-sm-3"&gt;
-               &lt;div class="card"&gt;
-                 &lt;div class="top-dealerbox text-center"&gt;&lt;img class="card-img-top" src="../assets/images/dashboard-2/1.png" alt="..."&gt;
-                   &lt;h6&gt;Thompson lee&lt;/h6&gt;
-                   &lt;p&gt;Malasiya&lt;/p&gt;&lt;a class="btn btn-rounded" href="javascript:void(0)"&gt;View More&lt;/a&gt;
-                 &lt;/div&gt;
-               &lt;/div&gt;
-           &lt;/div&gt;
-           &lt;div class="col-sm-3"&gt;
-               &lt;div class="card"&gt;
-                 &lt;div class="top-dealerbox text-center"&gt;&lt;img class="card-img-top" src="../assets/images/dashboard-2/8.png" alt="..."&gt;
-                   &lt;h6&gt;johnson allon&lt;/h6&gt;
-                   &lt;p&gt;bangladeshlt&lt;/p&gt;&lt;a class="btn btn-rounded" href="javascript:void(0)"&gt;View More&lt;/a&gt;
-                 &lt;/div&gt;
-               &lt;/div&gt;
-           &lt;/div&gt;
-           &lt;div class="col-sm-3"&gt;
-               &lt;div class="card"&gt;
-                 &lt;div class="top-dealerbox text-center"&gt;&lt;img class="card-img-top" src="../assets/images/dashboard-2/3.png" alt="..."&gt;
-                   &lt;h6&gt;williams reed&lt;/h6&gt;
-                   &lt;p&gt;Belgium&lt;/p&gt;&lt;a class="btn btn-rounded" href="javascript:void(0)"&gt;View More&lt;/a&gt;
-                 &lt;/div&gt;
-               &lt;/div&gt;
-           &lt;/div&gt;
-           &lt;div class="col-sm-3"&gt;
-               &lt;div class="card"&gt;
-                 &lt;div class="top-dealerbox text-center"&gt;&lt;img class="card-img-top" src="../assets/images/dashboard-2/3.png" alt="..."&gt;
-                   &lt;h6&gt; Jones king&lt;/h6&gt;
-                   &lt;p&gt;Canada&lt;/p&gt;&lt;a class="btn btn-rounded" href="javascript:void(0)"&gt;View More&lt;/a&gt;
-                 &lt;/div&gt;
-               &lt;/div&gt;
-           &lt;/div&gt;
-           &lt;div class="col-sm-3"&gt;
-               &lt;div class="card"&gt;
-                 &lt;div class="top-dealerbox text-center"&gt;&lt;img class="card-img-top" src="../assets/images/dashboard-2/5.png" alt="..."&gt;
-                   &lt;h6&gt;Brown davis&lt;/h6&gt;
-                   &lt;p&gt;China&lt;/p&gt;&lt;a class="btn btn-rounded" href="javascript:void(0)"&gt;View More&lt;/a&gt;
-                 &lt;/div&gt;
-               &lt;/div&gt;
-           &lt;/div&gt;
-           &lt;div class="col-sm-3"&gt;
-               &lt;div class="card"&gt;
-                 &lt;div class="top-dealerbox text-center"&gt;&lt;img class="card-img-top" src="../assets/images/dashboard-2/6.png" alt="..."&gt;
-                   &lt;h6&gt;Wilson Hill&lt;/h6&gt;
-                   &lt;p&gt;Denmark&lt;/p&gt;&lt;a class="btn btn-rounded" href="javascript:void(0)"&gt;View More&lt;/a&gt;
-                 &lt;/div&gt;
-               &lt;/div&gt;
-           &lt;/div&gt;
-           &lt;div class="col-sm-3"&gt;
-               &lt;div class="card"&gt;
-                 &lt;div class="top-dealerbox text-center"&gt;&lt;img class="card-img-top" src="../assets/images/dashboard-2/7.png" alt="..."&gt;
-                   &lt;h6&gt;Anderson ban&lt;/h6&gt;
-                   &lt;p&gt;Japan&lt;/p&gt;&lt;a class="btn btn-rounded" href="javascript:void(0)"&gt;View More&lt;/a&gt;
-                 &lt;/div&gt;
-               &lt;/div&gt;
-           &lt;/div&gt;
-           &lt;div class="col-sm-3"&gt;
-               &lt;div class="card"&gt;
-                 &lt;div class="top-dealerbox text-center"&gt;&lt;img class="card-img-top" src="../assets/images/dashboard-2/8.png" alt="..."&gt;
-                   &lt;h6&gt;Thompson lee&lt;/h6&gt;
-                   &lt;p&gt;Malasiya&lt;/p&gt;&lt;a class="btn btn-rounded" href="javascript:void(0)"&gt;View More&lt;/a&gt;
-                 &lt;/div&gt;
-               &lt;/div&gt;
-           &lt;/div&gt;
-         &lt;/div&gt;
-       &lt;/div&gt;
-       &lt;div class="item"&gt;
-         &lt;div class="row"&gt;
-           &lt;div class="col-sm-3"&gt;
-               &lt;div class="card"&gt;
-                 &lt;div class="top-dealerbox text-center"&gt;&lt;img class="card-img-top" src="../assets/images/dashboard-2/1.png" alt="..."&gt;
-                   &lt;h6&gt;Thompson lee&lt;/h6&gt;
-                   &lt;p&gt;Malasiya&lt;/p&gt;&lt;a class="btn btn-rounded" href="javascript:void(0)"&gt;View More&lt;/a&gt;
-                 &lt;/div&gt;
-               &lt;/div&gt;
-           &lt;/div&gt;
-           &lt;div class="col-sm-3"&gt;
-               &lt;div class="card"&gt;
-                 &lt;div class="top-dealerbox text-center"&gt;&lt;img class="card-img-top" src="../assets/images/dashboard-2/8.png" alt="..."&gt;
-                   &lt;h6&gt;johnson allon&lt;/h6&gt;
-                   &lt;p&gt;bangladeshlt&lt;/p&gt;&lt;a class="btn btn-rounded" href="javascript:void(0)"&gt;View More&lt;/a&gt;
-                 &lt;/div&gt;
-               &lt;/div&gt;
-           &lt;/div&gt;
-           &lt;div class="col-sm-3"&gt;
-               &lt;div class="card"&gt;
-                 &lt;div class="top-dealerbox text-center"&gt;&lt;img class="card-img-top" src="../assets/images/dashboard-2/3.png" alt="..."&gt;
-                   &lt;h6&gt;williams reed&lt;/h6&gt;
-                   &lt;p&gt;Belgium&lt;/p&gt;&lt;a class="btn btn-rounded" href="javascript:void(0)"&gt;View More&lt;/a&gt;
-                 &lt;/div&gt;
-               &lt;/div&gt;
-           &lt;/div&gt;
-           &lt;div class="col-sm-3"&gt;
-               &lt;div class="card"&gt;
-                 &lt;div class="top-dealerbox text-center"&gt;&lt;img class="card-img-top" src="../assets/images/dashboard-2/3.png" alt="..."&gt;
-                   &lt;h6&gt; Jones king&lt;/h6&gt;
-                   &lt;p&gt;Canada&lt;/p&gt;&lt;a class="btn btn-rounded" href="javascript:void(0)"&gt;View More&lt;/a&gt;
-                 &lt;/div&gt;
-               &lt;/div&gt;
-           &lt;/div&gt;
-           &lt;div class="col-sm-3"&gt;
-               &lt;div class="card"&gt;
-                 &lt;div class="top-dealerbox text-center"&gt;&lt;img class="card-img-top" src="../assets/images/dashboard-2/5.png" alt="..."&gt;
-                   &lt;h6&gt;Brown davis&lt;/h6&gt;
-                   &lt;p&gt;China&lt;/p&gt;&lt;a class="btn btn-rounded" href="javascript:void(0)"&gt;View More&lt;/a&gt;
-                 &lt;/div&gt;
-               &lt;/div&gt;
-           &lt;/div&gt;
-           &lt;div class="col-sm-3"&gt;
-               &lt;div class="card"&gt;
-                 &lt;div class="top-dealerbox text-center"&gt;&lt;img class="card-img-top" src="../assets/images/dashboard-2/6.png" alt="..."&gt;
-                   &lt;h6&gt;Wilson Hill&lt;/h6&gt;
-                   &lt;p&gt;Denmark&lt;/p&gt;&lt;a class="btn btn-rounded" href="javascript:void(0)"&gt;View More&lt;/a&gt;
-                 &lt;/div&gt;
-               &lt;/div&gt;
-           &lt;/div&gt;
-           &lt;div class="col-sm-3"&gt;
-               &lt;div class="card"&gt;
-                 &lt;div class="top-dealerbox text-center"&gt;&lt;img class="card-img-top" src="../assets/images/dashboard-2/7.png" alt="..."&gt;
-                   &lt;h6&gt;Anderson ban&lt;/h6&gt;
-                   &lt;p&gt;Japan&lt;/p&gt;&lt;a class="btn btn-rounded" href="javascript:void(0)"&gt;View More&lt;/a&gt;
-                 &lt;/div&gt;
-               &lt;/div&gt;
-           &lt;/div&gt;
-           &lt;div class="col-sm-3"&gt;
-               &lt;div class="card"&gt;
-                 &lt;div class="top-dealerbox text-center"&gt;&lt;img class="card-img-top" src="../assets/images/dashboard-2/8.png" alt="..."&gt;
-                   &lt;h6&gt;Thompson lee&lt;/h6&gt;
-                   &lt;p&gt;Malasiya&lt;/p&gt;&lt;a class="btn btn-rounded" href="javascript:void(0)"&gt;View More&lt;/a&gt;
-                 &lt;/div&gt;
-               &lt;/div&gt;
-           &lt;/div&gt;
-         &lt;/div&gt;
-       &lt;/div&gt;
-       &lt;div class="item"&gt;
-         &lt;div class="row"&gt;
-           &lt;div class="col-sm-3"&gt;
-               &lt;div class="card"&gt;
-                 &lt;div class="top-dealerbox text-center"&gt;&lt;img class="card-img-top" src="../assets/images/dashboard-2/1.png" alt="..."&gt;
-                   &lt;h6&gt;Thompson lee&lt;/h6&gt;
-                   &lt;p&gt;Malasiya&lt;/p&gt;&lt;a class="btn btn-rounded" href="javascript:void(0)"&gt;View More&lt;/a&gt;
-                 &lt;/div&gt;
-               &lt;/div&gt;
-           &lt;/div&gt;
-           &lt;div class="col-sm-3"&gt;
-               &lt;div class="card"&gt;
-                 &lt;div class="top-dealerbox text-center"&gt;&lt;img class="card-img-top" src="../assets/images/dashboard-2/8.png" alt="..."&gt;
-                   &lt;h6&gt;johnson allon&lt;/h6&gt;
-                   &lt;p&gt;bangladeshlt&lt;/p&gt;&lt;a class="btn btn-rounded" href="javascript:void(0)"&gt;View More&lt;/a&gt;
-                 &lt;/div&gt;
-               &lt;/div&gt;
-           &lt;/div&gt;
-           &lt;div class="col-sm-3"&gt;
-               &lt;div class="card"&gt;
-                 &lt;div class="top-dealerbox text-center"&gt;&lt;img class="card-img-top" src="../assets/images/dashboard-2/3.png" alt="..."&gt;
-                   &lt;h6&gt;williams reed&lt;/h6&gt;
-                   &lt;p&gt;Belgium&lt;/p&gt;&lt;a class="btn btn-rounded" href="javascript:void(0)"&gt;View More&lt;/a&gt;
-                 &lt;/div&gt;
-               &lt;/div&gt;
-           &lt;/div&gt;
-           &lt;div class="col-sm-3"&gt;
-               &lt;div class="card"&gt;
-                 &lt;div class="top-dealerbox text-center"&gt;&lt;img class="card-img-top" src="../assets/images/dashboard-2/3.png" alt="..."&gt;
-                   &lt;h6&gt; Jones king&lt;/h6&gt;
-                   &lt;p&gt;Canada&lt;/p&gt;&lt;a class="btn btn-rounded" href="javascript:void(0)"&gt;View More&lt;/a&gt;
-                 &lt;/div&gt;
-               &lt;/div&gt;
-           &lt;/div&gt;
-           &lt;div class="col-sm-3"&gt;
-               &lt;div class="card"&gt;
-                 &lt;div class="top-dealerbox text-center"&gt;&lt;img class="card-img-top" src="../assets/images/dashboard-2/5.png" alt="..."&gt;
-                   &lt;h6&gt;Brown davis&lt;/h6&gt;
-                   &lt;p&gt;China&lt;/p&gt;&lt;a class="btn btn-rounded" href="javascript:void(0)"&gt;View More&lt;/a&gt;
-                 &lt;/div&gt;
-               &lt;/div&gt;
-           &lt;/div&gt;
-           &lt;div class="col-sm-3"&gt;
-               &lt;div class="card"&gt;
-                 &lt;div class="top-dealerbox text-center"&gt;&lt;img class="card-img-top" src="../assets/images/dashboard-2/6.png" alt="..."&gt;
-                   &lt;h6&gt;Wilson Hill&lt;/h6&gt;
-                   &lt;p&gt;Denmark&lt;/p&gt;&lt;a class="btn btn-rounded" href="javascript:void(0)"&gt;View More&lt;/a&gt;
-                 &lt;/div&gt;
-               &lt;/div&gt;
-           &lt;/div&gt;
-           &lt;div class="col-sm-3"&gt;
-               &lt;div class="card"&gt;
-                 &lt;div class="top-dealerbox text-center"&gt;&lt;img class="card-img-top" src="../assets/images/dashboard-2/7.png" alt="..."&gt;
-                   &lt;h6&gt;Anderson ban&lt;/h6&gt;
-                   &lt;p&gt;Japan&lt;/p&gt;&lt;a class="btn btn-rounded" href="javascript:void(0)"&gt;View More&lt;/a&gt;
-                 &lt;/div&gt;
-               &lt;/div&gt;
-           &lt;/div&gt;
-           &lt;div class="col-sm-3"&gt;
-               &lt;div class="card"&gt;
-                 &lt;div class="top-dealerbox text-center"&gt;&lt;img class="card-img-top" src="../assets/images/dashboard-2/8.png" alt="..."&gt;
-                   &lt;h6&gt;Thompson lee&lt;/h6&gt;
-                   &lt;p&gt;Malasiya&lt;/p&gt;&lt;a class="btn btn-rounded" href="javascript:void(0)"&gt;View More&lt;/a&gt;
-                 &lt;/div&gt;
-               &lt;/div&gt;
-           &lt;/div&gt;
-         &lt;/div&gt;
-       &lt;/div&gt;
-     &lt;/div&gt;
-   &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-8 col-md- des-xl-100 box-col-12">
-                <div class="row">
-                    <div class="col-xl-3 col-sm-6 box-col-3 chart_data_right">
-                        <div class="card income-card card-secondary">
-                            <div class="card-body align-items-center">
-                                <div class="round-progress knob-block text-center">
-                                    <div class="progress-circle">
-                                        <input class="knob1" data-width="10" data-height="70" data-thickness=".3" data-angleoffset="0" data-linecap="round" data-fgcolor="#ba895d" data-bgcolor="#e0e9ea" value="60">
-                                    </div>
-                                    <h5>$9,84,235</h5>
-                                    <p>Our Annual Income</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6 box-col-3 chart_data_right second">
-                        <div class="card income-card card-primary">
-                            <div class="card-body">
-                                <div class="round-progress knob-block text-center">
-                                    <div class="progress-circle">
-                                        <input class="knob1" data-width="50" data-height="70" data-thickness=".3" data-fgcolor="#24695c" data-linecap="round" data-angleoffset="0" value="60">
-                                    </div>
-                                    <h5>$4,55,462</h5>
-                                    <p>Our Annual Income</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 box-col-6 top-sell-sec">
-                        <div class="card">
-                            <div class="card-header pb-0">
-                                <div class="header-top d-sm-flex justify-content-between align-items-center">
-                                    <h5>Top Selling Product</h5>
-                                    <div class="center-content">
-                                        <ul class="week-date">
-                                            <li class="font-primary">Today</li>
-                                            <li>Month</li>
-                                        </ul>
-                                    </div>
-                                    <div class="setting-list">
-                                        <ul class="list-unstyled setting-option">
-                                            <li>
-                                                <div class="setting-primary"><i class="icon-settings"></i></div>
-                                            </li>
-                                            <li><i class="view-html fa fa-code font-primary"></i></li>
-                                            <li><i class="icofont icofont-maximize full-card font-primary"></i></li>
-                                            <li><i class="icofont icofont-minus minimize-card font-primary"></i></li>
-                                            <li><i class="icofont icofont-refresh reload-card font-primary"></i></li>
-                                            <li><i class="icofont icofont-error close-card font-primary"></i></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div class="media"><img class="img-fluid" src="../assets/images/dashboard-2/9.png" alt="">
-                                    <div class="media-body"><a href="product-page.html">
-                                            <h6>Trending Nike shoes</h6>
-                                        </a>
-                                        <p>New Offer Only $126.00</p>
-                                        <ul class="rating-star">
-                                            <li> <i class="fa fa-star"></i></li>
-                                            <li> <i class="fa fa-star"></i></li>
-                                            <li> <i class="fa fa-star"></i></li>
-                                            <li> <i class="fa fa-star"></i></li>
-                                            <li> <i class="fa fa-star"></i></li>
-                                        </ul>
-                                    </div><a class="btn btn-iconsolid" href="cart.html"><i class="icon-bag"></i></a>
-                                </div>
-                                <div class="code-box-copy">
-                                    <button class="code-box-copy__btn btn-clipboard" data-clipboard-target="#top-selling-product" title="Copy"><i class="icofont icofont-copy-alt"></i></button>
-                                    <pre><code class="language-html" id="top-selling-product">&lt;div class="card"&gt;
-   &lt;div class="card-header pb-0"&gt;
-     &lt;div class="header-top d-sm-flex justify-content-between align-items-center"&gt;
-       &lt;h5&gt;Top Selling Product&lt;/h5&gt;
-       &lt;div class="center-content"&gt;
-         &lt;ul class="week-date"&gt;
-           &lt;li class="font-primary"&gt;Today&lt;/li&gt;
-           &lt;li&gt;Month&lt;/li&gt;
-         &lt;/ul&gt;
-       &lt;/div&gt;
-     &lt;div class="setting-list"&gt;
-       &lt;ul class="list-unstyled setting-option"&gt;
-         &lt;li&gt;
-           &lt;div class="setting-primary"&gt;&lt;i class="icon-settings"&gt;&lt;/i&gt;&lt;/div&gt;
-         &lt;/li&gt;
-         &lt;li&gt;&lt;i class="view-html fa fa-code font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-         &lt;li&gt;&lt;i class="icofont icofont-maximize full-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-         &lt;li&gt;&lt;i class="icofont icofont-minus minimize-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-         &lt;li&gt;&lt;i class="icofont icofont-refresh reload-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-         &lt;li&gt;&lt;i class="icofont icofont-error close-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-       &lt;/ul&gt;
-     &lt;/div&gt;
-   &lt;/div&gt;
-   &lt;/div&gt;
-   &lt;div class="card-body"&gt;
-     &lt;div class="media"&gt;&lt;img class="img-fluid" alt="" src="../assets/images/dashboard-2/9.png"&gt;
-       &lt;div class="media-body"&gt;
-         &lt;h6&gt;Trending Nike shoes&lt;/h6&gt;
-         &lt;p&gt;New Offer Only $126.00&lt;/p&gt;
-         &lt;ul class="rating-star"&gt;
-           &lt;li&gt; &lt;i class="fa fa-star"&gt;&lt;/i&gt;&lt;/li&gt;
-           &lt;li&gt; &lt;i class="fa fa-star"&gt;&lt;/i&gt;&lt;/li&gt;
-           &lt;li&gt; &lt;i class="fa fa-star"&gt;&lt;/i&gt;&lt;/li&gt;
-           &lt;li&gt; &lt;i class="fa fa-star"&gt;&lt;/i&gt;&lt;/li&gt;
-           &lt;li&gt; &lt;i class="fa fa-star"&gt;&lt;/i&gt;&lt;/li&gt;
-         &lt;/ul&gt;
-       &lt;/div&gt;
-       &lt;a class="btn btn-iconsolid" href="javascript:void(0)"&gt;&lt;i class="icon-bag"&gt;&lt;/i&gt;&lt;/a&gt;
-     &lt;/div&gt; 
-&lt;/div&gt;                                                </code></pre>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 box-col-6">
-                        <div class="card">
-                            <div class="card-header">
-                                <div class="header-top d-sm-flex justify-content-between align-items-center">
-                                    <h5>Total Selling</h5>
-                                    <div class="center-content">
-                                        <ul class="week-date">
-                                            <li class="font-primary">Today</li>
-                                            <li>Month </li>
-                                        </ul>
-                                    </div>
-                                    <div class="setting-list">
-                                        <ul class="list-unstyled setting-option">
-                                            <li>
-                                                <div class="setting-primary"><i class="icon-settings"></i></div>
-                                            </li>
-                                            <li><i class="view-html fa fa-code font-primary"></i></li>
-                                            <li><i class="icofont icofont-maximize full-card font-primary"></i></li>
-                                            <li><i class="icofont icofont-minus minimize-card font-primary"></i></li>
-                                            <li><i class="icofont icofont-refresh reload-card font-primary"></i></li>
-                                            <li><i class="icofont icofont-error close-card font-primary"></i></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body chart-block p-0">
-                                <div id="chart-dash-2-line"></div>
-                                <div class="code-box-copy">
-                                    <button class="code-box-copy__btn btn-clipboard" data-clipboard-target="#total-selling" title="Copy"><i class="icofont icofont-copy-alt"></i></button>
-                                    <pre><code class="language-html" id="total-selling">  &lt;div class="card"&gt;
-   &lt;div class="card-header pb-0"&gt;
-     &lt;div class="header-top d-sm-flex justify-content-between align-items-center"&gt;
-       &lt;h5&gt;Total Selling&lt;/h5&gt;
-       &lt;div class="center-content"&gt;
-         &lt;ul class="week-date"&gt;
-           &lt;li class="font-primary"&gt;Today&lt;/li&gt;
-           &lt;li&gt;Month&lt;/li&gt;
-         &lt;/ul&gt;
-       &lt;/div&gt;
-     &lt;div class="setting-list"&gt;
-       &lt;ul class="list-unstyled setting-option"&gt;
-         &lt;li&gt;
-           &lt;div class="setting-primary"&gt;&lt;i class="icon-settings"&gt;&lt;/i&gt;&lt;/div&gt;
-         &lt;/li&gt;
-         &lt;li&gt;&lt;i class="view-html fa fa-code font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-         &lt;li&gt;&lt;i class="icofont icofont-maximize full-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-         &lt;li&gt;&lt;i class="icofont icofont-minus minimize-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-         &lt;li&gt;&lt;i class="icofont icofont-refresh reload-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-         &lt;li&gt;&lt;i class="icofont icofont-error close-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-       &lt;/ul&gt;
-     &lt;/div&gt;
-   &lt;/div&gt;
-   &lt;/div&gt;
-   &lt;div class="card-body"&gt;
-      &lt;div id="chart-dash-2-line"&gt;
-      &lt;/div&gt;
-   &lt;/div&gt; 
-&lt;/div&gt;        </code></pre>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 box-col-6">
-                        <div class="card target-sec">
-                            <div class="card-header pb-0">
-                                <ul class="target-list">
-                                    <li>
-                                        <h6>Our Target</h6>
-                                        <p>Completed</p><span>$687.780</span>
-                                    </li>
-                                    <li class="bg-primary">
-                                        <h6>We Archieve</h6>
-                                        <p>Completed in After 3 Hours</p><span>$687.780k </span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="card-body p-0">
-                                <div class="traget-img-sec"></div>
-                                <div class="animat-block"><i class="fa fa-times close1"></i><i class="fa fa-times close2"></i><i class="fa fa-times close3"></i>
-                                    <div class="circle1"></div>
-                                    <div class="circle2"></div>
-                                    <div class="circle3"></div>
-                                </div>
+            <div class="col-sm-6 col-xl-3 col-lg-6">
+                <div class="card o-hidden border-0">
+                    <div class="bg-primary b-r-4 card-body">
+                        <div class="media static-top-widget">
+                            <div class="align-self-center text-center"><i data-feather="user"></i></div>
+                            <div class="media-body"><span class="m-0">Jumlah warga</span>
+                                <h4 class="mb-0 counter">6659</h4><i class="icon-bg" data-feather="user"></i>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-xl-4 des-xl-50 box-col-12 activity-sec chart_data_left">
-                <div class="card">
-                    <div class="card-header">
-                        <div class="header-top d-sm-flex justify-content-between align-items-center">
-                            <h5 class="m-0">Activity Timeline</h5>
-                            <div class="center-content">
-                                <p>Yearly User 24.65k</p>
+            <div class="col-sm-6 col-xl-3 col-lg-6">
+                <div class="card o-hidden border-0">
+                    <div class="bg-danger b-r-4 card-body">
+                        <div class="media static-top-widget">
+                            <div class="align-self-center text-center"><i data-feather="sun"></i></div>
+                            <div class="media-body"><span class="m-0">Covid-19</span>
+                                <h4 class="mb-0 counter">9856</h4><i class="icon-bg" data-feather="sun"></i>
                             </div>
-                            <div class="setting-list">
-                                <ul class="list-unstyled setting-option">
-                                    <li>
-                                        <div class="setting-primary"><i class="icon-settings"></i></div>
-                                    </li>
-                                    <li><i class="view-html fa fa-code font-primary"></i></li>
-                                    <li><i class="icofont icofont-maximize full-card font-primary"></i></li>
-                                    <li><i class="icofont icofont-minus minimize-card font-primary"></i></li>
-                                    <li><i class="icofont icofont-refresh reload-card font-primary"></i></li>
-                                    <li><i class="icofont icofont-error close-card font-primary"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="chart-main activity-timeline update-line">
-                            <div class="media">
-                                <div class="activity-line"></div>
-                                <div class="activity-dot-primary"></div>
-                                <div class="media-body d-block">
-                                    <h6> <span class="font-primary">20-04-2021</span>Today </h6>
-                                    <h5>Updated Product<i class="fa fa-circle circle-dot-primary pull-right"></i></h5>
-                                    <p>Quisque a consequat ante Sit amet magna at volutapt.</p>
-                                </div>
-                            </div>
-                            <div class="media">
-                                <div class="activity-dot-primary"></div>
-                                <div class="media-body d-block">
-                                    <h6> <span class="font-primary">20-04-20121</span>Today<span class="badge pill-badge-primary m-l-10">new </span></h6>
-                                    <h5>James just like your product <i class="fa fa-circle circle-dot-primary pull-right"></i></h5>
-                                    <p>Quisque a consequat ante Sit amet magna at volutapt.</p>
-                                    <ul class="timeline-pro">
-                                        <li> <img class="img-fluid" src="../assets/images/dashboard-2/11.png" alt="Product-1"></li>
-                                        <li> <img class="img-fluid" src="../assets/images/dashboard-2/10.png" alt="Product-2"></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="media">
-                                <div class="activity-dot-primary"></div>
-                                <div class="media-body d-block">
-                                    <h6> <span class="font-primary">20-04-20121</span>Today</h6>
-                                    <h5>Jihan Doe just like your product<i class="fa fa-circle circle-dot-primary pull-right"></i>
-                                    </h5>
-                                    <p>Vestibulum nec mi suscipit, dapibus purus ane.</p>
-                                </div>
-                            </div>
-                            <div class="media">
-                                <div class="media-body d-block">
-                                    <div class="tomorrow-sec">
-                                        <p>Tomorrow</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="media">
-                                <div class="activity-dot-primary"></div>
-                                <div class="media-body d-block">
-                                    <h6> <span class="font-primary">20-04-20121</span>Tomorrow</h6>
-                                    <h5>Today Total Revenue<i class="fa fa-circle circle-dot-primary pull-right"></i></h5>
-                                    <p>Quisque a consequat ante Sit amet magna at volutapt.</p>
-                                </div>
-                            </div>
-                            <div class="media">
-                                <div class="activity-dot-primary"></div>
-                                <div class="media-body d-block">
-                                    <div class="hospital-small-chart">
-                                        <div id="column-chart"> </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="code-box-copy">
-                            <button class="code-box-copy__btn btn-clipboard" data-clipboard-target="#activity-timeline" title="Copy"><i class="icofont icofont-copy-alt"></i></button>
-                            <pre><code class="language-html" id="activity-timeline">   &lt;div class="card"&gt;
- &lt;div class="card-header"&gt;
-   &lt;div class="header-top d-sm-flex justify-content-between align-items-center"&gt;
-     &lt;h5 class="m-0"&gt;Activity Timeline&lt;/h5&gt;
-     &lt;div class="center-content"&gt;
-       &lt;p&gt;Yearly User 24.65k&lt;/p&gt;
-     &lt;/div&gt;
-     &lt;div class="setting-list"&gt;
-       &lt;ul class="list-unstyled setting-option"&gt;
-           &lt;li&gt;
-             &lt;div class="setting-primary"&gt;&lt;i class="icon-settings"&gt;&lt;/i&gt;&lt;/div&gt;
-           &lt;/li&gt;
-           &lt;li&gt;&lt;i class="view-html fa fa-code font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-           &lt;li&gt;&lt;i class="icofont icofont-maximize full-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-           &lt;li&gt;&lt;i class="icofont icofont-minus minimize-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-           &lt;li&gt;&lt;i class="icofont icofont-refresh reload-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-           &lt;li&gt;&lt;i class="icofont icofont-error close-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-       &lt;/ul&gt;
-     &lt;/div&gt;
-   &lt;/div&gt;
- &lt;/div&gt;
- &lt;div class="card-body"&gt;
-   &lt;div class="chart-main activity-timeline update-line"&gt;
-     &lt;div class="media"&gt;
-       &lt;div class="activity-line"&gt;&lt;/div&gt;
-       &lt;div class="activity-dot-primary"&gt;&lt;/div&gt;
-       &lt;div class="media-body d-block"&gt;
-         &lt;h6&gt; &lt;span class="font-primary"&gt;20-04-2021&lt;/span&gt;Today &lt;/h6&gt;
-         &lt;h5&gt;Updated Product&lt;i class="fa fa-circle circle-dot-primary pull-right"&gt;&lt;/i&gt;&lt;/h5&gt;
-         &lt;p&gt;Quisque a consequat ante Sit amet magna at volutapt.&lt;/p&gt;
-       &lt;/div&gt;
-     &lt;/div&gt;
-     &lt;div class="media"&gt;
-       &lt;div class="activity-dot-primary"&gt;&lt;/div&gt;
-         &lt;div class="media-body d-block"&gt;
-           &lt;h6&gt; &lt;span class="font-primary"&gt;20-04-20121&lt;/span&gt;Today&lt;span class="badge pill-badge-primary m-l-10"&gt;new &lt;/span&gt;&lt;/h6&gt;
-           &lt;h5&gt;James just like your product &lt;i class="fa fa-circle circle-dot-primary pull-right"&gt;&lt;/i&gt;&lt;/h5&gt;
-           &lt;p&gt;Quisque a consequat ante Sit amet magna at volutapt.&lt;/p&gt;
-           &lt;ul class="timeline-pro"&gt;
-             &lt;li&gt; &lt;img class="img-fluid" src="../assets/images/dashboard-2/11.png" alt="Product-1"&gt;&lt;/li&gt;
-             &lt;li&gt; &lt;img class="img-fluid" src="../assets/images/dashboard-2/10.png" alt="Product-2"&gt;&lt;/li&gt;
-           &lt;/ul&gt;
-         &lt;/div&gt;
-     &lt;/div&gt;
-     &lt;div class="media"&gt;
-         &lt;div class="activity-dot-primary"&gt;&lt;/div&gt;
-           &lt;div class="media-body d-block"&gt;
-             &lt;h6&gt; &lt;span class="font-primary"&gt;20-04-20121&lt;/span&gt;Today&lt;/h6&gt;
-             &lt;h5&gt;Jihan Doe just like your product&lt;i class="fa fa-circle circle-dot-primary pull-right"&gt;&lt;/i&gt;&lt;/h5&gt;
-             &lt;p&gt;Vestibulum nec mi suscipit, dapibus purus ane.&lt;/p&gt;
-           &lt;/div&gt;
-         &lt;/div&gt;
-         &lt;div class="media"&gt;
-             &lt;div class="media-body d-block"&gt;
-               &lt;div class="tomorrow-sec"&gt;
-                 &lt;p&gt;Tomorrow&lt;/p&gt;
-               &lt;/div&gt;
-             &lt;/div&gt;
-         &lt;/div&gt;
-         &lt;div class="media"&gt;
-           &lt;div class="activity-dot-primary"&gt;&lt;/div&gt;
-           &lt;div class="media-body d-block"&gt;
-             &lt;h6&gt; &lt;span class="font-primary"&gt;20-04-20121&lt;/span&gt;Tomorrow&lt;/h6&gt;
-             &lt;h5&gt;Today Total Revenue&lt;i class="fa fa-circle circle-dot-primary pull-right"&gt;&lt;/i&gt;&lt;/h5&gt;
-             &lt;p&gt;Quisque a consequat ante Sit amet magna at volutapt.&lt;/p&gt;
-           &lt;/div&gt;
-         &lt;/div&gt;
-         &lt;div class="media"&gt;
-             &lt;div class="activity-dot-primary"&gt;&lt;/div&gt;
-               &lt;div class="media-body d-block"&gt;
-                 &lt;div class="hospital-small-chart"&gt;
-                   &lt;div id="column-chart"&gt; &lt;/div&gt;
-                 &lt;/div&gt;
-               &lt;/div&gt;
-             &lt;/div&gt;
-         &lt;/div&gt;
-       &lt;/div&gt;
-     &lt;/div&gt;</code></pre>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-xl-12 des-xl-50 yearly-growth-sec">
-                <div class="card">
-                    <div class="card-header">
-                        <div class="header-top d-sm-flex justify-content-between align-items-center">
-                            <h5>Yearly growth</h5>
-                            <div class="center-content">
-                                <p class="d-sm-flex align-items-center"><span class="m-r-10"><i class="toprightarrow-primary fa fa-arrow-up m-r-10"></i>$9657.55k </span>86% more then last
-                                    year</p>
-                            </div>
-                            <div class="setting-list">
-                                <ul class="list-unstyled setting-option">
-                                    <li>
-                                        <div class="setting-primary"><i class="icon-settings"></i></div>
-                                    </li>
-                                    <li><i class="view-html fa fa-code font-primary"></i></li>
-                                    <li><i class="icofont icofont-maximize full-card font-primary"></i></li>
-                                    <li><i class="icofont icofont-minus minimize-card font-primary"></i></li>
-                                    <li><i class="icofont icofont-refresh reload-card font-primary"></i></li>
-                                    <li><i class="icofont icofont-error close-card font-primary"></i></li>
-                                </ul>
+            <div class="col-sm-6 col-xl-3 col-lg-6">
+                <div class="card o-hidden border-0">
+                    <div class="bg-secondary b-r-4 card-body">
+                        <div class="media static-top-widget">
+                            <div class="align-self-center text-center"><i data-feather="calendar"></i></div>
+                            <div class="media-body"><span class="m-0">Agenda</span>
+                                <h4 class="mb-0 counter">893</h4><i class="icon-bg" data-feather="calendar"></i>
                             </div>
                         </div>
                     </div>
-                    <div class="card-body p-0 chart-block">
-                        <div id="chart-yearly-growth-dash-2"></div>
-                        <div class="code-box-copy">
-                            <button class="code-box-copy__btn btn-clipboard" data-clipboard-target="#yearly-growth" title="Copy"><i class="icofont icofont-copy-alt"></i></button>
-                            <pre><code class="language-html" id="yearly-growth">  &lt;div class="card"&gt;
-   &lt;div class="card-header pb-0"&gt;
-     &lt;div class="header-top d-sm-flex justify-content-between align-items-center"&gt;
-       &lt;h5&gt;Yearly growth&lt;/h5&gt;
-       &lt;div class="center-content"&gt;
-             &lt;p class="d-sm-flex align-items-center"&gt;
-                &lt;span class="m-r-10"&gt;
-                  &lt;i class=" toprightarrow-primary fa fa-arrow-up m-r-10"&gt;&lt;/i&gt;  $9657.55k
-                &lt;/span&gt; 86% more then last year
-            &lt;/p&gt;
-         &lt;/div&gt;                                             
-     &lt;div class="setting-list"&gt;
-       &lt;ul class="list-unstyled setting-option"&gt;
-         &lt;li&gt;
-           &lt;div class="setting-primary"&gt;&lt;i class="icon-settings"&gt;&lt;/i&gt;&lt;/div&gt;
-         &lt;/li&gt;
-         &lt;li&gt;&lt;i class="view-html fa fa-code font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-         &lt;li&gt;&lt;i class="icofont icofont-maximize full-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-         &lt;li&gt;&lt;i class="icofont icofont-minus minimize-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-         &lt;li&gt;&lt;i class="icofont icofont-refresh reload-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-         &lt;li&gt;&lt;i class="icofont icofont-error close-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-       &lt;/ul&gt;
-     &lt;/div&gt;
-   &lt;/div&gt;
-   &lt;/div&gt;
-   &lt;div class="card-body p-0 chart-block"&gt;
-      &lt;div id="chart-yearly-growth-dash-2"&gt;
-      &lt;/div&gt;
-   &lt;/div&gt; 
-&lt;/div&gt;        </code></pre>
+                </div>
+            </div>
+            <div class="col-sm-6 col-xl-3 col-lg-6">
+                <div class="card o-hidden border-0">
+                    <div class="bg-warning b-r-4 card-body">
+                        <div class="media static-top-widget">
+                            <div class="align-self-center text-center"><i data-feather="user-plus"></i></div>
+                            <div class="media-body"><span class="m-0">Kepala Keluarga</span>
+                                <h4 class="mb-0 counter">4531</h4><i class="icon-bg" data-feather="user-plus"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 xl-50 col-sm- box-col-3">
+
+            </div>
+            <div class="col-xl-3 xl-100 box-col-3">
+                <div class="card">
+                    <div class="cal-date-widget card-body">
+                        <div class="row">
+                            <div class="col-xl-6 col-xs-12 col-md-6 col-sm-6">
+                                <div class="cal-datepicker">
+                                    <div class="datepicker-here float-sm-end" data-language="en"> </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-xs-12 col-md-6 col-sm-6">
+                                <div class="card">
+                                    <div class="mobile-clock-widget">
+                                        <div class="bg-svg">
+                                            <svg class="climacon climacon_cloudLightningMoon" id="cloudLightningMoon" version="1.1" viewBox="15 15 70 70">
+                                                <clippath id="moonCloudFillClipfill11">
+                                                    <path d="M0,0v100h100V0H0z M60.943,46.641c-4.418,0-7.999-3.582-7.999-7.999c0-3.803,2.655-6.979,6.211-7.792c0.903,4.854,4.726,8.676,9.579,9.58C67.922,43.986,64.745,46.641,60.943,46.641z"></path>
+                                                </clippath>
+                                                <clippath id="cloudFillClipfill19">
+                                                    <path d="M15,15v70h70V15H15z M59.943,61.639c-3.02,0-12.381,0-15.999,0c-6.626,0-11.998-5.371-11.998-11.998c0-6.627,5.372-11.999,11.998-11.999c5.691,0,10.434,3.974,11.665,9.29c1.252-0.81,2.733-1.291,4.334-1.291c4.418,0,8,3.582,8,8C67.943,58.057,64.361,61.639,59.943,61.639z"></path>
+                                                </clippath>
+                                                <g class="climacon_iconWrap climacon_iconWrap-cloudLightningMoon">
+                                                    <g clip-path="url(#cloudFillClip)">
+                                                        <g class="climacon_wrapperComponent climacon_wrapperComponent-moon climacon_componentWrap-moon_cloud" clip-path="url(#moonCloudFillClip)">
+                                                            <path class="climacon_component climacon_component-stroke climacon_component-stroke_sunBody" d="M61.023,50.641c-6.627,0-11.999-5.372-11.999-11.998c0-6.627,5.372-11.999,11.999-11.999c0.755,0,1.491,0.078,2.207,0.212c-0.132,0.576-0.208,1.173-0.208,1.788c0,4.418,3.582,7.999,8,7.999c0.614,0,1.212-0.076,1.788-0.208c0.133,0.717,0.211,1.452,0.211,2.208C73.021,45.269,67.649,50.641,61.023,50.641z"></path>
+                                                        </g>
+                                                    </g>
+                                                    <g class="climacon_wrapperComponent climacon_wrapperComponent-lightning">
+                                                        <polygon class="climacon_component climacon_component-stroke climacon_component-stroke_lightning" points="48.001,51.641 57.999,51.641 52,61.641 58.999,61.641 46.001,77.639 49.601,65.641 43.001,65.641 "></polygon>
+                                                    </g>
+                                                    <g class="climacon_wrapperComponent climacon_wrapperComponent-cloud">
+                                                        <path class="climacon_component climacon_component-stroke climacon_component-stroke_cloud" d="M59.999,65.641c-0.28,0-0.649,0-1.062,0l3.584-4.412c3.182-1.057,5.478-4.053,5.478-7.588c0-4.417-3.581-7.998-7.999-7.998c-1.602,0-3.083,0.48-4.333,1.29c-1.231-5.316-5.974-9.29-11.665-9.29c-6.626,0-11.998,5.372-11.998,12c0,5.446,3.632,10.039,8.604,11.503l-1.349,3.777c-6.52-2.021-11.255-8.098-11.255-15.282c0-8.835,7.163-15.999,15.998-15.999c6.004,0,11.229,3.312,13.965,8.204c0.664-0.114,1.338-0.205,2.033-0.205c6.627,0,11.999,5.371,11.999,11.999C71.999,60.268,66.626,65.641,59.999,65.641z"></path>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <ul class="clock" id="clock">
+                                                <li class="hour" id="hour"></li>
+                                                <li class="min" id="min"></li>
+                                                <li class="sec" id="sec"></li>
+                                            </ul>
+                                            <div class="date f-24 mb-2" id="date"><span id="monthDay"></span><span id="year">, </span></div>
+                                            <div>
+                                                <p class="m-0 f-14 text-light">Riau, Indonesia </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="col-xl-6 xl-100 box-col-12">
+            <div class="card">
+                <div class="card-header pb-0 d-flex justify-content-between align-items-center">
+                    <h5>Agenda</h5>
+                    <div class="setting-list">
+                        <ul class="list-unstyled setting-option">
+                            <li>
+                                <div class="setting-primary"><i class="icon-settings"></i></div>
+                            </li>
+                            <li><i class="view-html fa fa-code font-primary"></i></li>
+                            <li><i class="icofont icofont-maximize full-card font-primary"></i></li>
+                            <li><i class="icofont icofont-minus minimize-card font-primary"></i></li>
+                            <li><i class="icofont icofont-refresh reload-card font-primary"></i></li>
+                            <li><i class="icofont icofont-error close-card font-primary"></i></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="user-status table-responsive">
+                        <table class="table table-bordernone">
+                            <thead>
+                                <tr>
+                                    <th scope="col">No</th>
+                                    <th scope="col">Nama agenda</th>
+                                    <th scope="col">Tanggal</th>
+                                    <th scope="col">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="f-w-600">1</td>
+                                    <td class="f-w-600">Simply dummy text of the printing</td>
+                                    <td>1</td>
+                                    <td>
+                                        <div class="span badge rounded-pill pill-badge-secondary">6523</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="code-box-copy">
+                        <button class="code-box-copy__btn btn-clipboard" data-clipboard-target="#products-cart" title="Copy"><i class="icofont icofont-copy-alt"></i></button>
+                        <pre><code class="language-html" id="products-cart">&lt;div class="card"&gt;
+ &lt;div class="card-header pb-0 d-flex justify-content-between align-items-center"&gt;
+   &lt;h5&gt;PRODUCTS CART&lt;/h5&gt;
+   &lt;div class="setting-list"&gt;
+     &lt;ul class="list-unstyled setting-option"&gt;
+       &lt;li&gt;
+         &lt;div class="setting-primary"&gt;&lt;i class="icon-settings"&gt;&lt;/i&gt;&lt;/div&gt;
+       &lt;/li&gt;
+       &lt;li&gt;&lt;i class="view-html fa fa-code font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
+       &lt;li&gt;&lt;i class="icofont icofont-maximize full-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
+       &lt;li&gt;&lt;i class="icofont icofont-minus minimize-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
+       &lt;li&gt;&lt;i class="icofont icofont-refresh reload-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
+       &lt;li&gt;&lt;i class="icofont icofont-error close-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
+     &lt;/ul&gt;
+   &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="card-body"&gt;
+   &lt;div class="user-status table-responsive"&gt;
+     &lt;table class="table table-bordernone"&gt;
+       &lt;thead&gt;
+         &lt;tr&gt;
+           &lt;th scope="col"&gt;Details&lt;/th&gt;
+           &lt;th scope="col"&gt;Quantity&lt;/th&gt;
+           &lt;th scope="col"&gt;Status&lt;/th&gt;
+           &lt;th scope="col"&gt;Price&lt;/th&gt;
+         &lt;/tr&gt;
+       &lt;/thead&gt;
+       &lt;tbody&gt;
+         &lt;tr&gt;
+           &lt;td class="f-w-600"&gt;Simply dummy text of the printing&lt;/td&gt;
+           &lt;td&gt;1&lt;/td&gt;
+           &lt;td class="font-primary"&gt;Pending&lt;/td&gt;
+           &lt;td&gt;
+             &lt;div class="span badge rounded-pill pill-badge-secondary"&gt;6523&lt;/div&gt;
+           &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+           &lt;td class="f-w-600"&gt;Long established&lt;/td&gt;
+           &lt;td&gt;5&lt;/td&gt;
+           &lt;td class="font-secondary"&gt;Cancle&lt;/td&gt;
+           &lt;td&gt;
+             &lt;div class="span badge rounded-pill pill-badge-success"&gt;6523&lt;/div&gt;
+           &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+           &lt;td class="f-w-600"&gt;sometimes by accident&lt;/td&gt;
+           &lt;td&gt;10&lt;/td&gt;
+           &lt;td class="font-secondary"&gt;Cancle&lt;/td&gt;
+           &lt;td&gt;
+             &lt;div class="span badge rounded-pill pill-badge-warning"&gt;6523&lt;/div&gt;
+           &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+           &lt;td class="f-w-600"&gt;Classical Latin literature&lt;/td&gt;
+           &lt;td&gt;9&lt;/td&gt;
+           &lt;td class="font-primary"&gt;Return&lt;/td&gt;
+           &lt;td&gt;
+             &lt;div class="span badge rounded-pill pill-badge-primary"&gt;6523&lt;/div&gt;
+           &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+           &lt;td class="f-w-600"&gt;keep the site on the Internet&lt;/td&gt;
+           &lt;td&gt;8&lt;/td&gt;
+           &lt;td class="font-primary"&gt;Pending&lt;/td&gt;
+           &lt;td&gt;
+               &lt;div class="span badge rounded-pill pill-badge-danger"&gt;6523&lt;/div&gt;
+           &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+             &lt;td class="f-w-600"&gt;Molestiae consequatur&lt;/td&gt;
+             &lt;td&gt;3&lt;/td&gt;
+             &lt;td class="font-secondary"&gt;Cancle&lt;/td&gt;
+             &lt;td&gt;
+               &lt;div class="span badge rounded-pill pill-badge-info"&gt;6523&lt;/div&gt;
+             &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+           &lt;td class="f-w-600"&gt;Pain can procure&lt;/td&gt;
+           &lt;td&gt;8&lt;/td&gt;
+           &lt;td class="font-primary"&gt;Return&lt;/td&gt;
+           &lt;td&gt;
+             &lt;div class="span badge rounded-pill pill-badge-primary"&gt;6523&lt;/div&gt;
+           &lt;/td&gt;
+         &lt;/tr&gt;
+       &lt;/tbody&gt;
+     &lt;/table&gt;
+   &lt;/div&gt;
+ &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-6 xl-100 box-col-12">
+            <div class="card employee-status">
+                <div class="card-header pb-0 d-flex justify-content-between align-items-center">
+                    <h5>Warga RW 04</h5>
+                    <div class="setting-list">
+                        <ul class="list-unstyled setting-option">
+                            <li>
+                                <div class="setting-primary"><i class="icon-settings"></i></div>
+                            </li>
+                            <li><i class="view-html fa fa-code font-primary"></i></li>
+                            <li><i class="icofont icofont-maximize full-card font-primary"></i></li>
+                            <li><i class="icofont icofont-minus minimize-card font-primary"></i></li>
+                            <li><i class="icofont icofont-refresh reload-card font-primary"></i></li>
+                            <li><i class="icofont icofont-error close-card font-primary"></i></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="user-status table-responsive">
+                        <table class="table table-bordernone">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Designation</th>
+                                    <th scope="col">Skill Level</th>
+                                    <th scope="col">Experience</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="bd-t-none u-s-tb">
+                                        <div class="align-middle image-sm-size"><img class="img-radius align-top m-r-15 rounded-circle" src="../assets/images/user/4.jpg" alt="">
+                                            <div class="d-inline-block">
+                                                <h6>John Deo <span class="text-muted">(14+ Online)</span></h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Designer</td>
+                                    <td>
+                                        <div class="progress-showcase">
+                                            <div class="progress" style="height: 8px;">
+                                                <div class="progress-bar bg-primary" role="progressbar" style="width: 30%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>2 Year</td>
+                                </tr>
+                                <tr>
+                                    <td class="bd-t-none u-s-tb">
+                                        <div class="align-middle image-sm-size d-flex align-items-center"><img class="img-radius align-top m-r-15 rounded-circle" src="../assets/images/user/1.jpg" alt="">
+                                            <div class="d-inline-block">
+                                                <h6>Holio Mako <span class="text-muted">(250+ Online)</span></h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Developer</td>
+                                    <td>
+                                        <div class="progress-showcase">
+                                            <div class="progress" style="height: 8px;">
+                                                <div class="progress-bar bg-secondary" role="progressbar" style="width: 70%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>3 Year</td>
+                                </tr>
+                                <tr>
+                                    <td class="bd-t-none u-s-tb">
+                                        <div class="align-middle image-sm-size"><img class="img-radius align-top m-r-15 rounded-circle" src="../assets/images/user/5.jpg" alt="">
+                                            <div class="d-inline-block">
+                                                <h6>Mohsib lara<span class="text-muted">(99+ Online)</span></h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Tester</td>
+                                    <td>
+                                        <div class="progress-showcase">
+                                            <div class="progress" style="height: 8px;">
+                                                <div class="progress-bar bg-primary" role="progressbar" style="width: 60%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>5 Month</td>
+                                </tr>
+                                <tr>
+                                    <td class="bd-t-none u-s-tb">
+                                        <div class="align-middle image-sm-size"><img class="img-radius align-top m-r-15 rounded-circle" src="../assets/images/user/6.jpg" alt="">
+                                            <div class="d-inline-block">
+                                                <h6>Hileri Soli <span class="text-muted">(150+ Online)</span></h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Designer</td>
+                                    <td>
+                                        <div class="progress-showcase">
+                                            <div class="progress" style="height: 8px;">
+                                                <div class="progress-bar bg-secondary" role="progressbar" style="width: 30%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>3 Month</td>
+                                </tr>
+                                <tr>
+                                    <td class="bd-t-none u-s-tb">
+                                        <div class="align-middle image-sm-size"><img class="img-radius align-top m-r-15 rounded-circle" src="../assets/images/user/7.jpg" alt="">
+                                            <div class="d-inline-block">
+                                                <h6>Pusiz bia <span class="text-muted">(14+ Online)</span></h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Designer</td>
+                                    <td>
+                                        <div class="progress-showcase">
+                                            <div class="progress" style="height: 8px;">
+                                                <div class="progress-bar bg-primary" role="progressbar" style="width: 90%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>5 Year</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="code-box-copy">
+                        <button class="code-box-copy__btn btn-clipboard" data-clipboard-target="#emplotee-status" title="Copy"><i class="icofont icofont-copy-alt"></i></button>
+                        <pre><code class="language-html" id="emplotee-status">&lt;div class="card"&gt;
+ &lt;div class="card-header pb-0 d-flex justify-content-between align-items-center"&gt;
+   &lt;h5&gt;EMPLOYEE STATUS&lt;/h5&gt;
+   &lt;div class="setting-list"&gt;
+     &lt;ul class="list-unstyled setting-option"&gt;
+       &lt;li&gt;
+         &lt;div class="setting-primary"&gt;&lt;i class="icon-settings"&gt;&lt;/i&gt;&lt;/div&gt;
+       &lt;/li&gt;
+       &lt;li&gt;&lt;i class="view-html fa fa-code font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
+       &lt;li&gt;&lt;i class="icofont icofont-maximize full-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
+       &lt;li&gt;&lt;i class="icofont icofont-minus minimize-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
+       &lt;li&gt;&lt;i class="icofont icofont-refresh reload-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
+       &lt;li&gt;&lt;i class="icofont icofont-error close-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
+     &lt;/ul&gt;
+   &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="card-body"&gt;
+   &lt;div class="user-status table-responsive"&gt;
+     &lt;table class="table table-bordernone"&gt;
+       &lt;thead&gt;
+         &lt;tr&gt;
+           &lt;th scope="col"&gt;Name&lt;/th&gt;
+           &lt;th scope="col"&gt;Designation&lt;/th&gt;
+           &lt;th scope="col"&gt;Skill Level&lt;/th&gt;
+           &lt;th scope="col"&gt;Experience&lt;/th&gt;
+         &lt;/tr&gt;
+       &lt;/thead&gt;
+       &lt;tbody&gt;
+         &lt;tr&gt;
+           &lt;td class="bd-t-none u-s-tb"&gt;
+             &lt;div class="align-middle image-sm-size"&gt;&lt;img class="img-radius align-top m-r-15 rounded-circle" src="../assets/images/user/4.jpg" alt=""&gt;
+               &lt;div class="d-inline-block"&gt;
+                 &lt;h6&gt;John Deo &lt;span class="text-muted"&gt;(14+ Online)&lt;/span&gt;&lt;/h6&gt;
+               &lt;/div&gt;
+             &lt;/div&gt;
+           &lt;/td&gt;
+           &lt;td&gt;Designer&lt;/td&gt;
+           &lt;td&gt;
+             &lt;div class="progress-showcase"&gt;
+               &lt;div class="progress" style="height: 8px;"&gt;
+                 &lt;div class="progress-bar bg-primary" role="progressbar" style="width: 30%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"&gt;&lt;/div&gt;
+               &lt;/div&gt;
+             &lt;/div&gt;
+           &lt;/td&gt;
+           &lt;td&gt;2 Year&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+           &lt;td class="bd-t-none u-s-tb"&gt;
+             &lt;div class="align-middle image-sm-size d-flex align-items-center"&gt;&lt;img class="img-radius align-top m-r-15 rounded-circle" src="../assets/images/user/1.jpg" alt=""&gt;
+               &lt;div class="d-inline-block"&gt;
+                 &lt;h6&gt;Holio Mako &lt;span class="text-muted"&gt;(250+ Online)&lt;/span&gt;&lt;/h6&gt;
+               &lt;/div&gt;
+             &lt;/div&gt;
+           &lt;/td&gt;
+           &lt;td&gt;Developer&lt;/td&gt;
+           &lt;td&gt;
+             &lt;div class="progress-showcase"&gt;
+               &lt;div class="progress" style="height: 8px;"&gt;
+                 &lt;div class="progress-bar bg-secondary" role="progressbar" style="width: 70%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"&gt;&lt;/div&gt;
+               &lt;/div&gt;
+             &lt;/div&gt;
+           &lt;/td&gt;
+          &lt;td&gt;3 Year&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td class="bd-t-none u-s-tb"&gt;
+            &lt;div class="align-middle image-sm-size"&gt;&lt;img class="img-radius align-top m-r-15 rounded-circle" src="../assets/images/user/5.jpg" alt=""&gt;
+                &lt;div class="d-inline-block"&gt;
+                  &lt;h6&gt;Mohsib lara&lt;span class="text-muted"&gt;(99+ Online)&lt;/span&gt;&lt;/h6&gt;
+                &lt;/div&gt;
+             &lt;/div&gt;
+           &lt;/td&gt;
+           &lt;td&gt;Tester&lt;/td&gt;
+           &lt;td&gt;
+             &lt;div class="progress-showcase"&gt;
+               &lt;div class="progress" style="height: 8px;"&gt;
+                 &lt;div class="progress-bar bg-primary" role="progressbar" style="width: 60%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"&gt;&lt;/div&gt;
+               &lt;/div&gt;
+             &lt;/div&gt;
+           &lt;/td&gt;
+           &lt;td&gt;5 Month&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+           &lt;td class="bd-t-none u-s-tb"&gt;
+             &lt;div class="align-middle image-sm-size"&gt;&lt;img class="img-radius align-top m-r-15 rounded-circle" src="../assets/images/user/6.jpg" alt=""&gt;
+               &lt;div class="d-inline-block"&gt;
+                 &lt;h6&gt;Hileri Soli &lt;span class="text-muted"&gt;(150+ Online)&lt;/span&gt;&lt;/h6&gt;
+               &lt;/div&gt;
+             &lt;/div&gt;
+           &lt;/td&gt;
+           &lt;td&gt;Designer&lt;/td&gt;
+           &lt;td&gt;
+             &lt;div class="progress-showcase"&gt;
+               &lt;div class="progress" style="height: 8px;"&gt;
+                 &lt;div class="progress-bar bg-secondary" role="progressbar" style="width: 30%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"&gt;&lt;/div&gt;
+               &lt;/div&gt;
+             &lt;/div&gt;
+           &lt;/td&gt;
+           &lt;td&gt;3 Month&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+           &lt;td class="bd-t-none u-s-tb"&gt;
+             &lt;div class="align-middle image-sm-size"&gt;&lt;img class="img-radius align-top m-r-15 rounded-circle" src="../assets/images/user/7.jpg" alt=""&gt;
+               &lt;div class="d-inline-block"&gt;
+                  &lt;h6&gt;Pusiz bia &lt;span class="text-muted"&gt;(14+ Online)&lt;/span&gt;&lt;/h6&gt;
+               &lt;/div&gt;
+             &lt;/div&gt;
+           &lt;/td&gt;
+           &lt;td&gt;Designer&lt;/td&gt;
+             &lt;td&gt;
+               &lt;div class="progress-showcase"&gt;
+                 &lt;div class="progress" style="height: 8px;"&gt;
+                   &lt;div class="progress-bar bg-primary" role="progressbar" style="width: 90%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"&gt;&lt;/div&gt;
+                   &lt;/div&gt;
+               &lt;/div&gt;
+             &lt;/td&gt;
+             &lt;td&gt;5 Year&lt;/td&gt;
+         &lt;/tr&gt;
+       &lt;/tbody&gt;
+     &lt;/table&gt;
+   &lt;/div&gt;
+ &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- Container-fluid Ends-->
+</div>
+<!-- Container-fluid Ends-->
 </div>

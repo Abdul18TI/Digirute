@@ -23,8 +23,8 @@ class C_dashboard_rw extends CI_Controller
     {
         if ($this->session->userdata('rw_id') != null) {
             $this->load->view('Templates/header');
-            $this->load->view('Templates/sidebar');
-            $this->load->view('dashboard');
+            $this->load->view('Templates/sidebar_rw');
+            $this->load->view('RW/dashboard');
             $this->load->view('Templates/footer');
         } else {
             $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Silahkan login terlebih dahulu</div>');

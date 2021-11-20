@@ -44,7 +44,7 @@ class C_login_rw extends CI_Controller
                     'rw_id' => $ifNIK['rw_id']
                 ];
                 $this->session->set_userdata($data);
-                redirect('RW/C_table_agenda_rw');
+                redirect('RW/C_dashboard_rw');
             } else {
                 $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
                         Password yang di masukkan salah !
@@ -57,7 +57,7 @@ class C_login_rw extends CI_Controller
                     'rw_id' => $ifUSERNAME['rw_id']
                 ];
                 $this->session->set_userdata($data);
-                redirect('RW/C_table_agenda_rw');
+                redirect('RW/C_dashboard_rw');
             } else {
                 $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
                         Password yang di masukkan salah !

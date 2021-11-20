@@ -3,10 +3,10 @@
     <!-- Page Sidebar Start-->
     <header class="main-nav">
         <div class="sidebar-user text-center"><a class="setting-primary" href="javascript:void(0)"><i data-feather="settings"></i></a><img class="img-90 rounded-circle" src="<?= base_url() ?>assets/images/dashboard/1.png" alt="">
-            <div class="badge-bottom"><span class="badge badge-primary">RT</span></div><a href="user-profile.html">
+            <div class="badge-bottom"><span class="badge badge-primary">RW</span></div><a href="user-profile.html">
                 <h6 class="mt-3 f-14 f-w-600">Sahid</h6>
             </a>
-            <p class="mb-0 font-roboto">RT 04 RW 01</p>
+            <p class="mb-0 font-roboto">RW 04</p>
             <!-- <ul>
                 <li><span><span class="counter">19.8</span>k</span>
                     <p>Follow</p>
@@ -33,19 +33,26 @@
                             </div>
                         </li>
                         <li>
-                        <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="users"></i><span>Pengaduan</span></a>
-                            <ul class="nav-submenu menu-content">
-                                <li><a href="<?= base_url('RW/C_form_agenda_rw') ?>">Tambah Agenda</a></li>
-                                <li><a href="<?= base_url('RW/C_table_agenda_rw') ?>">Tabel Agenda</a></li>
-                            </ul>
-                        </li>
-                        <li class="sidebar-main-title">
-                            <div>
-                                <h6>Pages</h6>
-                            </div>
+                            <a class="nav-link menu-title link-nav" href="C_dashboard_rw"><i data-feather="home"></i><span>Dashboard</span></a>
                         </li>
                         <li>
-                            <a class="nav-link menu-title link-nav" href="landing-page.html"><i data-feather="navigation-2"></i><span>Landing page</span></a>
+                        <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="users"></i><span>Warga</span></a>
+                            <ul class="nav-submenu menu-content">
+                                <li><a href="<?= base_url('RW/C_form_agenda_rw') ?>">Tambah warga</a></li>
+                                <li><a href="<?= base_url('RW/C_table_agenda_rw') ?>">Tabel warga</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="calendar"></i><span>Agenda</span></a>
+                            <ul class="nav-submenu menu-content">
+                                <li><a href="<?= base_url('RW/C_form_agenda_rw') ?>">Tambah agenda</a></li>
+                                <li><a href="<?= base_url('RW/C_table_agenda_rw') ?>">Tabel agenda</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="sun"></i><span>Covid-19</span></a>
+                            <ul class="nav-submenu menu-content">
+                                <li><a href="<?= base_url('RW/C_form_agenda_rw') ?>">Tambah data covid</a></li>
+                                <li><a href="<?= base_url('RW/C_table_agenda_rw') ?>">Tabel data covid</a></li>
+                            </ul>
                         </li>
 
                     </ul>

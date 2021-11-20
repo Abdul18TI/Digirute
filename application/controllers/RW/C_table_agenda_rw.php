@@ -25,7 +25,7 @@ class C_table_agenda_rw extends CI_Controller
             $this->load->model('M_agenda');
             $data['agenda'] = $this->M_agenda->tampil_data_agenda()->result();
             $this->load->view('Templates/header');
-            $this->load->view('Templates/sidebar');
+            $this->load->view('Templates/sidebar_rw');
             $this->load->view('Rw/Table/table_agenda', $data);
             $this->load->view('Templates/footer');
         } else {
