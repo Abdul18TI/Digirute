@@ -29,10 +29,14 @@ class C_form_pengaduan extends CI_Controller
 
     public function index()
     {
-
+        $data['datadiri'] = $this->session->userdata('NamaLengkap');
+        $data['rw'] = $this->session->userdata('ID_RW');
+        $data['rt'] = $this->session->userdata('ID_RT');
+        // var_dump($data['datadiri']);
+        // die;
         if ($this->session->userdata('ID_Warga') != null) {
             $this->load->view('Templates/header');
-            $this->load->view('Templates/sidebar_warga');
+            $this->load->view('Templates/sidebar_warga',$data);
             $this->load->view('Warga/Form/form_pengaduan');
             $this->load->view('Templates/footer');
         } else {
@@ -47,8 +51,8 @@ class C_form_pengaduan extends CI_Controller
             $Judul_Pengaduan      = $this->input->post('Judul_Pengaduan');
             $Kategori_Pengaduan      = $this->input->post('Kategori_Pengaduan');
             $Deskripsi_Pengaduan      = $this->input->post('Deskripsi_Pengaduan');
-            $ID_RW      = 1;
-            $ID_RT      = 1;
+            $ID_RW      = $this->session->userdata('ID_RW');
+            $ID_RT      = $this->session->userdata('ID_RT');
             $Status_Pengaduan      = 1;
             $UploadFotoPengaduan = $_FILES['Gambar_Pengaduan']['name'];
             $Tgl_Upload_Pengaduan = strtotime(date("Y-m-d H:i:s"));

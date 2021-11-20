@@ -44,7 +44,10 @@ class C_login_warga extends CI_Controller
         if ($ifNIK != null) {
             if (password_verify($password, $ifNIK['Password'])) {
                 $data = [
-                    'ID_Warga' => $ifNIK['ID_Warga']
+                    'ID_Warga' => $ifNIK['ID_Warga'],
+                    'ID_RT' => $ifNIK['ID_RT'],
+                    'ID_RW' => $ifNIK['ID_RW'],
+                    'NamaLengkap' => $ifNIK['NamaLengkap']
                 ];
                 $this->session->set_userdata($data);
 
@@ -60,7 +63,10 @@ class C_login_warga extends CI_Controller
         } else if ($ifUSERNAME != null) {
             if (password_verify($password, $ifUSERNAME['Password'])) {
                 $data = [
-                    'ID_Warga' => $ifUSERNAME['ID_Warga']
+                    'ID_Warga' => $ifUSERNAME['ID_Warga'],
+                    'ID_RT' => $ifUSERNAME['ID_RT'],
+                    'ID_RW' => $ifUSERNAME['ID_RW'],
+                    'NamaLengkap' => $ifUSERNAME['NamaLengkap']
                 ];
                 $this->session->set_userdata($data);
                 redirect('Warga/C_form_pengaduan');
@@ -80,9 +86,11 @@ class C_login_warga extends CI_Controller
 
     public function logout()
     {
-        $this->session->unset_userdata('ID_Warga');
-        $this->session->unset_userdata('rw_id');
-        $this->session->unset_userdata('rt_id');
+        $this->session->unset_userdata("ID_Warga");
+        $this->session->unset_userdata("ID_RT");
+        $this->session->unset_userdata("ID_Rw");
+        $this->session->unset_userdata("NamaLengkap");
+        $this->session->sess_destroy();
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
         Anda sudah log out !
         </div>');
