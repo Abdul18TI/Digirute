@@ -14,7 +14,7 @@
                             <div class="col">
                                 <div class="mb-3">
                                     <label class="form-label" for="exampleInputPassword22">Nama : </label>
-                                    <input class="form-control" id="exampleInputPassword22" name="NamaLengkap" type="text" disabled="" placeholder="Budi Setiawan">
+                                    <input class="form-control" id="exampleInputPassword22" name="NamaLengkap" type="text" disabled="" value="<?= $datadiri ?>">
                                 </div>
                             </div>
                         </div>

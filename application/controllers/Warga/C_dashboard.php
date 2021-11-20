@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class C_datapribadi extends CI_Controller
+class C_dashboard extends CI_Controller
 {
 
     /**
@@ -27,7 +27,6 @@ class C_datapribadi extends CI_Controller
 
         $this->id = $this->session->userdata('ID_Warga');
     }
-
     public function index()
     {
         if ($this->session->userdata('ID_Warga') != null) {
@@ -35,41 +34,13 @@ class C_datapribadi extends CI_Controller
             $data['rw'] = $this->session->userdata('ID_RW');
             $data['rt'] = $this->session->userdata('ID_RT');
             $data['datawarga'] = $this->M_warga->warga_byid($this->id)->row();
-            $data['datagolongandarah'] = _datagolongandarah();
-            $data['datastatus'] = _datastatuskawin();
-            $data['dataagama'] = _dataagama();
             $this->load->view('Templates/header');
             $this->load->view('Templates/sidebar_warga', $data);
-            $this->load->view('Warga/v_detailpribadi', $data);
+            $this->load->view('Warga/v_dashboard', $data);
             $this->load->view('Templates/footer');
         } else {
             $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Silahkan login terlebih dahulu</div>');
             redirect('C_error_page');
         }
-    }
-
-    public function updatehpemail()
-    {
-        $id = htmlspecialchars($this->input->post('id_mempelai', true));
-
-        $data = [
-            'Warga_Email' => htmlspecialchars($this->input->post('inp_email', true)),
-            'Warga_Email' => htmlspecialchars($this->input->post('inp_email', true))
-        ];
-        // $this->Mempelai_Model->update($id, $data);
-    }
-
-    public function keluarga()
-    {
-        // echo $this->id;
-        $data['datadiri'] = $this->session->userdata('NamaLengkap');
-        $data['rw'] = $this->session->userdata('ID_RW');
-        $data['rt'] = $this->session->userdata('ID_RT');
-        $data['datawarga'] = $this->M_warga->warga_byid($this->id)->result();
-        $data['datakeluarga'] = $this->M_warga->keluarga($data['datawarga'][0]->NoKK)->result();
-        $this->load->view('Templates/header');
-        $this->load->view('Templates/sidebar_warga', $data);
-        $this->load->view('Warga/v_keluarga', $data);
-        $this->load->view('Templates/footer');
     }
 }

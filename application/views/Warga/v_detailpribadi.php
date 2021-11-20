@@ -56,13 +56,13 @@
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Nomor Induk Kependudukan (NIK)</label>
                                         <div class="col-sm-9">
-                                            <input class="form-control " type="text" id="inp_nik" name="inp_nik" placeholder="Nomor Induk Kependudukan" disabled>
+                                            <input class="form-control " type="text" id="inp_nik" name="inp_nik" placeholder="Nomor Induk Kependudukan" value="<?= $datawarga->NIK ?>" disabled>
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Alamat</label>
                                         <div class="col-sm-9">
-                                            <textarea class="form-control" id="inp_alamat" name="inp_alamat" rows="5" cols="5" placeholder="Alamat" disabled></textarea>
+                                            <textarea class="form-control" id="inp_alamat" name="inp_alamat" rows="5" cols="5" placeholder="Alamat" disabled><?= $datawarga->Alamat ?></textarea>
                                         </div>
                                     </div>
                                     <div class="mb-3 row">

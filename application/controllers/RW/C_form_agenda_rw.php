@@ -26,9 +26,10 @@ class C_form_agenda_rw extends CI_Controller
     public function index()
     {
         if ($this->session->userdata('rw_id') != null) {
+            $data['datadiri'] = $this->session->userdata('NamaLengkap');
             $this->load->view('Templates/header');
-            $this->load->view('Templates/sidebar');
-            $this->load->view('Rw/Form/form_agenda');
+            $this->load->view('Templates/sidebar', $data);
+            $this->load->view('Rw/Form/form_agenda', $data);
             $this->load->view('Templates/footer');
         } else {
             $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Please login first..!</div>');

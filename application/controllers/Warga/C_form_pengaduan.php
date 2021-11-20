@@ -29,6 +29,7 @@ class C_form_pengaduan extends CI_Controller
 
     public function index()
     {
+        $data['id_warga'] = $this->session->userdata('ID_Warga');
         $data['datadiri'] = $this->session->userdata('NamaLengkap');
         $data['rw'] = $this->session->userdata('ID_RW');
         $data['rt'] = $this->session->userdata('ID_RT');
@@ -36,8 +37,8 @@ class C_form_pengaduan extends CI_Controller
         // die;
         if ($this->session->userdata('ID_Warga') != null) {
             $this->load->view('Templates/header');
-            $this->load->view('Templates/sidebar_warga',$data);
-            $this->load->view('Warga/Form/form_pengaduan');
+            $this->load->view('Templates/sidebar_warga', $data);
+            $this->load->view('Warga/Form/form_pengaduan', $data);
             $this->load->view('Templates/footer');
         } else {
             $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Silahkan login terlebih dahulu</div>');
